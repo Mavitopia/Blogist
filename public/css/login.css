@@ -1,0 +1,125 @@
+/* Global Styles */
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fff4ff;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  border-radius: 40px;
+  padding: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.container h1 {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Login Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* Forgot Password Link */
+.forgot-password {
+  text-align: right;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.login-form input[type="submit"] {
+  width: 100%;
+  background-color: #28a745;
+  color: white;
+  font-size: 18px;
+  padding: 15px;
+  border: none;
+  border-radius: 0 0 20px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: center;
+}
+
+.login-form input[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* --- Media Queries --- */
+
+/* Mobile Devices (up to 480px wide) */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+  .container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    padding: 10px 2px;
+    font-size: 14px;
+  }
+  .login-form input[type="submit"] {
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
+/* Large Screens (1200px and above) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 500px;
+    padding: 50px;
+  }
+  .container h1 {
+    font-size: 32px;
+    margin-bottom: 50px;
+  }
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    padding: 14px;
+    font-size: 18px;
+  }
+  .login-form input[type="submit"] {
+    padding: 18px;
+    font-size: 20px;
+  }
+}
