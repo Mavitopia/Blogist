@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="css/profile.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="profile-container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <h2>@<%=username%></h2>
+            <div class="buttons">
+                <button class="icon-btn" id="upload-btn"><i class="fas fa-plus"></i> Upload Blog</button>
+                <button class="icon-btn" id="settings-btn"><i class="fas fa-cog"></i> Settings</button>
+            </div>
+        </div>
+
+        <!-- Blog Count -->
+        <p class="blog-count">Total Blogs: <strong><%= locals.blogNumber ? locals.blogNumber : 0 %></strong></p>
+
+        <!-- Blog Showcase -->
+        <div class="blog-grid">
+            <% if (locals.blogPostList) { %>
+                <% locals.blogPostList.forEach(blogPost => { %>
+                    <div class="blog-card" data-title="<%= blogPost[0] %>">
+                        <h3><%= blogPost[0] ? blogPost[0] : "Undefined!" %></h3>
+                        <p>
+                            <%= blogPost[1].length > 15 ? blogPost[1].slice(0, 15) + '...' : blogPost[1] %>
+                        </p>
+                    </div>
+                <% }) %>
+            <% } %>
+        </div>
+
+        <!-- Place the script outside the loop to attach one event listener for each blog-card -->
+        <script>
+            // Select all elements with the "blog-card" class
+            document.querySelectorAll('.blog-card').forEach(card => {
+                card.addEventListener('click', function () {
+                    const title = card.getAttribute('data-title');
+                    window.location.href = 'http://localhost:3000/blog/' + title;
+                });
+            });
+        </script>
+
+
+        </div>
+<script src="Js/profile.js"></script>
+</body>
+</html>
