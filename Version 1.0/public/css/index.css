@@ -1,0 +1,763 @@
+body {
+  color: #142f2d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "open-sans", sans-serif;
+  text-align: center;
+}
+#home button {
+  display: none;
+}
+#login--button button {
+  display: none;
+}
+
+nav {
+  background-color: rgb(246, 245, 245);
+  padding-bottom: 40px;
+  padding-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+}
+h1 {
+  margin-top: 150px;
+  color: #112826;
+  text-align: left;
+  font-size: 96px;
+}
+#text--in--header {
+  color: #6c63ff;
+}
+
+#home img {
+  width: 70px;
+  height: 70px;
+}
+#home span {
+  font-size: 48px;
+}
+#login--button {
+  padding-top: 16px;
+  font-size: 48px;
+}
+#login--button:hover {
+  cursor: pointer;
+  color: #0d4c2e;
+}
+#left--side--button {
+  display: flex;
+  gap: 70px;
+}
+#singup--button button {
+  border: 0;
+  background-color: #157e4c;
+  color: #eafff5;
+  border-radius: 10px;
+  font-size: 32px;
+  margin-top: 8px;
+  text-decoration: none;
+  padding: 20px 40px;
+}
+#singup--button button:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Increase shadow size */
+  cursor: pointer;
+}
+
+.dot {
+  width: 18px;
+  height: 18px;
+  background-color: #6c63ff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#home:hover {
+  cursor: pointer;
+  color: #0d4c2e;
+}
+
+#features--box {
+  margin-top: 150px;
+  border-radius: 30px;
+  text-align: left;
+  display: flex;
+  background-color: #26e389;
+  padding: 50px;
+}
+#privacy--in--box {
+  padding-right: 50px;
+  padding-left: 40px;
+}
+#money--in--box {
+  padding-left: 50px;
+  padding-right: 40px;
+}
+#features--box h3 {
+  font-size: 48px;
+  color: #214f4b;
+}
+#features--box p {
+  font-size: 32px;
+  color: #37615d;
+}
+#features--box img {
+  padding: 20px;
+  background-color: #eafff5;
+  border-radius: 58px;
+  width: 120px;
+  height: 120px;
+}
+
+#user--comment {
+  margin-top: 150px;
+  display: grid;
+  align-items: start;
+  justify-items: start;
+  grid-template-columns: 880px 450px;
+  grid-template-rows: 300px 550px 50px;
+}
+#user--comment-info {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 250px 430px;
+  grid-row: 150px;
+  text-align: left;
+  grid-column: 0 / 1;
+  grid-row: 0 / 1;
+}
+#user--comment-info h2 {
+  font-size: 62px;
+  color: #112826;
+}
+#user--comment-info h2::after {
+  content: "from Italy";
+  display: block;
+  margin-top: 5px;
+  font-size: 32px;
+  color: #90a7a5;
+}
+#user--comment-info img {
+  border-radius: 200px;
+}
+
+#user--comment-text {
+  color: #37615d;
+  text-align: left;
+  grid-column: 1 / 1;
+}
+#user--comment-text h3 {
+  font-size: 43px;
+  color: #142f2d;
+}
+#user--comment-text--blogist {
+  color: #6c63ff;
+}
+#woman--heart {
+  align-self: center;
+  justify-self: center;
+  grid-column: 2;
+  grid-row: 1 / -2;
+}
+#view--blog--button {
+  justify-self: start;
+  align-self: start;
+  grid-column: 1 / span 2;
+  grid-row: 3;
+  width: 90%;
+  height: 120%;
+  display: flex;
+  align-items: center; /* Centers the button vertically */
+  justify-content: center; /* Centers the button horizontally */
+}
+
+#view--blog--button button {
+  border-radius: 8px;
+  border: none;
+  background-color: #26e389;
+  color: #112826;
+  width: 100%;
+  height: 85%;
+  font-size: 28px;
+  padding: 0; /* Reset padding */
+  display: flex;
+  align-items: center; /* Centers text vertically */
+  justify-content: center; /* Centers text horizontally */
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(38, 227, 137, 0.7);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#view--blog--button button:hover {
+  box-shadow: 0 0 24px rgba(38, 227, 137, 1), 0 0 35px rgba(38, 227, 137, 0.8);
+  transform: translateY(-4px);
+}
+
+footer {
+  font-size: 24px;
+  text-align: left;
+  width: 100%;
+  margin-top: 150px;
+  border-top: 2px solid #dfdede;
+}
+#faqs-wrapper {
+  font-weight: 600;
+  color: #37615d;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#faqs {
+  display: grid;
+  grid-template-columns: 180px 1150px;
+}
+#faqs h2 {
+  font-size: 42px;
+  font-weight: 700;
+}
+.question {
+  color: #214f4b;
+}
+#copyright {
+  margin-left: 20px;
+  margin-top: 30px;
+  font-weight: 700;
+}
+.link {
+  color: #007bff;
+  text-decoration: none;
+}
+#user--comment-text > p {
+  line-height: 1.45;
+  font-size: 24px;
+}
+
+/* Layout adjustments for smaller screens */
+@media (max-width: 1878px) {
+  nav {
+    padding-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+  }
+  h1 {
+    margin-top: 100px;
+    color: #112826;
+    text-align: left;
+    font-size: 62px;
+  }
+  #text--in--header {
+    color: #6c63ff;
+  }
+  #home img {
+    width: 40px;
+    height: 40px;
+  }
+  #home span {
+    font-size: 30px;
+  }
+  #login--button {
+    padding-top: 16px;
+    font-size: 30px;
+  }
+  #login--button:hover {
+    cursor: pointer;
+    color: #0d4c2e;
+  }
+  #left--side--button {
+    display: flex;
+    gap: 50px;
+  }
+  #singup--button button {
+    border: 0;
+    background-color: #157e4c;
+    color: #eafff5;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-top: 5px;
+    text-decoration: none;
+    padding: 15px 25px;
+  }
+  #singup--button button:hover {
+    box-shadow: 0 6px 15px rgba(5, 162, 47, 0.2); /* Increase shadow size */
+    cursor: pointer;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    background-color: #6c63ff;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  #home:hover {
+    cursor: pointer;
+    color: #0d4c2e;
+  }
+
+  #features--box {
+    margin-top: 100px;
+    border-radius: 30px;
+    text-align: left;
+    display: flex;
+    background-color: #26e389;
+    padding: 25px;
+  }
+  #privacy--in--box {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  #money--in--box {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  #features--box h3 {
+    font-size: 28px;
+    color: #214f4b;
+  }
+  #features--box p {
+    font-size: 20px;
+    color: #37615d;
+  }
+  #features--box img {
+    padding: 10px;
+    background-color: #eafff5;
+    border-radius: 28px;
+    width: 80px;
+    height: 80px;
+  }
+
+  #user--comment {
+    margin-top: 100px;
+    display: grid;
+    align-items: start;
+    justify-items: start;
+    grid-template-columns: 680px 250px;
+    grid-template-rows: 180px 400px 50px;
+  }
+  #user--comment-info {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 150px 230px;
+    grid-row: 150px;
+    text-align: left;
+    grid-column: 0 / 1;
+    grid-row: 0 / 1;
+  }
+  #user--comment-info h2 {
+    font-size: 32px;
+    color: #112826;
+  }
+  #user--comment-info h2::after {
+    content: "from Italy";
+    display: block;
+    margin-top: 5px;
+    font-size: 18px;
+    color: #90a7a5;
+  }
+  #user--comment-info img {
+    width: 150px;
+    height: 150px;
+    border-radius: 200px;
+  }
+
+  #user--comment-text {
+    color: #37615d;
+    text-align: left;
+    grid-column: 1 / 1;
+  }
+  #user--comment-text h3 {
+    font-size: 32px;
+    color: #142f2d;
+  }
+  #user--comment-text--blogist {
+    color: #6c63ff;
+  }
+  #woman--heart {
+    align-self: center;
+    justify-self: center;
+    grid-column: 2;
+    grid-row: 1 / -2;
+  }
+  #woman--heart img {
+    width: 400px;
+    height: 700px;
+  }
+  #view--blog--button {
+    justify-self: start;
+    align-self: start;
+    grid-column: 1 / span 2;
+    grid-row: 3;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #view--blog--button button {
+    border-radius: 8px;
+    border: none;
+    background-color: #26e389;
+    color: #112826;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(38, 227, 137, 0.7);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  #view--blog--button button:hover {
+    box-shadow: 0 0 24px rgba(38, 227, 137, 1), 0 0 35px rgba(38, 227, 137, 0.8);
+    transform: translateY(-4px);
+  }
+
+  footer {
+    font-size: 20px;
+    text-align: left;
+    width: 100%;
+    margin-top: 100px;
+    border-top: 2px solid #dfdede;
+  }
+  #faqs-wrapper {
+    font-weight: 600;
+    color: #37615d;
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  #faqs {
+    display: grid;
+    grid-template-columns: 120px 810px;
+  }
+  #faqs h2 {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  .question {
+    color: #214f4b;
+  }
+  #copyright {
+    margin-left: 20px;
+    margin-top: 30px;
+    font-weight: 700;
+  }
+  .link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  #user--comment-text > p {
+    line-height: 1.45;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 946px) {
+  /* Navigation adjustments */
+
+  /* Header adjustments */
+  h1 {
+    margin-top: 50px;
+    font-size: 42px;
+    text-align: center;
+  }
+
+  /* Features box layout and styling */
+  #features--box {
+    flex-direction: column;
+    text-align: center; /* Center the text */
+  }
+  #privacy--in--box {
+    padding-top: 10px;
+  }
+  #money--in--box {
+    padding-top: 20px;
+  }
+  #features--box h3 {
+    font-size: 24px;
+  }
+  #features--box p {
+    font-size: 18px; /* Adjust font size for better readability */
+  }
+  #woman--heart img {
+    display: none;
+  }
+
+  /* User comment layout */
+  #user--comment {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+  }
+  #user--comment-text > p {
+    display: inline;
+    font-size: 18px;
+  }
+  /* View Blog button adjustments */
+  #view--blog--button {
+    margin-top: 30px;
+    padding: 15px 25px;
+    font-size: 30px;
+    width: 100%; /* Make button full width */
+    height: 70px;
+  }
+
+  /* Footer adjustments */
+  footer {
+    text-align: center;
+    font-size: 14px; /* Smaller footer text */
+    padding: 10px 0; /* Adjust padding */
+  }
+  #view--blog--button > button {
+    padding: 10px;
+  }
+  #faqs {
+    font-size: 14px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 120px 500px;
+  }
+  #copyright {
+    text-align: left;
+  }
+}
+
+@media (max-width: 500px) {
+  /* Navigation Buttons - Redesigned for Consistency */
+  nav {
+    padding: 15px 10px;
+    background-color: #f6f5f5;
+    border-bottom: 1px solid #dfdede;
+  }
+
+  #home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #eafff5;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+  }
+
+  #home img {
+    width: 28px;
+    height: 28px;
+  }
+
+  #home:hover {
+    background-color: #d0f8e6;
+    transform: scale(1.05);
+  }
+
+  #login--button {
+    margin-top: 5px;
+    font-size: 18px;
+    padding: 8.5px 20px;
+    background-color: transparent;
+    border: 2px solid #26e389;
+    border-radius: 12px;
+    color: #26e389;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #login--button:hover {
+    background-color: #26e389; /* Green background on hover */
+    color: #eafff5; /* White text on hover */
+    transform: scale(1.05);
+  }
+
+  #singup--button button {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #26e389; /* Green background */
+    color: #eafff5; /* White text */
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(38, 227, 137, 0.2); /* Green shadow */
+    transition: all 0.2s ease;
+  }
+
+  #singup--button button:hover {
+    background-color: #20c576; /* Darker green on hover */
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(38, 227, 137, 0.3); /* Stronger green shadow */
+  }
+
+  /* Button Group Styling */
+  #left--side--button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  /* Active State for Buttons */
+  #home:active,
+  #login--button:active,
+  #singup--button button:active {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+}
+@media (max-width: 450px) {
+  body {
+    padding: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  #home img {
+    width: 24px;
+    height: 24px;
+  }
+
+  #home span,
+  #login--button {
+    font-size: 20px;
+  }
+
+  #left--side--button {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  #singup--button button {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+
+  #features--box {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  #features--box h3,
+  #features--box p {
+    font-size: 18px;
+  }
+
+  #features--box img {
+    width: 60px;
+    height: 60px;
+  }
+
+  #user--comment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #user--comment-info {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  #user--comment-info h2 {
+    font-size: 24px;
+  }
+
+  #user--comment-text h3 {
+    font-size: 20px;
+  }
+
+  #view--blog--button {
+    width: 100%;
+    height: 50px;
+  }
+
+  #view--blog--button button {
+    font-size: 16px;
+  }
+
+  footer {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  #faqs {
+    flex-direction: column;
+    font-size: 14px;
+  }
+}
+/*LOGOUT BUTTON*/
+#account--setting button {
+  font-size: 30px;
+  padding: 15px 20px;
+  background-color: #e74c3c; /* Red background for logout */
+  color: #eafff5; /* White text */
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(231, 76, 60, 0.2); /* Red shadow */
+  transition: all 0.2s ease;
+}
+
+#account--setting button:hover {
+  background-color: #c0392b; /* Darker red on hover */
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(231, 76, 60, 0.3); /* Stronger red shadow on hover */
+}
+
+#account--setting button:active {
+  transform: scale(0.95);
+  opacity: 0.9;
+}
+
+/* For smaller screens */
+@media (max-width: 500px) {
+  #account--setting button {
+    font-size: 16px;
+    padding: 8px 15px;
+    background-color: #e74c3c;
+    color: #eafff5;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(231, 76, 60, 0.2);
+    transition: all 0.2s ease;
+  }
+
+  #account--setting button:hover {
+    background-color: #c0392b;
+    box-shadow: 0 6px 8px rgba(231, 76, 60, 0.3);
+  }
+
+  #account--setting button:active {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+}

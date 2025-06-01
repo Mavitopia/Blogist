@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../css/signup.css" rel="stylesheet" />
+  </head>
+  <body>
+  <% if(locals.alertM) {%>
+    <script>alert("<%= alertM %>");</script>
+  <%}%>
+    <div class="container">
+      <h1>SIGN UP</h1>
+      <form class="signup-form" action="http://localhost:3000/signup/submit" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required minlength="2" pattern="^[a-zA-Z]+$" title="Name should only contain letters and no symbols are allowed"/>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required maxlength="20" minlength="5" pattern="^[a-zA-Z0-9]+$" title="Username should be between 5 to 15 characters and no symbols are allowed"/>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required minlength="5" maxlength="50" title="Please enter a valid email address (e.g., example@domain.com)." pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"/>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required
+               minlength="8" maxlength="20"
+               pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,20}$"
+               title="Password must be between 8 and 20 characters and include at least one uppercase letter, one lowercase letter, one number, and one special character (e.g., !@#$%^&*)." />
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required />
+
+        <input type="submit" value="Submit"/>
+      </form>
+
+    </div>
+  </body>
+</html>

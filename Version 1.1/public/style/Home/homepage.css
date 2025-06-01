@@ -1,0 +1,159 @@
+
+main {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.left-side-main-container {
+    width: 62%;
+}
+.right-side-main-container {
+    width: 32%;
+}
+
+.left-side-main-container-contents {
+    background-color: #433A35;
+    border: 2px solid #E4C59E;
+    padding: 20px;
+}
+.main-contents-header {
+    color: #803D3B;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-shadow: 0 0 2px #803D3B;
+}
+.main-contents-description {
+    color: #888;
+    font-size: 14px;
+    margin: 10px 0;
+}
+.main-contents-body {
+    font-size: 16px;
+    line-height: 1.6;
+}
+.main-contents-button button {
+    margin-top: 20px;
+    background-color: transparent;
+    border: 1px solid #803D3B;
+    font-size: 16px;
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    padding: 5px 15px;
+    color: #803D3B;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-contents-button button:hover {
+    cursor: pointer;
+    background-color: #803D3B;
+    color: #E4C59E;
+}
+.left-side-hr {
+    margin-top: 20px;
+    border: 1px solid #888888;
+}
+
+.right-side-main-container-latest-quest {
+    background-color: #4B3D36;
+    border: 2px solid #AF8260;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.right-side-main-latest-quest-header {
+    color: #AF8260;
+    margin-bottom: 20px;
+}
+
+.right-side-main-latest-quest-body p{
+    padding-bottom: 5px;
+    transition: color 0.5s ease, text-shadow 0.5s ease;
+}
+
+.right-side-main-latest-quest-body p:hover{
+    cursor: pointer;
+    color: #eddbc2;
+    text-shadow: 0 0 2px #eddbc2;
+}
+
+.right-side-main-latest-quest-body hr{
+    border: 1px solid #b99361;
+    margin-bottom: 20px;
+}
+
+.right-side-main-container-guild-stats {
+    background-color: #4B3D36;
+    border: 2px solid #AF8260;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.right-side-main-guild-stats-header {
+    color: #AF8260;
+    margin-bottom: 20px;
+}
+.right-side-main-guild-stats-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+}
+.guild-stats-body-box {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 140px;
+    height: 150px;
+    border: 1px solid #AF8260;
+    background-color: #38302D;
+    color: #AF8260;
+}
+.span-color {
+    font-weight: 700;
+    font-size: 25px;
+    color: #E4C59E;
+}
+.right-side-main-container-categories {
+    background-color: #4B3D36;
+    border: 2px solid #AF8260;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.right-side-main-categories-header {
+    color: #AF8260;
+    margin-bottom: 10px;
+}
+
+.right-side-main-categories-body hr {
+    border: 1px solid #b99361;
+    margin-bottom: 20px;
+}
+
+.right-side-main-categories-body p {
+    margin: 5px 0;
+    transition: color 0.5s ease, text-shadow 0.5s ease;
+}
+
+.right-side-main-categories-body p:hover {
+    cursor: pointer;
+    color: #eddbc2;
+    text-shadow: 0 0 2px #eddbc2;
+}
+
+.right-side-main-container-dotd {
+    background-color: #4B3D36;
+    border: 2px solid #AF8260;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.right-side-main-dotd-header {
+    color: #AF8260;
+    margin-bottom: 10px;
+}
+#right-side-main-dotd-footer-text {
+    text-align: right;
+    color: #888888;
+}

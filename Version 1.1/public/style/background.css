@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body {
+    font-family: 'Courier Prime', monospace;
+    background: #322C2B;
+    color: #E4C59E;
+    min-height: 100vh;
+    background-image:
+            radial-gradient(circle at 20% 80%, rgba(175, 130, 96, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(128, 61, 59, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 40% 40%, rgba(228, 197, 158, 0.1) 0%, transparent 50%);
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 50%;
+    margin: 80px auto;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+    color: #803D3B;
+    margin-bottom: 10px;
+}
+
+
+.app-introduction p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    margin-top: 15px;
+}
+
+
+p.pixel-type {
+    font-size: 18px;
+    color: #AF8260;
+    padding: 0.5em 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    width: 0;
+
+    border-right: 2px solid #AF8260;
+
+    animation:
+            typing 5s linear forwards,
+            blink-caret .70s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to   { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50%      { border-color: #AF8260; }
+}
+
+.app-hr {
+    width: 100%;
+    margin: 1rem auto;
+    border: 1px solid #803D3B;
+}
+
+
+
+.app-navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 30px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 40px;
+    background-color: #44312F;
+    border: 2px solid #803D3B;
+}
+.app-navigation a {
+    all: unset;
+}
+.app-navigation p {
+    padding: 8px 22px;
+    border-radius: 4px;
+    transition:
+            background-color 0.3s ease,
+            color 0.3s ease,
+            transform 0.2s ease;
+}
+
+.app-navigation p:hover {
+    cursor: pointer;
+    background-color: #AF8260;
+    color: #803D3B;
+    transform: scale(1.05);
+}

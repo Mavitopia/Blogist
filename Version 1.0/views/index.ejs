@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/index.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2991/2991100.png">
+  </head>
+  <body>
+    <nav>
+      <div id="home">
+        <img
+          src="img-svg/home-outline.svg"
+          width="25px"
+          height="25px"
+          alt="home icon"
+        /><span> Home </span><button>Home</button>
+      </div>
+      <div id="left--side--button">
+        <%if(locals.isLoggedIn) {%>
+        <div id="account--setting">
+          <button style="cursor: pointer">Setting</button>
+        </div>
+        <script>
+          document.getElementById("account--setting").onclick = function () {
+              window.location.href = 'http://localhost:3000/profile';
+          }
+        </script>
+          <%} else {%>
+        <div id="login--button"><a>Log in</a><button>Log in</button></div>
+        <div id="singup--button">
+          <button>Sign up</button>
+        </div>
+        <%}%>
+      </div>
+    </nav>
+    <header>
+      <h1>
+        <% if(locals.isLoggedIn) {%>
+        <span style="background-color: #26e389; padding:10px">Welcome <%=loginUserName%></span><br><br>
+        <%}%>
+        Write
+        <div class="dot"></div>
+        Share
+        <div class="dot"></div>
+        Inspire <br />A blogging platform for <br />
+        everyone—no limits, <br />
+        <span id="text--in--header">no boundaries</span>
+      </h1>
+    </header>
+    <article id="features--box">
+      <div id="privacy--in--box">
+        <img
+          src="img-svg/shield-half-outline.svg"
+          alt="shield represent privacy"
+          width="69px"
+        />
+        <h3>Privacy First Approach</h3>
+        <p>
+          Your voice matters, and so does your privacy.<br />
+          We protect your data at all costs so you can be at ease.
+        </p>
+      </div>
+      <div id="money--in--box">
+        <img
+          src="img-svg/cash-outline.svg"
+          alt="money represent income"
+          width="69px"
+        />
+        <h3>Earn While You Share</h3>
+        <p>
+          Your words have value, and so does your time.<br />
+          We help you earn from your content while you create.
+        </p>
+      </div>
+    </article>
+    <article id="user--comment">
+      <div id="user--comment-info">
+        <img
+          src="img-svg/uifaces-popular-image.jpg"
+          alt="a person"
+          width="250px"
+          height="250px"
+        />
+        <h2>Luca Bianchi</h2>
+      </div>
+      <div id="user--comment-text">
+        <h3>
+          Luca Bianchi’s Experience with
+          <span id="user--comment-text--blogist">Blogist</span>
+        </h3>
+        <p>
+          _"I’ve always wanted to share my thoughts and experiences with a wider
+          audience,<br />
+          but I didn’t want to compromise my privacy. That’s when I found
+          Blogist<br />
+          The best part? They truly value my data and privacy, making it easy
+          to<br />
+          feel safe while posting freely.<br />
+          Not only do they protect my information, but they also offer the
+          chance to<br />
+          monetize my content. It’s incredible to earn while doing something I
+          love. The<br />
+          platform is super easy to use, and I’ve connected with like-minded
+          people<br />
+          globally. If you're looking to share your voice, this is the place to
+          be!"_<br />
+          — Luca Bianchi
+        </p>
+      </div>
+      <div id="woman--heart">
+        <img
+          src="img-svg/undraw_love-it_8pc0.png"
+          alt="woman holding a heart"
+          width="554px"
+          height="938px"
+        />
+      </div>
+      <div id="view--blog--button">
+        <button>View blogs</button>
+      </div>
+    </article>
+    <footer>
+      <div id="faqs-wrapper">
+        <div id="faqs">
+          <h2>FAQs :</h2>
+          <p>
+            <span class="question"
+              >Q1: How do I start blogging on Blogist?<br /><br
+            /></span>
+            A1: <%if(!locals.isLoggedIn) {%>Simply <a href="http://localhost:3000/signup" class="link">sign up</a> for an account,<%}%>
+            create your profile, and start writing!<br />
+            Once you're ready, hit "Publish" to share your content with the
+            world.<br /><br /><br />
+
+            <span class="question"
+              >Q2: Is my data safe on Blogist?<br /><br /><br
+            /></span>
+            A2: Yes! We take your privacy seriously. We protect your data at all
+            costs,<br />
+            ensuring you can blog without worry.<br /><br /><br />
+
+            <span class="question"
+              >Q3: How can I earn money from my blog?<br /><br /><br
+            /></span>
+            A3: You can monetize your content through ads, sponsored posts, and
+            other<br />
+            opportunities we offer.<br /><br /><br />
+
+            <span class="question"
+              >Q4: Is there a limit to how many posts I can publish?<br /><br /><br
+            /></span>
+            A4: No limits at all! Feel free to share as many posts as you like.
+            We<br />
+            believe in giving you full freedom to express yourself.
+          </p>
+        </div>
+      </div>
+      <div id="copyright">© .... Blogist. All rights reserved.</div>
+    </footer>
+    <script>
+      const loginButton = document.getElementById("login--button");
+      if (loginButton) {
+        loginButton.onclick = function () {
+          window.location.href = 'http://localhost:3000/login';
+        };
+      }
+
+      const signupButton = document.getElementById("singup--button");
+      if (signupButton) {
+        signupButton.onclick = function () {
+          window.location.href = 'http://localhost:3000/signup';
+        };
+      }
+
+      document.getElementById('home').onclick = function() {
+        window.location.href = 'http://localhost:3000';
+      };
+
+      document.querySelector("#view--blog--button button").addEventListener('click', function () {
+        window.location.href = 'http://localhost:3000/blogs';
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,188 @@
+.showcase-guild {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #38302D;
+    border: 2px solid #AF8260;
+    padding: 30px;
+}
+
+.showcase-guild-header h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.showcase-guild-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.showcase-guild-body div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid #AF8260;
+    background-color: #38302D;
+    color: #AF8260;
+    padding: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.showcase-guild-body > div > h2 {
+    color: #E4C59E;
+}
+
+.showcase-guild-body > div:hover {
+    cursor: pointer;
+    scale: 1.05;
+    box-shadow: 0 0 10px #AF8260;
+}
+
+.guild-explore {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #AF8260;
+    margin-top: 20px;
+}
+
+.guild-explore-filter {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-right: 2px solid #AF8260;
+}
+
+.guild-explore-filter-type, .guild-explore-filter-age, .guild-explore-filter-sort {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.list-of-filters {
+    border: 1px solid #E4C59E;
+    background-color: #433A35;
+    color: #E4C59E;
+    width: 120px;
+    height: 30px;
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.list-of-filters:hover {
+    cursor: pointer;
+    background-color: #B68D6E;
+    color: #2D2622;
+}
+
+.list-of-filters:focus {
+    outline: none;
+    box-shadow: none;
+    box-shadow: 0 0 5px #E4C59E;
+}
+
+.guild-explore-filter label {
+    font-weight: 600;
+}
+
+.guild-explore-list {
+    background-color: #4D3B35;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+}
+
+.guild-explore-list-card {
+    padding: 20px;
+    background-color: #38302D;
+    border: 2px solid #AF8260;
+    margin-bottom: 10px;
+}
+
+.guild-explore-list-card-header {
+    color: #803D3B;
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.guild-explore-list-card-image {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.guild-explore-list-card-body {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.guild-explore-list-card-detail {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    color: #888888;
+}
+
+.guild-explore-list-card-footer button {
+    margin-top: 20px;
+    background-color: transparent;
+    border: 1px solid #803D3B;
+    font-size: 16px;
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    padding: 5px 15px;
+    color: #803D3B;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.guild-explore-list-card-footer button:hover {
+    cursor: pointer;
+    background-color: #803D3B;
+    color: #E4C59E;
+}
+
+.make-guild {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px 0;
+    gap: 15px;
+
+    background-color: #38302D;
+    border: 2px solid #AF8260;
+    padding: 30px;
+}
+
+.make-guild h2 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.make-guild button {
+    margin-top: 20px;
+    background-color: transparent;
+    border: 1px solid #803D3B;
+    font-size: 16px;
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    padding: 5px 15px;
+    color: #803D3B;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.make-guild button:hover {
+    cursor: pointer;
+    background-color: #803D3B;
+    color: #E4C59E;
+}
+
+.make-guild p {
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.5;
+}

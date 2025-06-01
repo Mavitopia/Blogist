@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Profile</title>
+  <link rel="stylesheet" href="/css/edit-profile.css" />
+</head>
+<body>
+  <div class="card">
+    <h1>Edit Profile</h1>
+    <form id="editProfileForm" action="http://localhost:3000/profile/setting/change/submit" method="POST">
+      <!-- Name Section -->
+      <div class="form-group">
+        <label for="newName">Name: <%=userName%></label>
+        <div class="input-wrapper">
+        <input type="text" id="newName" name="newName" minlength="2" pattern="^[a-zA-Z]+$" title="Name should only contain letters and no symbols are allowed" placeholder="Enter new name" style="display:none"/>
+          <button type="button" class="toggle-btn" onclick="toggleInput('newName')">
+            Edit
+          </button>
+        </div>
+      </div>
+      <!-- Password Section -->
+      <div class="form-group">
+        <label for="newPass">Password</label>
+        <div class="input-wrapper">
+          <input type="password" id="newPass" name="newPass"
+                 pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,20}$"
+                 title="Password must be between 8 and 20 characters and include at least one uppercase letter, one lowercase letter, one number, and one special character."
+                 placeholder="Enter new password" style="display: none;" />
+          <button type="button" class="toggle-btn" onclick="toggleInput('newPass')">Edit</button>
+        </div>
+      </div>
+      <!-- Email Section -->
+      <div class="form-group">
+        <label for="newEmail">Email: <%=email%></label>
+        <div class="input-wrapper">
+          <input
+            type="email"
+            id="newEmail"
+            name="newEmail"
+            placeholder="Enter new email"
+            style="display: none;"
+            minlength="5" maxlength="50" title="Please enter a valid email address (e.g., example@domain.com)." pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+          />
+          <button type="button" class="toggle-btn" onclick="toggleInput('newEmail')">
+            Edit
+          </button>
+        </div>
+      </div>
+      <!-- Confirm Password Section -->
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="Confirm your password"
+          required
+        />
+      </div>
+      <!-- Action Buttons -->
+      <div class="form-buttons">
+        <button type="submit" class="submit-btn">Submit</button>
+        <button type="button" class="back-btn" onclick="window.history.back()">Back</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Toggle the visibility of the input field with the given id
+    function toggleInput(inputId) {
+      const input = document.getElementById(inputId);
+      if (input.style.display === "none") {
+        input.style.display = "block";
+        input.focus();
+      } else {
+        input.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
