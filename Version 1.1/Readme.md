@@ -31,7 +31,7 @@ Digital Tavern is designed to evoke the nostalgia of pixel art, medieval menus, 
 git clone <repo-url>
 cd digital-tavern
 npm install
-npm start
+node .\app.js
 ```
 
 ## Contributing
