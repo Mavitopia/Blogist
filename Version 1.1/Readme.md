@@ -33,11 +33,3 @@ cd digital-tavern
 npm install
 node .\app.js
 ```
-
-## Contributing
-
-Contributions are welcome! Please open issues or submit pull requests to help improve Digital Tavern.
-
----
-
-Step into the Digital Tavern and let your stories unfold!
