@@ -1,4 +1,6 @@
 # Note: The project is still a work in progress 🛠️
+![Screenshot (104)](https://github.com/user-attachments/assets/6c380438-a568-4564-9c13-2ed5c86f6931)
+
 # Digital Tavern - Version 1.1
 
 Welcome to **Digital Tavern**, a blogging site inspired by the aesthetics and charm of classic old-school RPGs. This project is now in its second iteration (v1.1), bringing new features and improvements based on user feedback and creative vision.
@@ -31,13 +33,5 @@ Digital Tavern is designed to evoke the nostalgia of pixel art, medieval menus, 
 git clone <repo-url>
 cd digital-tavern
 npm install
-npm start
+node .\app.js
 ```
-
-## Contributing
-
-Contributions are welcome! Please open issues or submit pull requests to help improve Digital Tavern.
-
----
-
-Step into the Digital Tavern and let your stories unfold!
