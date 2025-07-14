@@ -1,0 +1,23 @@
+.read-main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background: #38302d;
+  border: 2px solid #af8260;
+  border-radius: 12px;
+  color: #e4c59e;
+}
+
+.read-content {
+  padding: 30px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.nav a p {
+  color: #af8260;
+  transition: color 0.2s;
+}
+.nav a p:hover {
+  color: #e4c59e;
+}

@@ -1,0 +1,64 @@
+/* Base form container */
+.change-form {
+  background: rgba(56, 48, 45, 0.9);
+  border: 2px solid #c44d58;
+  border-radius: 20px;
+  padding: 30px;
+  width: 500px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.change-form label {
+  font-size: 1.1rem;
+  color: #af8260;
+}
+
+.change-form input {
+  padding: 10px;
+  border: 1px solid #d5b58e;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #38302d;
+  color: #f0e6d2;
+}
+
+.change-form input:focus {
+  outline: none;
+  border-color: #c44d58;
+  box-shadow: 0 0 5px rgba(196, 77, 88, 0.7);
+}
+
+.change-form button {
+  padding: 12px;
+  font-size: 1.1rem;
+  background: #c44d58;
+  color: #f0e6d2;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.change-form button:hover {
+  transform: scale(1.02);
+  background: #af2f3b;
+}
+
+.pixel-type {
+  font-size: 1rem;
+  color: #d5b58e;
+}
+
+/* Slight twist for "change" pages */
+header .app-hr {
+  border-color: #c44d58;
+  border-width: 2px;
+}
+
+header .app-introduction h1 {
+  color: #c44d58;
+  text-shadow: 1px 1px #38302d;
+}

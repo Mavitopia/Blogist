@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=10"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DIGITAL TAVERN</title>
+    <link rel="icon" href="/img/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="/style/background.css" />
+    <link rel="stylesheet" href="/style/footer.css" />
+    <link rel="stylesheet" href="/style/FooterPages/Terms/termspage.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="app-introduction">
+          <h1>Terms of Service</h1>
+          <p class="pixel-type">Learn the rules before adventuring...</p>
+        </div>
+
+        <hr class="app-hr" />
+
+        <nav class="app-navigation" aria-label="Main navigation">
+          <a href="/"><p>HOME</p></a>
+          <a href="/quest"><p>QUEST</p></a>
+          <a href="/guild"><p>GUILD</p></a>
+          <a href="/blog"><p>BLOG</p></a>
+          <a href="/about"><p>ABOUT</p></a>
+          <% if (locals.loggedIn) { %>
+          <a href="/account"
+            ><p id="login-nav-btn"><%= locals.username %></p></a
+          >
+          <% } else { %>
+          <a href="/login"><p id="login-nav-btn">LOGIN</p></a>
+          <% } %>
+        </nav>
+      </header>
+
+      <div class="main-content">
+        <main class="policy-content">
+          <div class="policy-header">
+            <h1 class="policy-title">Terms of Service</h1>
+            <p class="policy-subtitle">
+              The Code of Conduct for Digital Taverns
+            </p>
+          </div>
+
+          <div class="last-updated">
+            <p><strong>Last Updated:</strong> June 6th, 2025</p>
+          </div>
+
+          <!-- Section: Introduction -->
+          <div class="section">
+            <h2 class="section-title">
+              <span class="section-icon">🗡️</span>
+              Introduction
+            </h2>
+            <div class="section-content">
+              <p>
+                Welcome, traveler, to the Digital Tavern’s Terms of Service. By
+                accessing or using our realm (“the Site”), you agree to abide by
+                these terms. If you do not accept these terms, you must refrain
+                from using the Site.
+              </p>
+              <p>
+                Our mission is to provide a safe, enjoyable experience for
+                adventurers, scribes, and guild members alike. These Terms
+                govern your use of all interactive features, posts, quests, and
+                community gatherings within our digital walls.
+              </p>
+            </div>
+          </div>
+
+          <!-- Section: Eligibility & Account -->
+          <div class="section">
+            <h2 class="section-title">
+              <span class="section-icon">🧙‍♂️</span>
+              Eligibility & Account Creation
+            </h2>
+            <div class="section-content">
+              <p>
+                To join the Digital Tavern, you must be at least 13 years old.
+                If you are between 13 and 17, a parent or guardian’s consent is
+                required. All adventurers must provide accurate information when
+                creating an account.
+              </p>
+              <ul>
+                <li>
+                  <strong>One Account Per Adventurer:</strong> Each user may
+                  hold only one active account. Duplicate or fan accounts may be
+                  suspended without notice.
+                </li>
+                <li>
+                  <strong>Credentials:</strong> Keep your password secret. You
+                  are responsible for any activity conducted under your account.
+                </li>
+                <li>
+                  <strong>Account Suspension:</strong> We reserve the right to
+                  suspend or terminate accounts for violations of these Terms or
+                  our Community Guidelines.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Section: Acceptable Use -->
+          <div class="section">
+            <h2 class="section-title">
+              <span class="section-icon">⚖️</span>
+              Acceptable Use & Conduct
+            </h2>
+            <div class="section-content">
+              <p>
+                Within the Digital Tavern, adventurers must behave with honor
+                and respect. Unruly or harmful conduct will not be tolerated.
+              </p>
+              <ul>
+                <li>
+                  <strong>Prohibited Content:</strong> Hate speech, threats,
+                  harassing language, or any form of discrimination is strictly
+                  forbidden.
+                </li>
+                <li>
+                  <strong>Spam & Scams:</strong> Posting unsolicited links,
+                  advertising, or participating in phishing attempts will result
+                  in immediate removal.
+                </li>
+                <li>
+                  <strong>Forgery & Impersonation:</strong> Pretending to be
+                  another adventurer, moderator, or noble house is a grave
+                  offense.
+                </li>
+                <li>
+                  <strong>Exploits & Hacks:</strong> Using third-party tools,
+                  game exploits, or unauthorized scripts to gain an unfair
+                  advantage is strictly forbidden. Violators may be permanently
+                  banned.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Section: User Content & Licensing -->
+          <div class="section">
+            <h2 class="section-title">
+              <span class="section-icon">✒️</span>
+              User Content & Licensing
+            </h2>
+            <div class="section-content">
+              <p>
+                When you share tales, screenshots, or art within the Digital
+                Tavern, you grant us a non-exclusive, royalty-free license to
+                use, display, and distribute your content.
+              </p>
+              <ul>
+                <li>
+                  <strong>Ownership:</strong> You retain ownership of any
+                  content you post, but you give us permission to display and
+                  share it across our platforms.
+                </li>
+                <li>
+                  <strong>Moderation:</strong> We reserve the right to remove or
+                  modify any content that violates these Terms or our Community
+                  Guidelines.
+                </li>
+                <li>
+                  <strong>Public Display:</strong> If you choose to make your
+                  content public (e.g., a blog post or quest submission), it may
+                  be viewed by all site visitors.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Section: Payment & Subscriptions -->
+          <div class="section">
+            <h2 class="section-title">
+              <span class="section-icon">💰</span>
+              Payment, Subscriptions & Refunds
+            </h2>
+            <div class="section-content">
+              <p>
+                Some tavern privileges—such as special account badges, rare
+                digital items, or premium quests—may require payment. All
+                transactions are handled through secure payment partners.
+              </p>
+              <ul>
+                <li>
+                  <strong>Billing:</strong> Prices are listed in Gold Coins (USD
+                  equivalent). You authorize us to charge your chosen payment
+                  method.
+                </li>
+                <li>
+                  <strong>Auto-Renewal:</strong> Any recurring subscription will
+                  auto-renew unless canceled at least 72 hours before the next
+                  billing cycle.
+                </li>
+                <li>
+                  <strong>Refunds:</strong> Refunds are granted at our
+                  discretion. Partial or full refunds may be issued if a
+                  purchase is unused or in the event of a technical mishap.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Section: Disclaimers & Liability -->
+          <div class="section">
+            <h2 class="section-title">
+              <span class="section-icon">🛡️</span>
+              Disclaimers & Limitation of Liability
+            </h2>
+            <div class="section-content">
+              <p>
+                The Digital Tavern is provided “as is” without warranties of any
+                kind. We are not liable for any damages arising from your use of
+                the Site.
+              </p>
+              <ul>
+                <li>
+                  <strong>No Warranty:</strong> We disclaim any guarantee of
+                  uninterrupted service, error-free operation, or specific
+                  functionality.
+                </li>
+                <li>
+                  <strong>Limitation of Liability:</strong> In no event shall we
+                  be liable for indirect, incidental, consequential, or punitive
+                  damages, even if advised of the possibility of such damages.
+                </li>
+                <li>
+                  <strong>Indemnification:</strong> You agree to indemnify and
+                  hold harmless the Digital Tavern and its affiliates from any
+                  claims, losses, or damages resulting from your misuse of the
+                  Site.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Section: Governing Law & Changes -->
+          <div class="section">
+            <h2 class="section-title">
+              <span class="section-icon">📜</span>
+              Governing Law & Changes
+            </h2>
+            <div class="section-content">
+              <p>
+                These Terms are governed by the laws of the Kingdom of
+                Questshire. Any dispute shall be resolved in the courts of
+                Questshire.
+              </p>
+              <ul>
+                <li>
+                  <strong>Updates:</strong> We may revise these Terms at any
+                  time. When changes are made, the “Last Updated” date will be
+                  revised, and we may notify you via email or a banner on the
+                  Site.
+                </li>
+                <li>
+                  <strong>Acceptance of Changes:</strong> Continued use of the
+                  Site after any changes constitutes your acceptance of the new
+                  Terms.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Section: Contact & Questions -->
+          <div class="section">
+            <h2 class="section-title">
+              <span class="section-icon">✉️</span>
+              Contact & Questions
+            </h2>
+            <div class="section-content">
+              <p>
+                If you have questions about these Terms or need assistance,
+                contact the Tavern Keepers:
+              </p>
+              <p>
+                <strong>Email:</strong>
+                <a href="mailto:tos@digitaltavern.com" class="email-showcase"
+                  >tos@digitaltavern.com</a
+                >
+              </p>
+              <p>
+                <strong>Postal Address:</strong> Digital Tavern, 123 Adventure
+                Lane, Quest City, QC 12345
+              </p>
+              <p>We aim to respond within 3–5 business days.</p>
+            </div>
+          </div>
+        </main>
+
+        <aside class="sidebar">
+          <div class="widget">
+            <h3 class="widget-title">Quick Links</h3>
+            <div class="widget-content">
+              <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#eligibility">Eligibility & Account</a></li>
+                <li><a href="#acceptable-use">Acceptable Use</a></li>
+                <li><a href="#user-content">User Content</a></li>
+                <li><a href="#payments">Payments</a></li>
+                <li><a href="#liability">Liability</a></li>
+                <li><a href="#governing-law">Governing Law</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="widget">
+            <h3 class="widget-title">Related Policies</h3>
+            <div class="widget-content">
+              <ul>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/cookie">Cookie Policy</a></li>
+                <li><a href="#">Community Guidelines</a></li>
+                <li><a href="#">Refund Policy</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="widget">
+            <h3 class="widget-title">Need Assistance?</h3>
+            <div class="widget-content">
+              <p>
+                For technical help, bug reports, or general inquiries, contact
+                our support team.
+              </p>
+              <p>
+                <a href="mailto:support@digitaltavern.com">Contact Support</a>
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <%-include("partials/footer.ejs")%>
+    </div>
+  </body>
+</html>

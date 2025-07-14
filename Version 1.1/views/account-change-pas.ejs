@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DIGITAL TAVERN</title>
+    <link rel="icon" href="/img/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="/style/background.css" />
+    <link rel="stylesheet" href="/style/footer.css" />
+    <link rel="stylesheet" href="/style/AccountChange/account-change.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="app-introduction">
+          <h1>Change Password</h1>
+          <p class="pixel-type">
+            Change your password to keep your account secure and customize your
+            experience.
+          </p>
+        </div>
+
+        <hr class="app-hr" />
+
+        <nav class="app-navigation" aria-label="Main navigation">
+          <a href="/"><p>HOME</p></a>
+          <a href="/quest"><p>QUEST</p></a>
+          <a href="/guild"><p>GUILD</p></a>
+          <a href="/blog"><p>BLOG</p></a>
+          <a href="/about"><p>ABOUT</p></a>
+          <% if (locals.loggedIn) { %>
+          <a href="/account"
+            ><p id="login-nav-btn"><%= locals.username %></p></a
+          >
+          <% } else { %>
+          <a href="/login"><p id="login-nav-btn">LOGIN</p></a>
+          <% } %>
+        </nav>
+      </header>
+
+      <!-- Main Content -->
+      <main>
+        <form
+          class="change-form"
+          action="/account/change/password"
+          method="POST"
+        >
+          <label for="currentPassword">Current Password</label>
+          <input
+            type="password"
+            id="currentPassword"
+            name="currentPassword"
+            required
+          />
+
+          <label for="newPassword">New Password</label>
+          <input type="password" id="newPassword" name="newPassword" required />
+
+          <label for="confirmPassword">Confirm New Password</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            required
+          />
+
+          <button type="submit">Update Password</button>
+        </form>
+      </main>
+
+      <%- include('partials/footer.ejs') %>
+    </div>
+    <script>
+      document
+        .querySelector(".change-form")
+        .addEventListener("submit", function (e) {
+          const newPassword = document
+            .getElementById("newPassword")
+            .value.trim();
+          const confirmPassword = document
+            .getElementById("confirmPassword")
+            .value.trim();
+
+          if (newPassword !== confirmPassword) {
+            e.preventDefault(); // Stop form from submitting
+            alert("❌ New password and confirmation do not match!");
+          }
+        });
+    </script>
+  </body>
+</html>

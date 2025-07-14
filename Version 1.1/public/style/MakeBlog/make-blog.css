@@ -1,0 +1,150 @@
+/* Main container */
+main {
+  background: #38302d;
+  border: 2px solid #af8260;
+  border-radius: 25px;
+  padding: 30px;
+  margin: 20px 0;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+}
+.tab-button {
+  flex: 1;
+  padding: 10px;
+  background: #38302d;
+  border: 2px solid #c44d58;
+  border-radius: 8px;
+  color: #d5b58e;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.tab-button.active {
+  background: #c44d58;
+  color: #f0e6d2;
+}
+
+.tab-content {
+  margin-top: 20px;
+}
+.hidden {
+  display: none;
+}
+
+/* Quest message */
+.no-quest {
+  color: #d5b58e;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 40px;
+  background: rgba(56, 48, 45, 0.8);
+  border-radius: 12px;
+  border: 2px dashed #d5b58e;
+}
+
+/* Form */
+.blog-form {
+  display: grid;
+  gap: 15px;
+}
+.blog-form label {
+  color: #af8260;
+  font-size: 1rem;
+}
+.blog-form input,
+.blog-form textarea {
+  padding: 10px;
+  border: 1px solid #d5b58e;
+  border-radius: 6px;
+  background: #38302d;
+  color: #f0e6d2;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.length-info {
+  font-size: 0.9rem;
+  color: #d5b58e;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+.options label {
+  font-size: 0.95rem;
+  color: #d5b58e;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.blog-form button {
+  padding: 12px;
+  font-size: 1.1rem;
+  background: #c44d58;
+  color: #f0e6d2;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.blog-form button:hover {
+  transform: scale(1.02);
+  background: #af2f3b;
+}
+.options label {
+  font-size: 0.95rem;
+  color: #d5b58e;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.blog-form button {
+  padding: 12px;
+  font-size: 1.1rem;
+  background: #c44d58;
+  color: #f0e6d2;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.blog-form button:hover {
+  transform: scale(1.02);
+  background: #af2f3b;
+}
+
+.options input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  transform: scale(1.2); /* slightly larger, more clickable */
+}
+
+.blog-form select {
+  padding: 10px;
+  border: 1px solid #d5b58e;
+  border-radius: 6px;
+  background: #38302d;
+  color: #f0e6d2;
+  width: 100%;
+  box-sizing: border-box;
+  appearance: none; /* removes default arrow in some browsers */
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.blog-form select:focus {
+  outline: none;
+  border-color: #c44d58;
+  background: #403733;
+}

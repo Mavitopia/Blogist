@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DIGITAL TAVERN – Sign Up</title>
+    <link rel="icon" href="/img/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="/style/background.css" />
+    <link rel="stylesheet" href="/style/footer.css" />
+    <link rel="stylesheet" href="/style/Signup/signup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="app-introduction">
+          <h1>Sign Up</h1>
+          <p class="pixel-type">
+            Create your free account and join the adventure!
+          </p>
+        </div>
+
+        <hr class="app-hr" />
+
+        <nav class="app-navigation" aria-label="Main navigation">
+          <a href="/"><p>HOME</p></a>
+          <a href="/quest"><p>QUEST</p></a>
+          <a href="/guild"><p>GUILD</p></a>
+          <a href="/blog"><p>BLOG</p></a>
+          <a href="/about"><p>ABOUT</p></a>
+          <% if (locals.loggedIn) { %>
+          <a href="/account"
+            ><p id="login-nav-btn"><%= locals.username %></p></a
+          >
+          <% } else { %>
+          <a href="/login"><p id="login-nav-btn">LOGIN</p></a>
+          <% } %>
+        </nav>
+      </header>
+
+      <main class="login-main">
+        <form action="/signup" method="POST" class="login-form">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Your Hero Name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="confirm">Confirm Password</label>
+            <input
+              type="password"
+              id="confirm"
+              name="confirm"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" class="btn-submit">Create Account</button>
+          </div>
+
+          <div class="signup-prompt">
+            <p>Already have an account?</p>
+            <a href="/login" class="btn-signup">Log In</a>
+          </div>
+        </form>
+      </main>
+
+      <%- include("partials/footer.ejs") %>
+    </div>
+    <script>
+      const form = document.querySelector(".login-form");
+      const password = document.getElementById("password");
+      const confirm = document.getElementById("confirm");
+
+      form.addEventListener("submit", function (e) {
+        if (password.value !== confirm.value) {
+          e.preventDefault(); // Stop form from submitting
+          alert("Passwords do not match!");
+          confirm.focus();
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DIGITAL TAVERN</title>
+    <link rel="icon" href="/img/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="/style/background.css" />
+    <link rel="stylesheet" href="/style/footer.css" />
+    <link rel="stylesheet" href="/style/MakeBlog/make-blog.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="app-introduction">
+          <h1>Blog</h1>
+          <p class="pixel-type">
+            Browse scrolls of knowledge to aid your journey...
+          </p>
+        </div>
+
+        <hr class="app-hr" />
+
+        <nav class="app-navigation" aria-label="Main navigation">
+          <a href="/"><p>HOME</p></a>
+          <a href="/quest"><p>QUEST</p></a>
+          <a href="/guild"><p>GUILD</p></a>
+          <a href="/blog"><p>BLOG</p></a>
+          <a href="/about"><p>ABOUT</p></a>
+          <% if (locals.loggedIn) { %>
+          <a href="/account"
+            ><p id="login-nav-btn"><%= locals.username %></p></a
+          >
+          <% } else { %>
+          <a href="/login"><p id="login-nav-btn">LOGIN</p></a>
+          <% } %>
+        </nav>
+      </header>
+      <main>
+        <% if (isLoggedIn) { %>
+        <!-- User is logged in, show the blog creation form -->
+
+        <div class="tabs">
+          <button id="tab-quest" class="tab-button active">Quest Blog</button>
+          <button id="tab-general" class="tab-button">General Blog</button>
+        </div>
+
+        <div id="content-quest" class="tab-content">
+          <p class="no-quest">
+            You have no accepted quests. Please switch to "General Blog" tab to
+            create a normal blog.
+          </p>
+        </div>
+
+        <div id="content-general" class="tab-content hidden">
+          <form
+            id="blog-form"
+            class="blog-form"
+            action="/blog/create"
+            method="POST"
+          >
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" required />
+
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+              <option value="" disabled selected>Select a category</option>
+              <option value="Social">Social</option>
+              <option value="Tech">Tech</option>
+              <option value="Game">Game</option>
+              <option value="Anime">Anime</option>
+              <option value="Adventure">Adventure</option>
+              <option value="Travel">Travel</option>
+            </select>
+
+            <label for="description">Description</label>
+            <textarea
+              id="description"
+              name="description"
+              rows="3"
+              required
+            ></textarea>
+
+            <label for="content">Content</label>
+            <textarea id="content" name="content" rows="8" required></textarea>
+
+            <!-- length -->
+            <p class="length-info">
+              Length: <span id="length-label">0</span> characters (<span
+                id="length-category"
+                >Short</span
+              >)
+            </p>
+
+            <!-- Hidden inputs to submit length info -->
+            <input
+              type="hidden"
+              id="length-category-value"
+              name="lengthCategory"
+              value="Short"
+            />
+
+            <div class="options">
+              <label
+                ><input type="checkbox" name="showInGuild" /> Show in Guild
+                Page</label
+              >
+              <label
+                ><input type="checkbox" name="allowComments" /> Allow
+                Comments</label
+              >
+            </div>
+
+            <button type="submit">Publish Blog</button>
+          </form>
+        </div>
+
+        <% } else { %>
+        <!-- User NOT logged in, show message with login button -->
+
+        <div
+          class="not-logged-in-message"
+          style="
+            text-align: center;
+            padding: 40px;
+            background: #44312f;
+            border-radius: 15px;
+            color: #e4c59e;
+            max-width: 400px;
+            margin: 60px auto;
+            border: 2px solid #af8260;
+          "
+        >
+          <h1 style="color: #c44d58; margin-bottom: 20px">Please Login</h1>
+          <p style="font-size: 1.2rem; margin-bottom: 30px">
+            You must be logged in to create a blog post.
+          </p>
+          <a
+            href="/login"
+            style="
+              display: inline-block;
+              background: #c44d58;
+              color: #f0e6d2;
+              padding: 12px 28px;
+              border-radius: 8px;
+              font-size: 1.1rem;
+              text-decoration: none;
+              transition: background-color 0.3s ease;
+            "
+            >Go to Login</a
+          >
+        </div>
+        <% } %>
+      </main>
+
+      <%- include('partials/footer.ejs') %>
+    </div>
+
+    <script>
+      // Tab switching
+      const btnQuest = document.getElementById("tab-quest");
+      const btnGeneral = document.getElementById("tab-general");
+      const contentQuest = document.getElementById("content-quest");
+      const contentGeneral = document.getElementById("content-general");
+
+      btnQuest.addEventListener("click", () => {
+        btnQuest.classList.add("active");
+        btnGeneral.classList.remove("active");
+        contentQuest.classList.remove("hidden");
+        contentGeneral.classList.add("hidden");
+      });
+
+      btnGeneral.addEventListener("click", () => {
+        btnGeneral.classList.add("active");
+        btnQuest.classList.remove("active");
+        contentGeneral.classList.remove("hidden");
+        contentQuest.classList.add("hidden");
+      });
+
+      // Length calculation and syncing hidden input for length category
+      const contentEl = document.getElementById("content");
+      const lengthLabel = document.getElementById("length-label");
+      const lengthCat = document.getElementById("length-category");
+      const hiddenLengthCategory = document.getElementById(
+        "length-category-value"
+      );
+
+      contentEl.addEventListener("input", () => {
+        const len = contentEl.value.length;
+        lengthLabel.textContent = len;
+
+        let category = "Short";
+        if (len <= 150) category = "Short";
+        else if (len <= 300) category = "Medium";
+        else category = "Long";
+
+        lengthCat.textContent = category;
+
+        // Update hidden input for form submission
+        hiddenLengthCategory.value = category;
+      });
+    </script>
+  </body>
+</html>

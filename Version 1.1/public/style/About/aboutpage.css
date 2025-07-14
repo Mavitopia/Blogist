@@ -1,6 +1,8 @@
 main {
   width: 100%;
+  margin-bottom: 20px;
 }
+
 .main-header {
   display: flex;
   flex-direction: column;

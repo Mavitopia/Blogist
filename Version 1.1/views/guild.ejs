@@ -17,7 +17,7 @@
     <div class="container">
       <header>
         <div class="app-introduction">
-          <h1>GUILDS</h1>
+          <h1>Guilds</h1>
           <p class="pixel-type">
             Join communities to share knowledge and adventure with like-minded
             peers...
@@ -32,6 +32,13 @@
           <a href="/guild"><p>GUILD</p></a>
           <a href="/blog"><p>BLOG</p></a>
           <a href="/about"><p>ABOUT</p></a>
+          <% if (locals.loggedIn) { %>
+          <a href="/account"
+            ><p id="login-nav-btn"><%= locals.username %></p></a
+          >
+          <% } else { %>
+          <a href="/login"><p id="login-nav-btn">LOGIN</p></a>
+          <% } %>
         </nav>
       </header>
 
@@ -44,17 +51,9 @@
             </h2>
           </div>
           <div class="showcase-guild-body">
-            <div class="showcase-guild-body-guild-active">
-              <h2>12</h2>
-              <p>Active Guilds</p>
-            </div>
             <div class="showcase-guild-body-guild-member">
               <h2>247</h2>
               <p>Guild Members</p>
-            </div>
-            <div class="showcase-guild-body-guild-quest">
-              <h2>89</h2>
-              <p>Guild Quests</p>
             </div>
             <div class="showcase-guild-body-guild-post">
               <h2>156</h2>
@@ -76,13 +75,6 @@
                 <option>Anime</option>
               </select>
             </div>
-            <div class="guild-explore-filter-age">
-              <label for="guild-age">BY DATE</label>
-              <select name="guild-age" id="guild-age" class="list-of-filters">
-                <option>New</option>
-                <option>Old</option>
-              </select>
-            </div>
             <div class="guild-explore-filter-sort">
               <label for="guild-sort">SORT</label>
               <select name="guild-sort" id="guild-sort" class="list-of-filters">
@@ -93,81 +85,38 @@
             </div>
           </div>
 
+          <% if (locals.guilds && locals.guilds.length > 0) { %> <%
+          guilds.forEach((i) => { %>
           <div class="guild-explore-list">
             <div class="guild-explore-list-card">
               <div class="guild-explore-list-card-image">
-                <p>⚔️</p>
+                <p><img src="<%= i.image %> " alt="guild image" /></p>
               </div>
               <div class="guild-explore-list-card-header">
-                <h2>The Crimson Blades</h2>
+                <h2><%= i.name %></h2>
               </div>
               <div class="guild-explore-list-card-body">
-                <p>
-                  Elite warriors who specialize in combat strategies, weapon
-                  mastery, and tactical adventures. Share your battle stories
-                  and learn from veteran fighters.
-                </p>
+                <p><%= i.description %></p>
               </div>
               <div class="guild-explore-list-card-detail">
-                <p>247 Members</p>
-                <p>156 Posts</p>
-                <p>12 Quests</p>
+                <p><%= i.members %> Members</p>
+                <p><%= i.posts %> Posts</p>
+                <p>Created: <%= i.created %></p>
+                <p>Tag: #<%= i.tag %></p>
               </div>
               <div class="guild-explore-list-card-footer">
-                <button class="join-guild-button">JOIN GUILD</button>
-                <button class="view-post-button">VIEW POSTS</button>
-              </div>
-            </div>
-
-            <div class="guild-explore-list-card">
-              <div class="guild-explore-list-card-image">
-                <p>🥀</p>
-              </div>
-              <div class="guild-explore-list-card-header">
-                <h2>Shadow Rangers</h2>
-              </div>
-              <div class="guild-explore-list-card-body">
-                <p>
-                  Masters of stealth, archery, and wilderness survival. Perfect
-                  for those who prefer the quiet approach and nature-based
-                  adventures.
-                </p>
-              </div>
-              <div class="guild-explore-list-card-detail">
-                <p>37 Members</p>
-                <p>126 Posts</p>
-                <p>14 Quests</p>
-              </div>
-              <div class="guild-explore-list-card-footer">
-                <button class="join-guild-button">JOIN GUILD</button>
-                <button class="view-post-button">VIEW POSTS</button>
-              </div>
-            </div>
-
-            <div class="guild-explore-list-card">
-              <div class="guild-explore-list-card-image">
-                <p>⭐</p>
-              </div>
-              <div class="guild-explore-list-card-header">
-                <h2>Mystic Circle</h2>
-              </div>
-              <div class="guild-explore-list-card-body">
-                <p>
-                  Wizards, sorcerers, and magic enthusiasts. Discuss
-                  spellcasting techniques, magical theory, and arcane mysteries.
-                </p>
-              </div>
-              <div class="guild-explore-list-card-detail">
-                <p>27 Members</p>
-                <p>116 Posts</p>
-                <p>111 Quests</p>
-              </div>
-              <div class="guild-explore-list-card-footer">
-                <button class="join-guild-button">JOIN GUILD</button>
-                <button class="view-post-button">VIEW POSTS</button>
+                <a href="/guild/<%= i.name %>">
+                  <button class="join-guild-button">JOIN GUILD</button>
+                </a>
+                <a href="/guild/<%= i.name %>">
+                  <button class="view-post-button">VIEW POSTS</button>
+                </a>
               </div>
             </div>
           </div>
+          <% }); %> <% } else { %>
+          <h2 id="no-guild">no guild</h2>
+          <% } %>
         </div>
 
         <div class="make-guild">
@@ -177,7 +126,9 @@
             like-minded adventurers! Build a community around your favorite
             topics and lead epic discussions.
           </p>
-          <button>Establish New Guild</button>
+          <a href="/guild/create">
+            <button>Establish New Guild</button>
+          </a>
         </div>
       </main>
 

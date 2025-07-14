@@ -1,0 +1,113 @@
+main {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.main-container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+
+    background-color: #38302d;
+    border: 2px solid #af8260;
+
+    font-size: 22px;
+
+    border-radius: 25px;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.upper-container {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+}
+.lower-container {
+    padding: 10px 0 25px 0 ;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    background: #322c2b;
+    border: 1px solid #af8260;
+    border-radius: 4px;
+    color: #e4c59e;
+}
+input:focus {
+    outline: none;
+    border-color: #e4c59e;
+}
+select {
+    width: 100%;
+    padding: 10px;
+    background: #322c2b;
+    border: 1px solid #af8260;
+    border-radius: 4px;
+    color: #e4c59e;
+}
+select:focus {
+    outline: none;
+    border-color: #e4c59e;
+}
+
+input[type="file"]:active {
+    border-color: #e4c59e;
+    box-shadow: 0 0 5px #e4c59e;
+}
+
+input[type="file"]::file-selector-button {
+    border: 1px solid #803d3b;
+    background-color: transparent;
+    color: #803d3b;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, scale 0.3s ease;
+}
+input[type="file"]::file-selector-button:hover {
+    cursor: pointer;
+    background-color: #803d3b;
+    color: #e4c59e;
+    scale: 1.01;
+}
+input[type="file"]::file-selector-button:active {
+    background-color: #803d3b;
+    color: #e4c59e;
+    scale: 0.99;
+    border-color: #e4c59e;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #803d3b;
+    border: 2px solid #af8260;
+    border-radius: 4px;
+    color: #e4c59e;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover {
+    background-color: #af8260;
+    color: #322c2b;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+    background-color: #803d3b;
+    border: 2px solid #af8260;
+    color: #e4c59e;
+}
+

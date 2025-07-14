@@ -17,7 +17,7 @@
     <div class="container">
       <header>
         <div class="app-introduction">
-          <h1>ABOUT</h1>
+          <h1>About</h1>
           <p class="pixel-type">
             Where legends gather to share their tales...
           </p>
@@ -31,6 +31,13 @@
           <a href="/guild"><p>GUILD</p></a>
           <a href="/blog"><p>BLOG</p></a>
           <a href="/about"><p>ABOUT</p></a>
+          <% if (locals.loggedIn) { %>
+          <a href="/account"
+            ><p id="login-nav-btn"><%= locals.username %></p></a
+          >
+          <% } else { %>
+          <a href="/login"><p id="login-nav-btn">LOGIN</p></a>
+          <% } %>
         </nav>
       </header>
 

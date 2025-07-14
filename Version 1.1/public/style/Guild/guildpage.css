@@ -187,3 +187,20 @@
   text-align: center;
   line-height: 1.5;
 }
+
+#no-guild {
+  color: #e4c59e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px auto;
+  gap: 15px;
+  padding: 30px;
+  width: fit-content;
+}
+
+p img {
+  width: 75px;
+  height: 75px;
+}

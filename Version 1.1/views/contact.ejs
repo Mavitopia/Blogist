@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=10"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DIGITAL TAVERN</title>
+    <link rel="icon" href="/img/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="/style/background.css" />
+    <link rel="stylesheet" href="/style/footer.css" />
+    <link rel="stylesheet" href="/style/FooterPages/Contact/contact.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="app-introduction">
+          <h1>Contact Us</h1>
+          <p class="pixel-type">Having Trouble? Let's Fix It...</p>
+        </div>
+
+        <hr class="app-hr" />
+
+        <nav class="app-navigation" aria-label="Main navigation">
+          <a href="/"><p>HOME</p></a>
+          <a href="/quest"><p>QUEST</p></a>
+          <a href="/guild"><p>GUILD</p></a>
+          <a href="/blog"><p>BLOG</p></a>
+          <a href="/about"><p>ABOUT</p></a>
+          <% if (locals.loggedIn) { %>
+          <a href="/account"
+            ><p id="login-nav-btn"><%= locals.username %></p></a
+          >
+          <% } else { %>
+          <a href="/login"><p id="login-nav-btn">LOGIN</p></a>
+          <% } %>
+        </nav>
+      </header>
+
+      <div class="contact-us-container">
+        <h1>Ways to contact our support team</h1>
+        <div class="contact-us-via-other">
+          <div class="other-1 contact-others">
+            <h2>Contact via Gmail</h2>
+            <img
+              src="./img/gmail-icon.png"
+              alt="Gmail icon"
+              width="60px"
+              height="50px"
+            />
+          </div>
+          <div class="other-2 contact-others">
+            <h2>Contact via Telegram</h2>
+            <img
+              src="./img/telegram-icon.png"
+              alt="Telegram icon"
+              width="60px"
+              height="60px"
+            />
+          </div>
+          <div class="other-3 contact-others">
+            <h2>Contact via Instagram</h2>
+            <img
+              src="./img/ig-instagram-icon.png"
+              alt="Instagram icon"
+              width="60px"
+              height="60px"
+            />
+          </div>
+          <div class="other-4 contact-others">
+            <h2>Contact via Discord</h2>
+            <img
+              src="./img/discord-color-icon.png"
+              alt="Discord icon"
+              width="60px"
+              height="50px"
+            />
+          </div>
+        </div>
+        <div class="contact-us-via-site">
+          <div class="contact-us-via-site-container">
+            <h2>Contact via form</h2>
+            <form action="/submit-support" method="post">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+
+              <label for="description">Describe Your Problem</label>
+              <textarea
+                id="description"
+                name="description"
+                rows="5"
+                required
+              ></textarea>
+
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <%-include("partials/footer.ejs")%>
+    </div>
+  </body>
+</html>

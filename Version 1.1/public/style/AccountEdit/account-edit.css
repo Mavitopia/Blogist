@@ -1,0 +1,69 @@
+main {
+  background-color: #38302d;
+  border: 2px solid #af8260;
+  border-radius: 25px;
+  padding: 25px;
+  transition: scale 0.2s ease-in-out;
+  font-size: 25px;
+  margin: 10px 0;
+  width: 800px;
+}
+main:hover {
+  scale: 1.02;
+  box-shadow: 0 8px 32px 0 rgba(175, 130, 96, 0.35),
+    0 1.5px 8px 0 rgba(0, 0, 0, 0.25);
+}
+
+ul {
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.account-info h2 {
+  margin-bottom: 10px;
+}
+.account-info strong {
+  margin-bottom: 10px;
+  color: #caae8b;
+}
+.account-info p {
+  margin-bottom: 10px;
+  color: #d5b58e;
+}
+li a {
+  color: #caae8b;
+  text-decoration: none;
+}
+li a:hover {
+  color: #d5b58e;
+  text-decoration: underline;
+}
+
+ul {
+  margin-bottom: 20px;
+}
+
+.account-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: #d5b58e;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #af8260;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

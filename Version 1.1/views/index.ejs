@@ -1,159 +1,159 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>DIGITAL TAVERN</title>
     <link rel="icon" href="/img/favicon.png" type="image/png" />
-    <link rel="stylesheet" href="/style/background.css">
-    <link rel="stylesheet" href="/style/footer.css">
-    <link rel="stylesheet" href="/style/Home/homepage.css">
-</head>
-<body>
-
-<div class="container">
-    <header>
-
+    <link rel="stylesheet" href="/style/background.css" />
+    <link rel="stylesheet" href="/style/footer.css" />
+    <link rel="stylesheet" href="/style/Home/homepage.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
         <div class="app-introduction">
-            <h1>
-                The Digital Tavern
-            </h1>
-            <p class="pixel-type">Where legends gather to share their tales...</p>
+          <h1>The Digital Tavern</h1>
+          <p class="pixel-type">Where legends gather to share their tales...</p>
         </div>
 
-        <hr class="app-hr">
+        <hr class="app-hr" />
 
         <nav class="app-navigation" aria-label="Main navigation">
-            <a href="/"><p>HOME</p></a>
-            <a href="/quest"><p>QUEST</p></a>
-            <a href="/guild"><p>GUILD</p></a>
-            <a href="/blog"><p>BLOG</p></a>
-            <a href="/about"><p>ABOUT</p></a>
+          <a href="/"><p>HOME</p></a>
+          <a href="/quest"><p>QUEST</p></a>
+          <a href="/guild"><p>GUILD</p></a>
+          <a href="/blog"><p>BLOG</p></a>
+          <a href="/about"><p>ABOUT</p></a>
+          <% if (locals.loggedIn) { %>
+          <a href="/account"
+            ><p id="login-nav-btn"><%= locals.username %></p></a
+          >
+          <% } else { %>
+          <a href="/login"><p id="login-nav-btn">LOGIN</p></a>
+          <% } %>
         </nav>
-    </header>
+      </header>
 
-    <main>
-
+      <main>
         <div class="left-side-main-container">
-            <div class="left-side-main-container-contents">
-                <div class="main-contents-header">
-                    <h2>The Great Dragon Heist: A Level 20 Adventure</h2>
-                </div>
-                <div class="main-contents-description">
-                    <p>Posted by DungeonMaster_X on May 25, 2025 | Category: Adventures</p>
-                </div>
-                <div class="main-contents-body">
-                    <p>
-                        Last night's session was absolutely legendary! Our party of seasoned adventurers finally infiltrated the ancient dragon's lair deep within the Crimson Mountains. What started as a simple treasure hunt turned into an epic battle that lasted four hours...
-                        <br>
-                        The rogue's stealth rolls were on fire, the wizard's fireball crits were devastating, and don't get me started on the paladin's divine intervention at the crucial moment. This is why we play D&D, folks!
-                    </p>
-                </div>
-                <div class="main-contents-button">
-                    <button>Read More...</button>
-                </div>
-                <hr class="left-side-hr">
+          <div class="left-side-main-container-contents">
+            <div class="main-contents-header">
+              <h2>The Great Dragon Heist: A Level 20 Adventure</h2>
             </div>
+            <div class="main-contents-description">
+              <p>
+                Posted by DungeonMaster_X on May 25, 2025 | Category: Adventures
+              </p>
+            </div>
+            <div class="main-contents-body">
+              <p>
+                Last night's session was absolutely legendary! Our party of
+                seasoned adventurers finally infiltrated the ancient dragon's
+                lair deep within the Crimson Mountains. What started as a simple
+                treasure hunt turned into an epic battle that lasted four
+                hours...
+                <br />
+                The rogue's stealth rolls were on fire, the wizard's fireball
+                crits were devastating, and don't get me started on the
+                paladin's divine intervention at the crucial moment. This is why
+                we play D&D, folks!
+              </p>
+            </div>
+            <div class="main-contents-button">
+              <button>Read More...</button>
+            </div>
+            <hr class="left-side-hr" />
+          </div>
         </div>
 
         <div class="right-side-main-container">
+          <div class="right-side-main-container-latest-quest">
+            <div class="right-side-main-latest-quest-header">
+              <h2>Latest QUESTS</h2>
+            </div>
+            <div class="right-side-main-latest-quest-body">
+              <p>The Haunted Monastery</p>
+              <hr />
 
-            <div class="right-side-main-container-latest-quest">
-                <div class="right-side-main-latest-quest-header">
-                    <h2>Latest QUESTS</h2>
-                </div>
-                <div class="right-side-main-latest-quest-body">
-                    <p>The Haunted Monastery</p>
-                    <hr>
+              <p>Rescue the Lost Caravan</p>
+              <hr />
+            </div>
+          </div>
 
-                    <p>Rescue the Lost Caravan</p>
-                    <hr>
-                </div>
+          <div class="right-side-main-container-guild-stats">
+            <div class="right-side-main-guild-stats-header">
+              <h2>Guild Stats</h2>
+            </div>
+            <div class="right-side-main-guild-stats-body">
+              <div class="guild-stats-body-box1 guild-stats-body-box">
+                <p>
+                  <span class="span-color">247</span>
+                </p>
+                <p>Active Players</p>
+              </div>
+              <div class="guild-stats-body-box2 guild-stats-body-box">
+                <p>
+                  <span class="span-color">89</span>
+                </p>
+                <p>Campaigns</p>
+              </div>
+              <div class="guild-stats-body-box3 guild-stats-body-box">
+                <p>
+                  <span class="span-color">1,432</span>
+                </p>
+                <p>Total Posts</p>
+              </div>
+              <div class="guild-stats-body-box4 guild-stats-body-box">
+                <p>
+                  <span class="span-color">156</span>
+                </p>
+                <p>Adventures</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="right-side-main-container-categories">
+            <div class="right-side-main-categories-header">
+              <h2>Categories</h2>
+            </div>
+            <div class="right-side-main-categories-body">
+              <p>Adventures ()</p>
+              <hr />
+              <p>Character Builds ()</p>
+              <hr />
+              <p>Reviews ()</p>
+              <hr />
+              <p>Lore ()</p>
+              <hr />
+              <p>Game Mechanics ()</p>
+              <hr />
+            </div>
+          </div>
+
+          <div class="right-side-main-container-dotd">
+            <div class="right-side-main-dotd-header">
+              <h2>Discord Of The Day</h2>
             </div>
 
-            <div class="right-side-main-container-guild-stats">
-                <div class="right-side-main-guild-stats-header">
-                    <h2>Guild Stats</h2>
-                </div>
-                <div class="right-side-main-guild-stats-body">
-                    <div class="guild-stats-body-box1 guild-stats-body-box">
-                        <p>
-                            <span class="span-color">247</span>
-                        </p>
-                        <p>
-                            Active Players
-                        </p>
-                    </div>
-                    <div class="guild-stats-body-box2 guild-stats-body-box">
-                        <p>
-                            <span class="span-color">89</span>
-                        </p>
-                        <p>
-                            Campaigns
-                        </p>
-                    </div>
-                    <div class="guild-stats-body-box3 guild-stats-body-box">
-                        <p>
-                            <span class="span-color">1,432</span>
-                        </p>
-                        <p>
-                            Total Posts
-                        </p>
-                    </div>
-                    <div class="guild-stats-body-box4 guild-stats-body-box">
-                        <p>
-                            <span class="span-color">156</span>
-                        </p>
-                        <p>
-                            Adventures
-                        </p>
-                    </div>
-                </div>
-                    
+            <div class="right-side-main-dotd-body">
+              <p>
+                "The best adventures aren't found in books - they're created
+                around the table with friends."
+              </p>
+              <p id="right-side-main-dotd-footer-text">
+                - Anonymous Adventurer
+              </p>
             </div>
-
-            <div class="right-side-main-container-categories">
-                <div class="right-side-main-categories-header">
-                    <h2>Categories</h2>
-                </div>
-                <div class="right-side-main-categories-body">
-                    <p>Adventures ()</p>
-                    <hr />
-                    <p>Character Builds ()</p>
-                    <hr />
-                    <p>Reviews ()</p>
-                    <hr />
-                    <p>Lore ()</p>
-                    <hr />
-                    <p>Game Mechanics ()</p>
-                    <hr />
-                </div>
-            </div>
-
-            <div class="right-side-main-container-dotd">
-                <div class="right-side-main-dotd-header">
-                    <h2>Discord Of The Day</h2>
-                </div>
-
-                <div class="right-side-main-dotd-body">
-                    <p>
-                        "The best adventures aren't found in books - they're created around the table with friends."
-                    </p>
-                    <p id="right-side-main-dotd-footer-text">
-                        - Anonymous Adventurer
-                    </p>
-                </div>
-            </div>
-
+          </div>
         </div>
+      </main>
 
-    </main>
-
-    <%-include("partials/footer.ejs")%>
-
-</div>
-
-</body>
+      <%-include("partials/footer.ejs")%>
+    </div>
+  </body>
 </html>

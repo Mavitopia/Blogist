@@ -1,248 +1,164 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DIGITAL TAVERN</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>DIGITAL TAVERN – Blog</title>
     <link rel="icon" href="/img/favicon.png" type="image/png" />
-    <link rel="stylesheet" href="/style/background.css">
-    <link rel="stylesheet" href="/style/footer.css">
-    <link rel="stylesheet" href="/style/Blog/blogpage.css">
-</head>
-<body>
-
-<class class="container">
-    <header>
-
+    <link rel="stylesheet" href="/style/background.css" />
+    <link rel="stylesheet" href="/style/footer.css" />
+    <link rel="stylesheet" href="/style/Blog/blogpage.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
         <div class="app-introduction">
-            <h1>
-                BLOG
-            </h1>
-            <p class="pixel-type">Browse scrolls of knowledge to aid your journey...</p>
+          <h1>Blog</h1>
+          <p class="pixel-type">
+            Browse scrolls of knowledge to aid your journey...
+          </p>
         </div>
-
-        <hr class="app-hr">
-
+        <hr class="app-hr" />
         <nav class="app-navigation" aria-label="Main navigation">
-            <a href="/"><p>HOME</p></a>
-            <a href="/quest"><p>QUEST</p></a>
-            <a href="/guild"><p>GUILD</p></a>
-            <a href="/blog"><p>BLOG</p></a>
-            <a href="/about"><p>ABOUT</p></a>
+          <a href="/"><p>HOME</p></a>
+          <a href="/quest"><p>QUEST</p></a>
+          <a href="/guild"><p>GUILD</p></a>
+          <a href="/blog"><p>BLOG</p></a>
+          <a href="/about"><p>ABOUT</p></a>
+          <% if (locals.loggedIn) { %>
+          <a href="/account"
+            ><p id="login-nav-btn"><%= locals.username %></p></a
+          >
+          <% } else { %>
+          <a href="/login"><p id="login-nav-btn">LOGIN</p></a>
+          <% } %>
         </nav>
-    </header>
+      </header>
 
-        <main>
-
+      <main>
         <div class="navigation-bar-quests">
-
-            <div class="navigation-bar-quests-left">
-
-                <div class="difficulty-section">
-
-                        <div class="header-difficulty-section section-headers">
-                            <label for="difficulty-list">Category</label>
-                        </div>
-                        <div class="main-difficulty-section">
-                            <select name="difficulty-list" id="difficulty-list" class="list-of-filters">
-                                <option>All Categories</option>
-                                <option>Quest</option>
-                                <option>Social</option>
-                                <option>Game</option>
-                                <option>Anime</option>
-                                <option>Travel</option>
-                                <option>Adventure</option>
-                            </select>
-                        </div>
-
-                </div>
-
-                <div class="sort-section">
-
-                    <div class="header-sort-section section-headers">
-                    <label for="sort-list">Sort</label>
-                    </div>
-                    <div class="main-sort-section">
-                    <select name="sort-list" id="sort-list" class="list-of-filters">
-                        <option>Related</option>
-                        <option>Popular</option>
-                        <option>Most Liked</option>
-                        <option>Most Viewed</option>
-                        <option>Least Liked</option>
-                        <option>Least Viewed</option>
-                    </select>
-                    </div>
-
-                </div>
-
-                <div class="Length-section">
-
-                    <div class="header-Length-section section-headers">
-                    <label for="Length-list">Length</label>
-                    </div>
-                    <div class="main-Length-section">
-                    <select name="Length-list" id="Length-list" class="list-of-filters">
-                        <option>All Length</option>
-                        <option>Short</option>
-                        <option>Medium</option>
-                        <option>Long</option>
-                    </select>
-                    </div>
-
-                </div>
-
+          <div class="navigation-bar-quests-left">
+            <!-- Category Filter -->
+            <div class="difficulty-section">
+              <div class="header-difficulty-section section-headers">
+                <label for="difficulty-list">Category</label>
+              </div>
+              <div class="main-difficulty-section">
+                <select
+                  name="difficulty-list"
+                  id="difficulty-list"
+                  class="list-of-filters"
+                >
+                  <option value="All">All Categories</option>
+                  <% var categories = []; for (var i = 0; i < blogs.length; i++)
+                  { var c = blogs[i][1].category; if (categories.indexOf(c) ===
+                  -1) categories.push(c); } for (var j = 0; j <
+                  categories.length; j++) { %>
+                  <option value="<%= categories[j] %>">
+                    <%= categories[j] %>
+                  </option>
+                  <% } %>
+                </select>
+              </div>
             </div>
-            <div class="navigation-bar-blog-right">
-                <div class="availability-section">
-                    <p class="numbers-navigation-right numbers-navigation-blog">42</p>
-                    <p>Total Blogs</p>
-                </div>
+
+            <!-- Length Filter -->
+            <div class="Length-section">
+              <div class="header-Length-section section-headers">
+                <label for="Length-list">Length</label>
+              </div>
+              <div class="main-Length-section">
+                <select
+                  name="Length-list"
+                  id="Length-list"
+                  class="list-of-filters"
+                >
+                  <option value="All">All Length</option>
+                  <option value="Short">Short</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Long">Long</option>
+                </select>
+              </div>
             </div>
+          </div>
+
+          <div class="navigation-bar-blog-right">
+            <div class="availability-section">
+              <p class="numbers-navigation-right numbers-navigation-blog">
+                <%= blogs.length %>
+              </p>
+              <p>Total Blogs</p>
+            </div>
+          </div>
         </div>
 
-        <div class="main-container">
-            <div class="main-container-contents">
-                <div class="main-contents-header">
-                    <h2>The Great Dragon Heist: A Level 20 Adventure</h2>
-                </div>
-                <div class="main-contents-description">
-                    <p>Posted by DungeonMaster_X on May 25, 2025 | Category: Adventures</p>
-                </div>
-                <div class="main-contents-body">
-                    <p>
-                        Last night's session was absolutely legendary! Our party of seasoned adventurers finally infiltrated the ancient dragon's lair deep within the Crimson Mountains. What started as a simple treasure hunt turned into an epic battle that lasted four hours...
-                        <br>
-                        The rogue's stealth rolls were on fire, the wizard's fireball crits were devastating, and don't get me started on the paladin's divine intervention at the crucial moment. This is why we play D&D, folks!
-                    </p>
-                </div>
-                <div class="main-contents-button">
-                    <button>Read More...</button>
-                </div>
-
-                <hr class="main-hr">
-
+        <div class="main-container" id="posts-container">
+          <% if (blogs.length === 0) { %>
+          <p>No blog entries yet.</p>
+          <% } else { %> <% for (var i = 0; i < blogs.length; i++) { var title =
+          blogs[i][0]; var blog = blogs[i][1]; %>
+          <div
+            class="main-container-contents post"
+            data-category="<%= blog.category %>"
+            data-length="<%= blog.lengthCategory || 'Unknown' %>"
+          >
+            <div class="main-contents-header">
+              <h2><%= title %></h2>
             </div>
-
-                <div class="main-container-contents">
-                <div class="main-contents-header">
-                    <h2>The Great Dragon Heist: A Level 20 Adventure</h2>
-                </div>
-                <div class="main-contents-description">
-                    <p>Posted by DungeonMaster_X on May 25, 2025 | Category: Adventures</p>
-                </div>
-                <div class="main-contents-body">
-                    <p>
-                        Last night's session was absolutely legendary! Our party of seasoned adventurers finally infiltrated the ancient dragon's lair deep within the Crimson Mountains. What started as a simple treasure hunt turned into an epic battle that lasted four hours...
-                        <br>
-                        The rogue's stealth rolls were on fire, the wizard's fireball crits were devastating, and don't get me started on the paladin's divine intervention at the crucial moment. This is why we play D&D, folks!
-                    </p>
-                </div>
-                <div class="main-contents-button">
-                    <button>Read More...</button>
-                </div>
-                <hr class="main-hr">
+            <div class="main-contents-description">
+              <p>
+                Posted by <%= blog.author %> on <%= blog.date || "Unknown Date"
+                %> | Category: <%= blog.category %> | Length: <%=
+                blog.lengthCategory %>
+              </p>
             </div>
-
-                            <div class="main-container-contents">
-                <div class="main-contents-header">
-                    <h2>The Great Dragon Heist: A Level 20 Adventure</h2>
-                </div>
-                <div class="main-contents-description">
-                    <p>Posted by DungeonMaster_X on May 25, 2025 | Category: Adventures</p>
-                </div>
-                <div class="main-contents-body">
-                    <p>
-                        Last night's session was absolutely legendary! Our party of seasoned adventurers finally infiltrated the ancient dragon's lair deep within the Crimson Mountains. What started as a simple treasure hunt turned into an epic battle that lasted four hours...
-                        <br>
-                        The rogue's stealth rolls were on fire, the wizard's fireball crits were devastating, and don't get me started on the paladin's divine intervention at the crucial moment. This is why we play D&D, folks!
-                    </p>
-                </div>
-                <div class="main-contents-button">
-                    <button>Read More...</button>
-                </div>
-                <hr class="main-hr">
+            <div class="main-contents-body">
+              <p><%= blog.description %></p>
             </div>
-
-                            <div class="main-container-contents">
-                <div class="main-contents-header">
-                    <h2>The Great Dragon Heist: A Level 20 Adventure</h2>
-                </div>
-                <div class="main-contents-description">
-                    <p>Posted by DungeonMaster_X on May 25, 2025 | Category: Adventures</p>
-                </div>
-                <div class="main-contents-body">
-                    <p>
-                        Last night's session was absolutely legendary! Our party of seasoned adventurers finally infiltrated the ancient dragon's lair deep within the Crimson Mountains. What started as a simple treasure hunt turned into an epic battle that lasted four hours...
-                        <br>
-                        The rogue's stealth rolls were on fire, the wizard's fireball crits were devastating, and don't get me started on the paladin's divine intervention at the crucial moment. This is why we play D&D, folks!
-                    </p>
-                </div>
-                <div class="main-contents-button">
-                    <button>Read More...</button>
-                </div>
-                <hr class="main-hr">
+            <div class="main-contents-button">
+              <a href="/blog/read/<%= i %>">
+                <button>Read More...</button>
+              </a>
             </div>
-
-                            <div class="main-container-contents">
-                <div class="main-contents-header">
-                    <h2>The Great Dragon Heist: A Level 20 Adventure</h2>
-                </div>
-                <div class="main-contents-description">
-                    <p>Posted by DungeonMaster_X on May 25, 2025 | Category: Adventures</p>
-                </div>
-                <div class="main-contents-body">
-                    <p>
-                        Last night's session was absolutely legendary! Our party of seasoned adventurers finally infiltrated the ancient dragon's lair deep within the Crimson Mountains. What started as a simple treasure hunt turned into an epic battle that lasted four hours...
-                        <br>
-                        The rogue's stealth rolls were on fire, the wizard's fireball crits were devastating, and don't get me started on the paladin's divine intervention at the crucial moment. This is why we play D&D, folks!
-                    </p>
-                </div>
-                <div class="main-contents-button">
-                    <button>Read More...</button>
-                </div>
-                <hr class="main-hr">
-            </div>
-
-
-                            <div class="main-container-contents">
-                <div class="main-contents-header">
-                    <h2>The Great Dragon Heist: A Level 20 Adventure</h2>
-                </div>
-                <div class="main-contents-description">
-                    <p>Posted by DungeonMaster_X on May 25, 2025 | Category: Adventures</p>
-                </div>
-                <div class="main-contents-body">
-                    <p>
-                        Last night's session was absolutely legendary! Our party of seasoned adventurers finally infiltrated the ancient dragon's lair deep within the Crimson Mountains. What started as a simple treasure hunt turned into an epic battle that lasted four hours...
-                        <br>
-                        The rogue's stealth rolls were on fire, the wizard's fireball crits were devastating, and don't get me started on the paladin's divine intervention at the crucial moment. This is why we play D&D, folks!
-                    </p>
-                </div>
-                <div class="main-contents-button">
-                    <button>Read More...</button>
-                </div>
-                <hr class="main-hr">
-            </div>
-
+            <hr class="main-hr" />
+          </div>
+          <% } %> <% } %>
         </div>
-        
-    <div class="make-blog">
-        <h2>
-            Start Your Own Lore Log
-        </h2>
-        <p>
-            Have knowledge to share or tales to tell? Write your insights and adventures in your own blog. Let others learn from your scrolls of wisdom.
-        </p>
-        <button>
-            Begin New Chronicle
-        </button>
+
+        <div class="make-blog">
+          <h2>Start Your Own Lore Log</h2>
+          <p>
+            Have knowledge to share or tales to tell? Write your insights and
+            adventures in your own blog. Let others learn from your scrolls of
+            wisdom.
+          </p>
+          <a href="/make-blog">
+            <button>Begin New Chronicle</button>
+          </a>
+        </div>
+      </main>
+
+      <%- include("partials/footer.ejs") %>
     </div>
 
-        </main>
+    <script>
+      const categorySelect = document.getElementById("difficulty-list");
+      const lengthSelect = document.getElementById("Length-list");
+      const posts = document.querySelectorAll(".main-container-contents.post");
 
-    <%-include("partials/footer.ejs")%>
-    
-</body>
+      function filterPosts() {
+        const cat = categorySelect.value;
+        const len = lengthSelect.value;
+
+        posts.forEach((p) => {
+          const matchCat = cat === "All" || p.dataset.category === cat;
+          const matchLen = len === "All" || p.dataset.length === len;
+          p.style.display = matchCat && matchLen ? "" : "none";
+        });
+      }
+
+      categorySelect.addEventListener("change", filterPosts);
+      lengthSelect.addEventListener("change", filterPosts);
+    </script>
+  </body>
 </html>

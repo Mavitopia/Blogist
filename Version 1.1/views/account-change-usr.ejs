@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DIGITAL TAVERN</title>
+    <link rel="icon" href="/img/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="/style/background.css" />
+    <link rel="stylesheet" href="/style/footer.css" />
+    <link rel="stylesheet" href="/style/AccountChange/account-change.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="app-introduction">
+          <h1>Change Username</h1>
+          <p class="pixel-type">
+            Change your username securely. Enter your current password and a new
+            username below.
+          </p>
+        </div>
+
+        <hr class="app-hr" />
+
+        <nav class="app-navigation" aria-label="Main navigation">
+          <a href="/"><p>HOME</p></a>
+          <a href="/quest"><p>QUEST</p></a>
+          <a href="/guild"><p>GUILD</p></a>
+          <a href="/blog"><p>BLOG</p></a>
+          <a href="/about"><p>ABOUT</p></a>
+          <% if (locals.loggedIn) { %>
+          <a href="/account"
+            ><p id="login-nav-btn"><%= locals.username %></p></a
+          >
+          <% } else { %>
+          <a href="/login"><p id="login-nav-btn">LOGIN</p></a>
+          <% } %>
+        </nav>
+      </header>
+
+      <!-- Main Content -->
+      <main>
+        <form
+          class="change-form"
+          action="/account/change/username"
+          method="POST"
+        >
+          <label for="password">Current Password</label>
+          <input
+            type="password"
+            id="password"
+            name="currentPassword"
+            required
+          />
+
+          <label for="newUsername">New Username</label>
+          <input type="text" id="newUsername" name="newUsername" required />
+
+          <button type="submit">Update Username</button>
+        </form>
+      </main>
+
+      <%- include('partials/footer.ejs') %>
+    </div>
+  </body>
+</html>

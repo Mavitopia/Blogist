@@ -1,221 +1,269 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>DIGITAL TAVERN</title>
     <link rel="icon" href="/img/favicon.png" type="image/png" />
-    <link rel="stylesheet" href="/style/background.css">
-    <link rel="stylesheet" href="/style/footer.css">
-    <link rel="stylesheet" href="/style/Quest/questpage.css">
-</head>
-<body>
-
-<div class="container">
-    <header>
-
+    <link rel="stylesheet" href="/style/background.css" />
+    <link rel="stylesheet" href="/style/footer.css" />
+    <link rel="stylesheet" href="/style/Quest/questpage.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
         <div class="app-introduction">
-            <h1>
-                QUESTS
-            </h1>
-            <p class="pixel-type">Pick a quest, earn XP, and share your story...</p>
+          <h1>Quest</h1>
+          <p class="pixel-type">
+            Pick a quest, earn XP, and share your story...
+          </p>
         </div>
 
-        <hr class="app-hr">
+        <hr class="app-hr" />
 
         <nav class="app-navigation" aria-label="Main navigation">
-            <a href="/"><p>HOME</p></a>
-            <a href="/quest"><p>QUEST</p></a>
-            <a href="/guild"><p>GUILD</p></a>
-            <a href="/blog"><p>BLOG</p></a>
-            <a href="/about"><p>ABOUT</p></a>
+          <a href="/"><p>HOME</p></a>
+          <a href="/quest"><p>QUEST</p></a>
+          <a href="/guild"><p>GUILD</p></a>
+          <a href="/blog"><p>BLOG</p></a>
+          <a href="/about"><p>ABOUT</p></a>
+          <% if (locals.loggedIn) { %>
+          <a href="/account"
+            ><p id="login-nav-btn"><%= locals.username %></p></a
+          >
+          <% } else { %>
+          <a href="/login"><p id="login-nav-btn">LOGIN</p></a>
+          <% } %>
         </nav>
-    </header>
+      </header>
 
-    <main>
-
+      <main>
         <div class="navigation-bar-quests">
-
-            <div class="navigation-bar-quests-left">
-
-                <div class="difficulty-section">
-
-                        <div class="header-difficulty-section section-headers">
-                            <label for="difficulty-list">Difficulty</label>
-                        </div>
-                        <div class="main-difficulty-section">
-                            <select name="difficulty-list" id="difficulty-list" class="list-of-filters">
-                                <option>All Levels</option>
-                                <option>Easy (LV 1-3)</option>
-                                <option>Medium (LV 4-6)</option>
-                                <option>Hard (LV 7-9)</option>
-                                <option>Insane (LV 10)</option>
-                            </select>
-                        </div>
-
-                </div>
-
-                <div class="type-section">
-
-                    <div class="header-type-section section-headers">
-                    <label for="type-list">Type</label>
-                    </div>
-                    <div class="main-type-section">
-                    <select name="type-list" id="type-list" class="list-of-filters">
-                        <option>All Types</option>
-                        <option>Adventure</option>
-                        <option>Puzzle</option>
-                        <option>Story</option>
-                        <option>Trivia</option>
-                    </select>
-                    </div>
-
-                </div>
-
-                <div class="duration-section">
-
-                    <div class="header-duration-section section-headers">
-                    <label for="duration-list">Duration</label>
-                    </div>
-                    <div class="main-duration-section">
-                    <select name="duration-list" id="duration-list" class="list-of-filters">
-                        <option>All Length</option>
-                        <option>Short</option>
-                        <option>Medium</option>
-                        <option>Long</option>
-                    </select>
-                    </div>
-
-                </div>
-
+          <div class="navigation-bar-quests-left">
+            <div class="difficulty-section">
+              <div class="header-difficulty-section section-headers">
+                <label for="difficulty-list">Difficulty</label>
+              </div>
+              <div class="main-difficulty-section">
+                <select
+                  name="difficulty-list"
+                  id="difficulty-list"
+                  class="list-of-filters"
+                >
+                  <option>All Levels</option>
+                  <option>Easy (LV 1-3)</option>
+                  <option>Medium (LV 4-6)</option>
+                  <option>Hard (LV 7-9)</option>
+                  <option>Insane (LV 10)</option>
+                </select>
+              </div>
             </div>
-            <div class="navigation-bar-quests-right">
-                <div class="availability-section">
-                    <p class="numbers-navigation-right numbers-navigation-quest">42</p>
-                    <p>Available</p>
-                </div>
 
-                <div class="completed-section">
-                    <p class="completed-navigation-right numbers-navigation-quest">128</p>
-                    <p>Completed</p>
-                </div>
-
-                <div class="activity-section">
-                    <p class="activity-navigation-right numbers-navigation-quest">67</p>
-                    <p>Active</p>
-                </div>
+            <div class="type-section">
+              <div class="header-type-section section-headers">
+                <label for="type-list">Type</label>
+              </div>
+              <div class="main-type-section">
+                <select name="type-list" id="type-list" class="list-of-filters">
+                  <option>All Types</option>
+                  <option>Adventure</option>
+                  <option>Puzzle</option>
+                  <option>Story</option>
+                  <option>Trivia</option>
+                </select>
+              </div>
             </div>
+
+            <div class="duration-section">
+              <div class="header-duration-section section-headers">
+                <label for="duration-list">Duration</label>
+              </div>
+              <div class="main-duration-section">
+                <select
+                  name="duration-list"
+                  id="duration-list"
+                  class="list-of-filters"
+                >
+                  <option>All Length</option>
+                  <option>Short</option>
+                  <option>Medium</option>
+                  <option>Long</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="navigation-bar-quests-right">
+            <div class="availability-section">
+              <p class="numbers-navigation-right numbers-navigation-quest">
+                42
+              </p>
+              <p>Available</p>
+            </div>
+
+            <div class="completed-section">
+              <p class="completed-navigation-right numbers-navigation-quest">
+                128
+              </p>
+              <p>Completed</p>
+            </div>
+
+            <div class="activity-section">
+              <p class="activity-navigation-right numbers-navigation-quest">
+                67
+              </p>
+              <p>Active</p>
+            </div>
+          </div>
         </div>
 
         <div class="main-container">
-
-            <div class="left-side-main-container">
-
+          <div class="left-side-main-container">
             <div class="left-side-main-container-contents">
-                <div class="main-contents-header">
-                    <h2>The Great Dragon Heist: A Level 20 Adventure</h2>
-                </div>
-                <div class="main-contents-description">
-                    <p>Posted by DungeonMaster_X on May 25, 2025 | Category: Adventures</p>
-                </div>
-                <div class="main-contents-body">
-                    <p>
-                        Last night's session was absolutely legendary! Our party of seasoned adventurers finally infiltrated the ancient dragon's lair deep within the Crimson Mountains. What started as a simple treasure hunt turned into an epic battle that lasted four hours...
-                        <br>
-                        The rogue's stealth rolls were on fire, the wizard's fireball crits were devastating, and don't get me started on the paladin's divine intervention at the crucial moment. This is why we play D&D, folks!
-                    </p>
-                </div>
-                <div class="main-contents-button">
-                    <button>Read More...</button>
-                </div>
-                <hr class="left-side-hr">
+              <div class="main-contents-header">
+                <h2>The Great Dragon Heist: A Level 20 Adventure</h2>
+              </div>
+              <div class="main-contents-description">
+                <p>
+                  Posted by DungeonMaster_X on May 25, 2025 | Category:
+                  Adventures
+                </p>
+              </div>
+              <div class="main-contents-body">
+                <p>
+                  Last night's session was absolutely legendary! Our party of
+                  seasoned adventurers finally infiltrated the ancient dragon's
+                  lair deep within the Crimson Mountains. What started as a
+                  simple treasure hunt turned into an epic battle that lasted
+                  four hours...
+                  <br />
+                  The rogue's stealth rolls were on fire, the wizard's fireball
+                  crits were devastating, and don't get me started on the
+                  paladin's divine intervention at the crucial moment. This is
+                  why we play D&D, folks!
+                </p>
+              </div>
+              <div class="main-contents-button">
+                <button>Read More...</button>
+              </div>
+              <hr class="left-side-hr" />
             </div>
+          </div>
 
-        </div>
-
-        <div class="right-side-main-container">
-
+          <div class="right-side-main-container">
             <div class="right-side-main-container-quest-master">
-                <div class="right-side-main-quest-master-header">
-                    <h2>QUEST MASTERS</h2>
-                </div>
-                <div class="right-side-main-quest-master-body">
-
-                    <p><span class="rank-span">#1</span> <span class="main-text-span">DragonSlayer_Mike</span>  <span class="level-span">LV 10</span></p>
-                    <p><span class="rank-span">#2</span> <span class="main-text-span">MysticMage_Luna</span>  <span class="level-span">LV 8</span></p>
-                    <p><span class="rank-span">#3</span> <span class="main-text-span">ShadowRogue_Kai</span>  <span class="level-span">LV 7</span></p>
-                    <p><span class="rank-span">#4</span> <span class="main-text-span">HolyPaladin_Sara</span> <span class="level-span">LV 3</span></p>
-                    <p><span class="rank-span">#5</span> <span class="main-text-span">WildRanger_Alex</span>  <span class="level-span">LV 1</span></p>
-
-                </div>
+              <div class="right-side-main-quest-master-header">
+                <h2>QUEST MASTERS</h2>
+              </div>
+              <div class="right-side-main-quest-master-body">
+                <p>
+                  <span class="rank-span">#1</span>
+                  <span class="main-text-span">DragonSlayer_Mike</span>
+                  <span class="level-span">LV 10</span>
+                </p>
+                <p>
+                  <span class="rank-span">#2</span>
+                  <span class="main-text-span">MysticMage_Luna</span>
+                  <span class="level-span">LV 8</span>
+                </p>
+                <p>
+                  <span class="rank-span">#3</span>
+                  <span class="main-text-span">ShadowRogue_Kai</span>
+                  <span class="level-span">LV 7</span>
+                </p>
+                <p>
+                  <span class="rank-span">#4</span>
+                  <span class="main-text-span">HolyPaladin_Sara</span>
+                  <span class="level-span">LV 3</span>
+                </p>
+                <p>
+                  <span class="rank-span">#5</span>
+                  <span class="main-text-span">WildRanger_Alex</span>
+                  <span class="level-span">LV 1</span>
+                </p>
+              </div>
             </div>
 
             <div class="right-side-main-recently-completed">
-
-                <div class="right-side-main-recently-completed-header">
-                    <h2>RECENTRLY COMPLETED</h2>
-                </div>
-                <div class="right-side-main-recently-completed-body">
-                    <p>
-                        <span class="recently-completed-header-span">The Haunted Monastery</span>
-                        <span class="recently-completed-body-span-1">Completed by CriticalHit_Sally •</span>
-                        <span class="recently-completed-body-span-2">2 hours ago</span>
-                    </p>
-                    <p>
-                        <span class="recently-completed-header-span">Dragon Egg Heist</span>
-                        <span class="recently-completed-body-span-1">Completed by SilentBlade •</span>
-                        <span class="recently-completed-body-span-2">4 hours ago</span>
-                    </p>
-                    <p>
-                        <span class="recently-completed-header-span">The Lost Caravan</span>
-                        <span class="recently-completed-body-span-1">Completed by DungeonMaster_X •</span>
-                        <span class="recently-completed-body-span-2">6 hours ago</span>
-                    </p>
-                    <p>
-                        <span class="recently-completed-header-span">Wizard's Missing Tome</span>
-                        <span class="recently-completed-body-span-1">Completed by MysticMage_Luna •</span>
-                        <span class="recently-completed-body-span-2">8 hours ago</span>
-                    </p>
-                </div>
-
+              <div class="right-side-main-recently-completed-header">
+                <h2>RECENTRLY COMPLETED</h2>
+              </div>
+              <div class="right-side-main-recently-completed-body">
+                <p>
+                  <span class="recently-completed-header-span"
+                    >The Haunted Monastery</span
+                  >
+                  <span class="recently-completed-body-span-1"
+                    >Completed by CriticalHit_Sally •</span
+                  >
+                  <span class="recently-completed-body-span-2"
+                    >2 hours ago</span
+                  >
+                </p>
+                <p>
+                  <span class="recently-completed-header-span"
+                    >Dragon Egg Heist</span
+                  >
+                  <span class="recently-completed-body-span-1"
+                    >Completed by SilentBlade •</span
+                  >
+                  <span class="recently-completed-body-span-2"
+                    >4 hours ago</span
+                  >
+                </p>
+                <p>
+                  <span class="recently-completed-header-span"
+                    >The Lost Caravan</span
+                  >
+                  <span class="recently-completed-body-span-1"
+                    >Completed by DungeonMaster_X •</span
+                  >
+                  <span class="recently-completed-body-span-2"
+                    >6 hours ago</span
+                  >
+                </p>
+                <p>
+                  <span class="recently-completed-header-span"
+                    >Wizard's Missing Tome</span
+                  >
+                  <span class="recently-completed-body-span-1"
+                    >Completed by MysticMage_Luna •</span
+                  >
+                  <span class="recently-completed-body-span-2"
+                    >8 hours ago</span
+                  >
+                </p>
+              </div>
             </div>
 
             <div class="right-side-main-active-guild">
+              <div class="right-side-main-active-guild-header">
+                <h2>ACTIVE GUILDS</h2>
+              </div>
 
-                <div class="right-side-main-active-guild-header">
-                    <h2>ACTIVE GUILDS</h2>
-                </div>
-
-                <div class="right-side-main-active-guild-body">
-                    <p>
-                        <span class="active-guild-header-span">Dragon Hunters</span>
-                        <span class="active-guild-body-span">47 members</span>
-                    </p>
-                    <p>
-                        <span class="active-guild-header-span">Sword & Sorcery</span>
-                        <span class="active-guild-body-span">32 members</span>
-                    </p>
-                    <p>
-                        <span class="active-guild-header-span">Castle Defenders</span>
-                        <span class="active-guild-body-span">28 members</span>
-                    </p>
-                </div>
-
+              <div class="right-side-main-active-guild-body">
+                <p>
+                  <span class="active-guild-header-span">Dragon Hunters</span>
+                  <span class="active-guild-body-span">47 members</span>
+                </p>
+                <p>
+                  <span class="active-guild-header-span">Sword & Sorcery</span>
+                  <span class="active-guild-body-span">32 members</span>
+                </p>
+                <p>
+                  <span class="active-guild-header-span">Castle Defenders</span>
+                  <span class="active-guild-body-span">28 members</span>
+                </p>
+              </div>
             </div>
-
+          </div>
         </div>
+      </main>
 
-        </div>
-
-    </main>
-
-
-
-
-    <%-include("partials/footer.ejs")%>
-
-</div>
-</body>
+      <%-include("partials/footer.ejs")%>
+    </div>
+  </body>
 </html>

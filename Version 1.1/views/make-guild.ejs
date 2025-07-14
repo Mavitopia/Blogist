@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DIGITAL TAVERN</title>
+    <link rel="icon" href="/img/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="/style/background.css" />
+    <link rel="stylesheet" href="/style/footer.css" />
+    <link rel="stylesheet" href="/style/Guild/make-guild.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="app-introduction">
+          <h1>Make your guild</h1>
+          <p class="pixel-type">Create and manage your own guild with ease!</p>
+        </div>
+
+        <hr class="app-hr" />
+
+        <nav class="app-navigation" aria-label="Main navigation">
+          <a href="/"><p>HOME</p></a>
+          <a href="/quest"><p>QUEST</p></a>
+          <a href="/guild"><p>GUILD</p></a>
+          <a href="/blog"><p>BLOG</p></a>
+          <a href="/about"><p>ABOUT</p></a>
+          <% if (locals.loggedIn) { %>
+          <a href="/account"
+            ><p id="login-nav-btn"><%= locals.username %></p></a
+          >
+          <% } else { %>
+          <a href="/login"><p id="login-nav-btn">LOGIN</p></a>
+          <% } %>
+        </nav>
+      </header>
+
+      <main>
+        <div class="main-container">
+          <form
+            class="main-form"
+            action="/make-guild/request"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <div class="upper-container">
+              <label for="guildImage">Guild Image:</label>
+              <input
+                type="file"
+                id="guildImage"
+                name="guildImage"
+                accept="image/*"
+                required
+              />
+              <label for="guildName">Guild Name:</label>
+              <input
+                type="text"
+                id="guildName"
+                name="guildName"
+                placeholder="Dragon tavern"
+                maxlength="20"
+                minlength="3"
+                required
+              />
+            </div>
+            <div class="lower-container">
+              <label for="guildDescription">Guild Description: </label>
+              <input
+                id="guildDescription"
+                type="text"
+                name="guildDescription"
+                placeholder="A fun place to share idea about making video games"
+                minlength="20"
+                maxlength="200"
+                required
+              />
+
+              <label for="guildTags">Guild Tags: </label>
+              <select id="guildTags" name="guildTags" required>
+                <option disabled selected>Select a tag</option>
+                <option value="Anime">Anime</option>
+                <option value="Manga">Manga</option>
+                <option value="Game">Games</option>
+                <option value="Music">Music</option>
+                <option value="Technology">Technology</option>
+                <option value="Politics">Politics</option>
+                <option value="Sports">Sports</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="submit-container">
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </main>
+
+      <%-include('partials/footer')%>
+    </div>
+    <script>
+      const tagSelector = document.querySelector("#guildTags");
+      const form = document.querySelector(".main-form");
+
+      form.addEventListener("submit", (e) => {
+        if (tagSelector.value === "Select a tag") {
+          e.preventDefault();
+          alert("Please select a tag");
+        }
+      });
+    </script>
+  </body>
+</html>
