@@ -1,29 +1,53 @@
-# Note: The project is still a work in progress 🛠️
-![Screenshot (104)](https://github.com/user-attachments/assets/6c380438-a568-4564-9c13-2ed5c86f6931)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/49983afe-278d-424d-9015-a79f6aa01b50" alt="Screenshot (155)" width="1000">
+</p>
 
-# Digital Tavern - Version 1.1
+[![Work in Progress](https://img.shields.io/badge/status-WIP-orange)]()
 
-Welcome to **Digital Tavern**, a blogging site inspired by the aesthetics and charm of classic old-school RPGs. This project is now in its second iteration (v1.1), bringing new features and improvements based on user feedback and creative vision.
+# Digital Tavern v1.1
 
-## Project Overview
+A **blogging site** styled like a classic old‑school RPG.  
+Built as an experiment to test current web‑development skills with Node.js and Express.
 
-Digital Tavern is designed to evoke the nostalgia of pixel art, medieval menus, and fantasy worlds, providing a unique and immersive blogging experience. Users can create, share, and explore blog posts as if they were adventurers gathering in a cozy tavern.
+---
 
-## What's New in Version 1.1
+## ⚔️ Project Overview
 
-- Enhanced UI with more authentic RPG elements
-- Improved post editor and formatting options
-- New user profile customization features
-- Performance optimizations and bug fixes
+Digital Tavern recreates the look and feel of a medieval RPG inn—complete with pixel‑art menus and fantasy fonts—to offer a playful but functional blogging experience.  
+**Note:** This is a frontend‑focused prototype. There is no database or persistent backend; data lives in memory.
 
-## Features
+---
 
-- **RPG-Inspired Interface:** Menus, fonts, and icons reminiscent of classic games
-- **Rich Blogging Tools:** Write, edit, and manage posts with ease
-- **Community Interaction:** Comment, like, and follow fellow adventurers
-- **Custom Avatars:** Personalize your profile with RPG-style avatars
+## ⚙️ Architecture & Stack
 
-## Getting Started
+- **Runtime:** Node.js (v14+ recommended)  
+- **Server:** Express.js  
+- **Templating:** EJS  
+- **Assets:** CSS, pixel‑art icons, custom fonts  
+- **Data Storage:** In‑memory JavaScript objects  
+- **Testing:** (none yet—feedback welcome!)
+
+---
+
+## ✨ What’s New in v1.1
+Version 1.1 is a major overhaul—a huge leap from the initial prototype. It’s no longer just a basic blogging layout; it now feels like a true digital tavern with stronger RPG aesthetics, better structure, and improved functionality.
+
+- Complete UI Redesign with immersive RPG menus, fonts, and styling
+
+- Enhanced Blogging experience
+
+- Overall Polish – every screen has been reworked to feel more cohesive and fantasy-inspired
+
+---
+
+## 🧪 Feedback Wanted
+
+Some components were generated or heavily assisted by AI.
+Please review these for correctness, consistency, and security best practices. Any suggestions on structure or style conventions are especially appreciated.
+
+---
+
+## ⭐ Getting Started
 
 1. Clone the repository
 2. Install dependencies
@@ -31,7 +55,7 @@ Digital Tavern is designed to evoke the nostalgia of pixel art, medieval menus, 
 
 ```bash
 git clone <repo-url>
-cd digital-tavern
 npm install
 node .\app.js
-```
+
+No database setup is required. All posts and user data reset on server restart.
