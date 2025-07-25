@@ -46,9 +46,32 @@
       <main>
         <div class="account-container">
           <div class="account-info">
-            <h2>Account Information</h2>
-            <p><strong>Username:</strong> <%= locals.username %></p>
-            <p><strong>Email:</strong> <%= locals.email %></p>
+            <h2>Active Quest</h2>
+            <% if (activeQuest) { %>
+            <p><strong>Title:</strong> <%= activeQuest.title %></p>
+            <p><strong>Summary:</strong> <%= activeQuest.summary %></p>
+            <p><strong>Category:</strong> <%= activeQuest.category %></p>
+            <p><strong>Difficulty:</strong> <%= activeQuest.difficulty %></p>
+            <p><strong>Duration:</strong> <%= activeQuest.duration %></p>
+            <% } else { %>
+            <p>You currently have no active quests.</p>
+            <% } %>
+          </div>
+
+          <div class="account-info">
+            <h2>Completed Quests</h2>
+            <% if (completedQuests.length > 0) { %>
+            <ul>
+              <% completedQuests.forEach(q => { %>
+              <li>
+                <strong><%= q.title %></strong> - <%= q.category %>, <%=
+                q.difficulty %>
+              </li>
+              <% }) %>
+            </ul>
+            <% } else { %>
+            <p>No quests completed yet.</p>
+            <% } %>
           </div>
           <div class="account-actions">
             <h2>Actions</h2>

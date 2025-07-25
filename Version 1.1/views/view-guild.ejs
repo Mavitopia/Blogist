@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DIGITAL TAVERN</title>
+    <link rel="icon" href="/img/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="/style/background.css" />
+    <link rel="stylesheet" href="/style/footer.css" />
+    <link rel="stylesheet" href="/style/Guild/view-guild.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="app-introduction">
+          <h1>View Guild</h1>
+          <p class="pixel-type">
+            This guild was made by
+            <strong style="color: #c44d58; text-transform: capitalize"
+              ><%= guild.leader %></strong
+            >
+            in <%= guild.created %>
+          </p>
+        </div>
+        <hr class="app-hr" />
+        <nav class="app-navigation" aria-label="Main navigation">
+          <a href="/"><p>HOME</p></a>
+          <a href="/quest"><p>QUEST</p></a>
+          <a href="/guild"><p>GUILD</p></a>
+          <a href="/blog"><p>BLOG</p></a>
+          <a href="/about"><p>ABOUT</p></a>
+          <% if (loggedIn) { %>
+          <a href="/account"><p id="login-nav-btn"><%= username %></p></a>
+          <% } else { %>
+          <a href="/login"><p id="login-nav-btn">LOGIN</p></a>
+          <% } %>
+        </nav>
+      </header>
+
+      <main class="guild-detail-page">
+        <!-- Guild Header -->
+        <section class="guild-header">
+          <img src="<%= guild.image %>" alt="Guild: <%= guild.name %>" />
+          <h1><%= guild.name %></h1>
+          <p><%= guild.description %></p>
+          <p>Created on <%= guild.created %> by <%= guild.leader %></p>
+          <div class="tags">
+            <% if (Array.isArray(tags)) { %> <% tags.forEach(function(t) { %>
+            <span class="tag">#<%= t %></span>
+            <% }); %> <% } else { %>
+            <span class="tag">#<%= tags %></span>
+            <% } %>
+          </div>
+        </section>
+
+        <!-- Stats & Members -->
+        <section class="guild-stats">
+          <div><strong><%= guild.members %></strong> Members</div>
+          <div><strong><%= posts %></strong> Posts</div>
+        </section>
+
+        <section class="guild-members">
+          <h2>Members (<%= members.length %>)</h2>
+          <ul>
+            <% members.forEach(function(u) { %>
+            <li>
+              <%= u %> <% if (u === guild.leader) { %>
+              <span class="leader-label">(Leader)</span>
+              <% } %>
+            </li>
+            <% }); %>
+          </ul>
+        </section>
+
+        <section class="guild-blogs">
+          <h2>Guild Blog Posts</h2>
+          <% if (guildBlogs.length === 0) { %>
+          <p>No blog posts have been shared in this guild yet.</p>
+          <% } else { %>
+          <ul>
+            <% guildBlogs.forEach(function(item) { %>
+            <li>
+              <a
+                href="/blog/read/<%= item.idx %>"
+                style="color: #c44d58; text-decoration: none"
+                onmouseover="this.style.color='#4285f4'"
+                onmouseout="this.style.color='#c44d58'"
+              >
+                <%= item.title %>
+              </a>
+              by <%= item.data.author %> on <%= item.data.date %>
+            </li>
+            <% }); %>
+          </ul>
+          <% } %>
+        </section>
+
+        <% // Determine if the current user is already in the guild const
+        alreadyJoined = members.includes(username); %>
+
+        <section class="guild-actions">
+          <% if (alreadyJoined) { %>
+          <p class="welcome-back">
+            Welcome back to the guild, <%= username %>!
+          </p>
+          <% } else if (loggedIn) { %>
+          <form
+            method="post"
+            action="/guild/<%= encodeURIComponent(guild.name) %>/join"
+          >
+            <button type="submit" class="btn-join">Join Guild</button>
+          </form>
+          <% } else { %>
+          <p>
+            <a href="/login" style="color: #803d3b">Login</a> to join this
+            guild.
+          </p>
+          <% } %>
+        </section>
+      </main>
+
+      <%- include("partials/footer.ejs") %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quest Details - <%= quest.title %></title>
+    <link rel="stylesheet" href="/style/background.css" />
+    <style>
+      body {
+        font-family: "Courier Prime", monospace;
+        background: #322c2b;
+        color: #e4c59e;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .quest-detail-container {
+        background: #44312f;
+        border: 2px solid #803d3b;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px #0008;
+        padding: 2.5rem 2.5rem 2rem 2.5rem;
+        margin-top: 60px;
+        width: 100%;
+        max-width: 540px;
+        min-width: 320px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      h1 {
+        color: #803d3b;
+        font-family: "Press Start 2P", cursive;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: 1px;
+      }
+
+      p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        color: #e4c59e;
+      }
+
+      .quest-detail-label {
+        color: #af8260;
+        font-weight: bold;
+      }
+
+      form button {
+        background-color: #af8260;
+        border: none;
+        color: #322c2b;
+        padding: 12px 24px;
+        font-size: 1.1em;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: bold;
+        letter-spacing: 1px;
+        box-shadow: 1px 1px 0 #fff, 2px 2px 0 #322c2b;
+        transition: background 0.2s, color 0.2s;
+      }
+
+      form button:hover {
+        background-color: #803d3b;
+        color: #e4c59e;
+      }
+
+      .message {
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        font-weight: 600;
+        font-family: inherit;
+      }
+
+      .error {
+        background-color: #803d3b;
+        color: #e4c59e;
+        border: 1px solid #af8260;
+      }
+
+      .success {
+        background-color: #af8260;
+        color: #322c2b;
+        border: 1px solid #e4c59e;
+      }
+
+      .info {
+        background-color: #e4c59e;
+        color: #322c2b;
+        border: 1px solid #af8260;
+      }
+
+      a {
+        display: inline-block;
+        margin-top: 25px;
+        text-decoration: none;
+        color: #af8260;
+        font-weight: bold;
+        font-family: inherit;
+        font-size: 1.1em;
+        transition: color 0.2s;
+      }
+
+      a:hover {
+        color: #803d3b;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quest-detail-container">
+      <h1><%= quest.title %></h1>
+      <p>
+        <span class="quest-detail-label">Description:</span>
+        <%= quest.description || quest.summary || "No description provided." %>
+      </p>
+      <p>
+        <span class="quest-detail-label">Category:</span> <%= quest.category %> |
+        <span class="quest-detail-label">Difficulty:</span> <%= quest.difficulty %>
+        |
+        <span class="quest-detail-label">Duration:</span> <%= quest.duration %>
+      </p>
+      <p><span class="quest-detail-label">Author:</span> <%= quest.author %></p>
+
+      <% if (quest.author === username) { %>
+      <p class="message error">You cannot accept your own quest.</p>
+      <% } else if (userActiveQuestId === quest.id) { %>
+      <p class="message success">You have accepted this quest.</p>
+      <% } else if (userActiveQuestId) { %>
+      <p class="message info">
+        You have an active quest already. You cannot accept another quest until
+        you complete the current one.
+      </p>
+      <% } else { %>
+      <form method="POST" action="/quest/<%= quest.id %>/accept">
+        <button type="submit">Accept Quest</button>
+      </form>
+      <% } %>
+
+      <a href="/quest">← Back to Quest List</a>
+    </div>
+    <script>
+      const form = document.querySelector("form");
+      const button = form ? form.querySelector("button") : null;
+
+      if (form && button) {
+        form.addEventListener("submit", function (e) {
+          // Disable the button to prevent multiple clicks
+          button.disabled = true;
+          button.textContent = "Accepting...";
+        });
+      }
+    </script>
+  </body>
+</html>

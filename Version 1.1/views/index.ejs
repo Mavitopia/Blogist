@@ -41,34 +41,36 @@
 
       <main>
         <div class="left-side-main-container">
+          <% if (latestBlog) { %>
           <div class="left-side-main-container-contents">
             <div class="main-contents-header">
-              <h2>The Great Dragon Heist: A Level 20 Adventure</h2>
+              <h2><%= latestBlog.title %></h2>
             </div>
             <div class="main-contents-description">
               <p>
-                Posted by DungeonMaster_X on May 25, 2025 | Category: Adventures
+                Posted by <%= latestBlog.author %> on <%= latestBlog.date %> | Category: <%= latestBlog.category %>
               </p>
             </div>
             <div class="main-contents-body">
               <p>
-                Last night's session was absolutely legendary! Our party of
-                seasoned adventurers finally infiltrated the ancient dragon's
-                lair deep within the Crimson Mountains. What started as a simple
-                treasure hunt turned into an epic battle that lasted four
-                hours...
-                <br />
-                The rogue's stealth rolls were on fire, the wizard's fireball
-                crits were devastating, and don't get me started on the
-                paladin's divine intervention at the crucial moment. This is why
-                we play D&D, folks!
+                <%= latestBlog.description || latestBlog.content.substring(0, 180) + (latestBlog.content.length > 180 ? '...' : '') %>
               </p>
             </div>
             <div class="main-contents-button">
-              <button>Read More...</button>
+              <a href="/blog/read/<%= latestBlogIdx %>"><button>Read More...</button></a>
             </div>
             <hr class="left-side-hr" />
           </div>
+          <% } else { %>
+            <div class="left-side-main-container-contents">
+              <div class="main-contents-header">
+                <h2>No blog posts yet!</h2>
+              </div>
+              <div class="main-contents-body">
+                <p>Be the first to share your adventure in the Digital Tavern.</p>
+              </div>
+            </div>
+          <% } %>
         </div>
 
         <div class="right-side-main-container">
@@ -77,11 +79,14 @@
               <h2>Latest QUESTS</h2>
             </div>
             <div class="right-side-main-latest-quest-body">
-              <p>The Haunted Monastery</p>
-              <hr />
-
-              <p>Rescue the Lost Caravan</p>
-              <hr />
+              <% if (latestQuests && latestQuests.length > 0) { %>
+                <% latestQuests.forEach(function(q, idx) { %>
+                  <p><%= q.title %></p>
+                  <% if (idx < latestQuests.length - 1) { %><hr /> <% } %>
+                <% }); %>
+              <% } else { %>
+                <p>No quests yet!</p>
+              <% } %>
             </div>
           </div>
 
@@ -92,27 +97,15 @@
             <div class="right-side-main-guild-stats-body">
               <div class="guild-stats-body-box1 guild-stats-body-box">
                 <p>
-                  <span class="span-color">247</span>
+                  <span class="span-color"><%= activePlayers %></span>
                 </p>
-                <p>Active Players</p>
+                <p>Members</p>
               </div>
               <div class="guild-stats-body-box2 guild-stats-body-box">
                 <p>
-                  <span class="span-color">89</span>
+                  <span class="span-color"><%= totalPosts %></span>
                 </p>
-                <p>Campaigns</p>
-              </div>
-              <div class="guild-stats-body-box3 guild-stats-body-box">
-                <p>
-                  <span class="span-color">1,432</span>
-                </p>
-                <p>Total Posts</p>
-              </div>
-              <div class="guild-stats-body-box4 guild-stats-body-box">
-                <p>
-                  <span class="span-color">156</span>
-                </p>
-                <p>Adventures</p>
+                <p>Posts</p>
               </div>
             </div>
           </div>
@@ -122,31 +115,25 @@
               <h2>Categories</h2>
             </div>
             <div class="right-side-main-categories-body">
-              <p>Adventures ()</p>
-              <hr />
-              <p>Character Builds ()</p>
-              <hr />
-              <p>Reviews ()</p>
-              <hr />
-              <p>Lore ()</p>
-              <hr />
-              <p>Game Mechanics ()</p>
-              <hr />
+              <% if (categories && categories.length > 0) { %>
+                <% categories.forEach(function(cat, idx) { %>
+                  <p><%= cat.name %> (<%= cat.count %>)</p>
+                  <% if (idx < categories.length - 1) { %><hr /> <% } %>
+                <% }); %>
+              <% } else { %>
+                <p>No categories yet!</p>
+              <% } %>
             </div>
           </div>
 
           <div class="right-side-main-container-dotd">
             <div class="right-side-main-dotd-header">
-              <h2>Discord Of The Day</h2>
+              <h2>Quote Of The Day</h2>
             </div>
-
             <div class="right-side-main-dotd-body">
-              <p>
-                "The best adventures aren't found in books - they're created
-                around the table with friends."
-              </p>
+              <p>"<%= quote %>"</p>
               <p id="right-side-main-dotd-footer-text">
-                - Anonymous Adventurer
+                - Digital Tavern
               </p>
             </div>
           </div>

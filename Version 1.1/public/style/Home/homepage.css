@@ -4,6 +4,57 @@ main {
   margin-top: 40px;
 }
 
+ .left-side-main-container {
+  width: 62%;
+}
+.right-side-main-container {
+  width: 32%;
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .left-side-main-container,
+  .right-side-main-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    margin-top: 10px;
+    gap: 15px;
+  }
+  .left-side-main-container-contents,
+  .right-side-main-container-latest-quest,
+  .right-side-main-container-guild-stats,
+  .right-side-main-container-categories,
+  .right-side-main-container-dotd {
+    padding: 10px;
+  }
+  .guild-stats-body-box {
+    width: 90px;
+    height: 90px;
+    font-size: 14px;
+  }
+  .span-color {
+    font-size: 18px;
+  }
+  .main-contents-header {
+    font-size: 16px;
+  }
+  .main-contents-body {
+    font-size: 13px;
+  }
+}
+main {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
 .left-side-main-container {
   width: 62%;
 }
@@ -95,7 +146,7 @@ main {
 .right-side-main-guild-stats-body {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
   text-align: center;
 }
 .guild-stats-body-box {

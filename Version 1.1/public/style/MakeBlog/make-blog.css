@@ -148,3 +148,77 @@ main {
   border-color: #c44d58;
   background: #403733;
 }
+/* Quest Blog form styling */
+#quest-blog-form {
+  display: grid;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+#quest-blog-form label {
+  color: #af8260;
+  font-size: 1rem;
+}
+
+#quest-blog-form input,
+#quest-blog-form textarea,
+#quest-blog-form select {
+  padding: 10px;
+  border: 1px solid #d5b58e;
+  border-radius: 6px;
+  background: #38302d;
+  color: #f0e6d2;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+#quest-blog-form select {
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+#quest-blog-form select:focus {
+  outline: none;
+  border-color: #c44d58;
+  background: #403733;
+}
+
+#quest-blog-form .options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+#quest-blog-form .options label {
+  font-size: 0.95rem;
+  color: #d5b58e;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#quest-blog-form input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  transform: scale(1.2);
+}
+
+#quest-blog-form button {
+  padding: 12px;
+  font-size: 1.1rem;
+  background: #c44d58;
+  color: #f0e6d2;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#quest-blog-form button:hover {
+  transform: scale(1.02);
+  background: #af2f3b;
+}

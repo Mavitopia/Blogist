@@ -1,0 +1,112 @@
+/* Global Main Area */
+main {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+/* Card Container */
+.main-container {
+  width: 75%;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: #2f2926;
+  border: 2px solid #af8260;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(175, 130, 96, 0.25);
+  color: #e4c59e;
+  font-size: 1.1rem;
+}
+
+/* Title */
+.main-container h2 {
+  text-align: center;
+  color: #e4c59e;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #af8260;
+  padding-bottom: 10px;
+}
+
+/* Form Layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Containers */
+.upper-container,
+.lower-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input Fields */
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  background-color: #322c2b;
+  color: #e4c59e;
+  border: 1px solid #af8260;
+  border-radius: 6px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+/* Focus State */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #e4c59e;
+  background-color: #3d3432;
+}
+
+/* Placeholder color */
+::placeholder {
+  color: #c5a373;
+  opacity: 0.8;
+}
+
+/* Button */
+button {
+  padding: 12px 20px;
+  background-color: #803d3b;
+  border: 2px solid #af8260;
+  color: #e4c59e;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: center;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover & Active States */
+button:hover {
+  background-color: #af8260;
+  color: #2f2926;
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #803d3b;
+  transform: scale(0.95);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .main-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  button {
+    width: 100%;
+  }
+}

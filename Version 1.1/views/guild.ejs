@@ -32,12 +32,10 @@
           <a href="/guild"><p>GUILD</p></a>
           <a href="/blog"><p>BLOG</p></a>
           <a href="/about"><p>ABOUT</p></a>
-          <% if (locals.loggedIn) { %>
-          <a href="/account"
-            ><p id="login-nav-btn"><%= locals.username %></p></a
-          >
+          <% if (loggedIn) { %>
+            <a href="/account"><p id="login-nav-btn"><%= username %></p></a>
           <% } else { %>
-          <a href="/login"><p id="login-nav-btn">LOGIN</p></a>
+            <a href="/login"><p id="login-nav-btn">LOGIN</p></a>
           <% } %>
         </nav>
       </header>
@@ -52,70 +50,87 @@
           </div>
           <div class="showcase-guild-body">
             <div class="showcase-guild-body-guild-member">
-              <h2>247</h2>
+              <h2><%= totalMembers %></h2>
               <p>Guild Members</p>
             </div>
             <div class="showcase-guild-body-guild-post">
-              <h2>156</h2>
+              <h2><%= totalPosts %></h2>
               <p>Guild Posts</p>
             </div>
           </div>
         </div>
 
         <div class="guild-explore">
-          <div class="guild-explore-filter">
+          <form method="get" action="/guild" class="guild-explore-filter">
             <div class="guild-explore-filter-type">
               <label for="guild-type">TYPE</label>
-              <select name="guild-type" id="guild-type" class="list-of-filters">
-                <option>All</option>
-                <option>Game</option>
-                <option>Movie</option>
-                <option>Series</option>
-                <option>Social</option>
-                <option>Anime</option>
+              <select
+                name="type"
+                id="guild-type"
+                class="list-of-filters"
+                onchange="this.form.submit()"
+              >
+                <option value="All" <%= currentType === "All" ? "selected" : "" %>>All</option>
+                <option value="Game" <%= currentType === "Game" ? "selected" : "" %>>Game</option>
+                <option value="Movie" <%= currentType === "Movie" ? "selected" : "" %>>Movie</option>
+                <option value="Series" <%= currentType === "Series" ? "selected" : "" %>>Series</option>
+                <option value="Social" <%= currentType === "Social" ? "selected" : "" %>>Social</option>
+                <option value="Anime" <%= currentType === "Anime" ? "selected" : "" %>>Anime</option>
               </select>
             </div>
+
             <div class="guild-explore-filter-sort">
               <label for="guild-sort">SORT</label>
-              <select name="guild-sort" id="guild-sort" class="list-of-filters">
-                <option>Related</option>
-                <option>Most Members</option>
-                <option>Most Posts</option>
+              <select
+                name="sort"
+                id="guild-sort"
+                class="list-of-filters"
+                onchange="this.form.submit()"
+              >
+                <option value="Related" <%= currentSort === "Related" ? "selected" : "" %>>Related</option>
+                <option value="Most Members" <%= currentSort === "Most Members" ? "selected" : "" %>>Most Members</option>
+                <option value="Most Posts" <%= currentSort === "Most Posts" ? "selected" : "" %>>Most Posts</option>
               </select>
             </div>
-          </div>
+          </form>
 
-          <% if (locals.guilds && locals.guilds.length > 0) { %> <%
-          guilds.forEach((i) => { %>
-          <div class="guild-explore-list">
-            <div class="guild-explore-list-card">
-              <div class="guild-explore-list-card-image">
-                <p><img src="<%= i.image %> " alt="guild image" /></p>
+          <% if (guilds && guilds.length > 0) { %>
+            <% guilds.forEach(function(i) { %>
+              <div class="guild-explore-list">
+                <div class="guild-explore-list-card">
+                  <div class="guild-explore-list-card-image">
+                    <p><img src="<%= i.image %>" alt="guild image" /></p>
+                  </div>
+                  <div class="guild-explore-list-card-header">
+                    <h2><%= i.name %></h2>
+                  </div>
+                  <div class="guild-explore-list-card-body">
+                    <p><%= i.description %></p>
+                  </div>
+                  <div class="guild-explore-list-card-detail">
+                    <p><%= i.members %> Members</p>
+                    <p><%= i.posts %> Posts</p>
+                    <p>Created: <%= i.created %></p>
+                    <p>
+                      Tag:
+                      <%= Array.isArray(i.tags)
+                        ? "#" + i.tags.join(", #")
+                        : "#" + i.tags %>
+                    </p>
+                  </div>
+                  <div class="guild-explore-list-card-footer">
+                    <a href="/guild/<%= encodeURIComponent(i.name) %>">
+                      <button class="join-guild-button">JOIN GUILD</button>
+                    </a>
+                    <a href="/guild/<%= encodeURIComponent(i.name) %>">
+                      <button class="view-post-button">VIEW POSTS</button>
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div class="guild-explore-list-card-header">
-                <h2><%= i.name %></h2>
-              </div>
-              <div class="guild-explore-list-card-body">
-                <p><%= i.description %></p>
-              </div>
-              <div class="guild-explore-list-card-detail">
-                <p><%= i.members %> Members</p>
-                <p><%= i.posts %> Posts</p>
-                <p>Created: <%= i.created %></p>
-                <p>Tag: #<%= i.tag %></p>
-              </div>
-              <div class="guild-explore-list-card-footer">
-                <a href="/guild/<%= i.name %>">
-                  <button class="join-guild-button">JOIN GUILD</button>
-                </a>
-                <a href="/guild/<%= i.name %>">
-                  <button class="view-post-button">VIEW POSTS</button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <% }); %> <% } else { %>
-          <h2 id="no-guild">no guild</h2>
+            <% }); %>
+          <% } else { %>
+            <h2 id="no-guild">No guilds found</h2>
           <% } %>
         </div>
 
@@ -132,7 +147,7 @@
         </div>
       </main>
 
-      <%-include("partials/footer.ejs")%>
+      <%- include("partials/footer.ejs") %>
     </div>
   </body>
 </html>

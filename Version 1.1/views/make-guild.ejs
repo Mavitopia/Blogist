@@ -40,6 +40,7 @@
       </header>
 
       <main>
+        <% if (locals.loggedIn) { %>
         <div class="main-container">
           <form
             class="main-form"
@@ -97,6 +98,44 @@
             </div>
           </form>
         </div>
+
+        <% } else { %>
+          <!-- User NOT logged in, show message with login button -->
+
+          <div
+                  class="not-logged-in-message"
+                  style="
+            text-align: center;
+            padding: 40px;
+            background: #44312f;
+            border-radius: 15px;
+            color: #e4c59e;
+            max-width: 400px;
+            margin: 60px auto;
+            border: 2px solid #af8260;
+          "
+          >
+            <h1 style="color: #c44d58; margin-bottom: 20px">Please Login</h1>
+            <p style="font-size: 1.2rem; margin-bottom: 30px">
+              You must be logged in to create a blog post.
+            </p>
+            <a
+                    href="/login"
+                    style="
+              display: inline-block;
+              background: #c44d58;
+              color: #f0e6d2;
+              padding: 12px 28px;
+              border-radius: 8px;
+              font-size: 1.1rem;
+              text-decoration: none;
+              transition: background-color 0.3s ease;
+            "
+            >Go to Login</a
+            >
+          </div>
+        <% } %>
+
       </main>
 
       <%-include('partials/footer')%>

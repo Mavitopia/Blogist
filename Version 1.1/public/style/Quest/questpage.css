@@ -233,3 +233,43 @@ main {
   color: #eddbc2;
   text-shadow: 0 0 2px #eddbc2;
 }
+.make-quest-btn {
+  display: inline-block;
+  background-color: #5c2e2e; /* darker wine red */
+  color: #f5deb3; /* soft parchment/golden wheat */
+  padding: 12px 24px;
+  border: 2px solid #f5deb3;
+  border-radius: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 0 10px rgba(245, 222, 179, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.make-quest-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(245, 222, 179, 0.1);
+  transform: skewX(-25deg);
+  transition: left 0.6s ease;
+}
+
+.make-quest-btn:hover::before {
+  left: 200%;
+}
+
+.make-quest-btn:hover {
+  background-color: #7b3e3e; /* slightly brighter red */
+  color: #fff8dc; /* lighter parchment */
+  border: 2px solid #f5deb3; /* keep border visible */
+  box-shadow: 0 0 15px rgba(245, 222, 179, 0.4);
+}

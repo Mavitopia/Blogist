@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DIGITAL TAVERN</title>
+    <link rel="icon" href="/img/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="/style/background.css" />
+    <link rel="stylesheet" href="/style/footer.css" />
+    <link rel="stylesheet" href="/style/Quest/quest-create.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="app-introduction">
+          <h1>Quest</h1>
+          <p class="pixel-type">
+            Pick a quest, earn XP, and share your story...
+          </p>
+        </div>
+
+        <hr class="app-hr" />
+
+        <nav class="app-navigation" aria-label="Main navigation">
+          <a href="/"><p>HOME</p></a>
+          <a href="/quest"><p>QUEST</p></a>
+          <a href="/guild"><p>GUILD</p></a>
+          <a href="/blog"><p>BLOG</p></a>
+          <a href="/about"><p>ABOUT</p></a>
+          <% if (loggedIn) { %>
+          <a href="/account"><p id="login-nav-btn"><%= username %></p></a>
+          <% } else { %>
+          <a href="/login"><p id="login-nav-btn">LOGIN</p></a>
+          <% } %>
+        </nav>
+      </header>
+
+      <main>
+        <div class="main-container">
+          <h2>Create a New Quest</h2>
+          <form action="/quest/create" method="POST">
+            <div class="upper-container">
+              <input
+                type="text"
+                name="title"
+                placeholder="Quest Title"
+                required
+              />
+              <textarea
+                name="summary"
+                placeholder="Quest Summary"
+                required
+              ></textarea>
+              <textarea
+                name="description"
+                placeholder="Detailed Description"
+                required
+              ></textarea>
+            </div>
+            <div class="lower-container">
+              <select name="difficulty" required>
+                <option value="">Select Difficulty</option>
+                <option value="Easy">Easy (LV 1–3)</option>
+                <option value="Medium">Medium (LV 4–6)</option>
+                <option value="Hard">Hard (LV 7–9)</option>
+                <option value="Insane">Insane (LV 10)</option>
+              </select>
+              <select name="category" required>
+                <option value="">Select Category</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Puzzle">Puzzle</option>
+                <option value="Story">Story</option>
+                <option value="Trivia">Trivia</option>
+              </select>
+              <select name="duration" required>
+                <option value="">Select Duration</option>
+                <option value="Short">Short (0–30 mins)</option>
+                <option value="Medium">Medium (30–60 mins)</option>
+                <option value="Long">Long (1hr+)</option>
+              </select>
+              <button type="submit">Post Quest</button>
+            </div>
+          </form>
+        </div>
+      </main>
+      <%- include('partials/footer') %>
+    </div>
+  </body>
+</html>

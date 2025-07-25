@@ -31,239 +31,253 @@
           <a href="/guild"><p>GUILD</p></a>
           <a href="/blog"><p>BLOG</p></a>
           <a href="/about"><p>ABOUT</p></a>
-          <% if (locals.loggedIn) { %>
-          <a href="/account"
-            ><p id="login-nav-btn"><%= locals.username %></p></a
-          >
+          <% if (loggedIn) { %>
+            <a href="/account"><p id="login-nav-btn"><%= username %></p></a>
           <% } else { %>
-          <a href="/login"><p id="login-nav-btn">LOGIN</p></a>
+            <a href="/login"><p id="login-nav-btn">LOGIN</p></a>
           <% } %>
         </nav>
       </header>
 
       <main>
         <div class="navigation-bar-quests">
-          <div class="navigation-bar-quests-left">
+          <form method="get" action="/quest" class="navigation-bar-quests-left">
+            <!-- Difficulty -->
             <div class="difficulty-section">
-              <div class="header-difficulty-section section-headers">
-                <label for="difficulty-list">Difficulty</label>
-              </div>
-              <div class="main-difficulty-section">
-                <select
-                  name="difficulty-list"
-                  id="difficulty-list"
-                  class="list-of-filters"
-                >
-                  <option>All Levels</option>
-                  <option>Easy (LV 1-3)</option>
-                  <option>Medium (LV 4-6)</option>
-                  <option>Hard (LV 7-9)</option>
-                  <option>Insane (LV 10)</option>
-                </select>
-              </div>
+              <label class="section-headers" for="difficulty-list">Difficulty</label>
+              <select
+                name="difficulty"
+                id="difficulty-list"
+                class="list-of-filters"
+                onchange="this.form.submit()"
+              >
+                <option value="All" <%= currentDifficulty === "All" ? "selected" : "" %>>
+                  All Levels
+                </option>
+                <option value="Easy" <%= currentDifficulty === "Easy" ? "selected" : "" %>>
+                  Easy (LV 1-3)
+                </option>
+                <option value="Medium" <%= currentDifficulty === "Medium" ? "selected" : "" %>>
+                  Medium (LV 4-6)
+                </option>
+                <option value="Hard" <%= currentDifficulty === "Hard" ? "selected" : "" %>>
+                  Hard (LV 7-9)
+                </option>
+                <option value="Insane" <%= currentDifficulty === "Insane" ? "selected" : "" %>>
+                  Insane (LV 10)
+                </option>
+              </select>
             </div>
 
+            <!-- Type -->
             <div class="type-section">
-              <div class="header-type-section section-headers">
-                <label for="type-list">Type</label>
-              </div>
-              <div class="main-type-section">
-                <select name="type-list" id="type-list" class="list-of-filters">
-                  <option>All Types</option>
-                  <option>Adventure</option>
-                  <option>Puzzle</option>
-                  <option>Story</option>
-                  <option>Trivia</option>
-                </select>
-              </div>
+              <label class="section-headers" for="type-list">Type</label>
+              <select
+                name="type"
+                id="type-list"
+                class="list-of-filters"
+                onchange="this.form.submit()"
+              >
+                <option value="All" <%= currentType === "All" ? "selected" : "" %>>
+                  All Types
+                </option>
+                <option value="Adventure" <%= currentType === "Adventure" ? "selected" : "" %>>
+                  Adventure
+                </option>
+                <option value="Puzzle" <%= currentType === "Puzzle" ? "selected" : "" %>>
+                  Puzzle
+                </option>
+                <option value="Story" <%= currentType === "Story" ? "selected" : "" %>>
+                  Story
+                </option>
+                <option value="Trivia" <%= currentType === "Trivia" ? "selected" : "" %>>
+                  Trivia
+                </option>
+              </select>
             </div>
 
+            <!-- Duration -->
             <div class="duration-section">
-              <div class="header-duration-section section-headers">
-                <label for="duration-list">Duration</label>
-              </div>
-              <div class="main-duration-section">
-                <select
-                  name="duration-list"
-                  id="duration-list"
-                  class="list-of-filters"
-                >
-                  <option>All Length</option>
-                  <option>Short</option>
-                  <option>Medium</option>
-                  <option>Long</option>
-                </select>
-              </div>
+              <label class="section-headers" for="duration-list">Duration</label>
+              <select
+                name="duration"
+                id="duration-list"
+                class="list-of-filters"
+                onchange="this.form.submit()"
+              >
+                <option value="All" <%= currentDuration === "All" ? "selected" : "" %>>
+                  All Length
+                </option>
+                <option value="Short" <%= currentDuration === "Short" ? "selected" : "" %>>
+                  Short
+                </option>
+                <option value="Medium" <%= currentDuration === "Medium" ? "selected" : "" %>>
+                  Medium
+                </option>
+                <option value="Long" <%= currentDuration === "Long" ? "selected" : "" %>>
+                  Long
+                </option>
+              </select>
             </div>
-          </div>
+          </form>
+
           <div class="navigation-bar-quests-right">
             <div class="availability-section">
-              <p class="numbers-navigation-right numbers-navigation-quest">
-                42
-              </p>
+              <p class="numbers-navigation-quest"><%= stats.available %></p>
               <p>Available</p>
             </div>
 
             <div class="completed-section">
-              <p class="completed-navigation-right numbers-navigation-quest">
-                128
-              </p>
+              <p class="numbers-navigation-quest"><%= stats.completed %></p>
               <p>Completed</p>
             </div>
 
             <div class="activity-section">
-              <p class="activity-navigation-right numbers-navigation-quest">
-                67
-              </p>
+              <p class="numbers-navigation-quest"><%= stats.active %></p>
               <p>Active</p>
             </div>
           </div>
         </div>
 
+        <!-- Make Quest Button -->
+        <% if (loggedIn) { %>
+          <div style="text-align:center; margin:20px 0;">
+            <a href="/quest/create" class="make-quest-btn">Make New Quest</a>
+          </div>
+        <% } %>
+
         <div class="main-container">
+          <!-- Left: Quest Listings -->
           <div class="left-side-main-container">
-            <div class="left-side-main-container-contents">
-              <div class="main-contents-header">
-                <h2>The Great Dragon Heist: A Level 20 Adventure</h2>
-              </div>
-              <div class="main-contents-description">
-                <p>
-                  Posted by DungeonMaster_X on May 25, 2025 | Category:
-                  Adventures
-                </p>
-              </div>
-              <div class="main-contents-body">
-                <p>
-                  Last night's session was absolutely legendary! Our party of
-                  seasoned adventurers finally infiltrated the ancient dragon's
-                  lair deep within the Crimson Mountains. What started as a
-                  simple treasure hunt turned into an epic battle that lasted
-                  four hours...
-                  <br />
-                  The rogue's stealth rolls were on fire, the wizard's fireball
-                  crits were devastating, and don't get me started on the
-                  paladin's divine intervention at the crucial moment. This is
-                  why we play D&D, folks!
-                </p>
-              </div>
-              <div class="main-contents-button">
-                <button>Read More...</button>
-              </div>
-              <hr class="left-side-hr" />
-            </div>
+            <% if (quests.length === 0) { %>
+              <p>No quests found.</p>
+            <% } else { %>
+              <% quests.forEach(function(q) { %>
+                <% 
+                  const isActive = (typeof activeQuestId !== 'undefined' && activeQuestId && q.id === activeQuestId);
+                  const isCompleted = (Array.isArray(completedQuestIds) && completedQuestIds.includes(q.id));
+                %>
+                <% if (!isCompleted) { %>
+                <div class="left-side-main-container-contents<%= isActive ? ' active-quest' : '' %><%= isCompleted ? ' completed-quest' : '' %>">
+                  <div class="main-contents-header">
+                    <h2><%= q.title %></h2>
+                    <% if (isActive) { %>
+                      <span class="quest-badge quest-badge-active">Active</span>
+                    <% } %>
+                  </div>
+                  <div class="main-contents-description">
+                    <p>
+                      Posted by <%= q.author %> on <%= q.date %> |
+                      Category: <%= q.category %>
+                    </p>
+                  </div>
+                  <div class="main-contents-body">
+                    <p><%= q.summary %></p>
+                  </div>
+                  <% if (!isActive) { %>
+                  <div class="main-contents-button">
+                    <a href="/quest/<%= q.id %>"><button>Read More...</button></a>
+                  </div>
+                  <% } %>
+                  <hr class="left-side-hr" />
+                </div>
+                <% } %>
+              <% }); %>
+<style>
+  /* Highlight for active and completed quests - matches site background and palette */
+  .active-quest {
+    border: 2px solid #af8260;
+    background: #44312f;
+    box-shadow: 0 0 8px #af826055;
+  }
+  .completed-quest {
+    border: 2px solid #e4c59e;
+    background: #322c2b;
+    box-shadow: 0 0 8px #e4c59e55;
+    opacity: 1;
+  }
+  .quest-badge {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 0.85em;
+    font-weight: bold;
+    vertical-align: middle;
+    font-family: inherit;
+    letter-spacing: 1px;
+    border: 1px solid #322c2b;
+    box-shadow: 1px 1px 0 #fff, 2px 2px 0 #322c2b;
+  }
+  .quest-badge-active {
+    background: #af8260;
+    color: #322c2b;
+    border-color: #af8260;
+  }
+  .quest-badge-completed {
+    background: #e4c59e;
+    color: #322c2b;
+    border-color: #e4c59e;
+  }
+</style>
+            <% } %>
           </div>
 
+          <!-- Right: Leaderboards & Stats -->
           <div class="right-side-main-container">
+            <!-- Quest Masters -->
             <div class="right-side-main-container-quest-master">
               <div class="right-side-main-quest-master-header">
                 <h2>QUEST MASTERS</h2>
               </div>
               <div class="right-side-main-quest-master-body">
-                <p>
-                  <span class="rank-span">#1</span>
-                  <span class="main-text-span">DragonSlayer_Mike</span>
-                  <span class="level-span">LV 10</span>
-                </p>
-                <p>
-                  <span class="rank-span">#2</span>
-                  <span class="main-text-span">MysticMage_Luna</span>
-                  <span class="level-span">LV 8</span>
-                </p>
-                <p>
-                  <span class="rank-span">#3</span>
-                  <span class="main-text-span">ShadowRogue_Kai</span>
-                  <span class="level-span">LV 7</span>
-                </p>
-                <p>
-                  <span class="rank-span">#4</span>
-                  <span class="main-text-span">HolyPaladin_Sara</span>
-                  <span class="level-span">LV 3</span>
-                </p>
-                <p>
-                  <span class="rank-span">#5</span>
-                  <span class="main-text-span">WildRanger_Alex</span>
-                  <span class="level-span">LV 1</span>
-                </p>
+                <% leaders.forEach(function(u, idx) { %>
+                  <p>
+                    <span class="rank-span">#<%= idx+1 %></span>
+                    <span class="main-text-span"><%= u.name %></span>
+                    <span class="level-span">LV <%= u.level %></span>
+                  </p>
+                <% }); %>
               </div>
             </div>
 
+            <!-- Recently Completed -->
             <div class="right-side-main-recently-completed">
               <div class="right-side-main-recently-completed-header">
-                <h2>RECENTRLY COMPLETED</h2>
+                <h2>RECENTLY COMPLETED</h2>
               </div>
               <div class="right-side-main-recently-completed-body">
-                <p>
-                  <span class="recently-completed-header-span"
-                    >The Haunted Monastery</span
-                  >
-                  <span class="recently-completed-body-span-1"
-                    >Completed by CriticalHit_Sally •</span
-                  >
-                  <span class="recently-completed-body-span-2"
-                    >2 hours ago</span
-                  >
-                </p>
-                <p>
-                  <span class="recently-completed-header-span"
-                    >Dragon Egg Heist</span
-                  >
-                  <span class="recently-completed-body-span-1"
-                    >Completed by SilentBlade •</span
-                  >
-                  <span class="recently-completed-body-span-2"
-                    >4 hours ago</span
-                  >
-                </p>
-                <p>
-                  <span class="recently-completed-header-span"
-                    >The Lost Caravan</span
-                  >
-                  <span class="recently-completed-body-span-1"
-                    >Completed by DungeonMaster_X •</span
-                  >
-                  <span class="recently-completed-body-span-2"
-                    >6 hours ago</span
-                  >
-                </p>
-                <p>
-                  <span class="recently-completed-header-span"
-                    >Wizard's Missing Tome</span
-                  >
-                  <span class="recently-completed-body-span-1"
-                    >Completed by MysticMage_Luna •</span
-                  >
-                  <span class="recently-completed-body-span-2"
-                    >8 hours ago</span
-                  >
-                </p>
+                <% (recent || []).forEach(function(r) { %>
+                  <p>
+                    <span class="recently-completed-header-span"><%= r.title %></span>
+                    <span class="recently-completed-body-span-1">
+                      Completed by <%= r.user %> •
+                    </span>
+                    <span class="recently-completed-body-span-2"><%= r.timeAgo %></span>
+                  </p>
+                <% }); %>
               </div>
             </div>
 
+            <!-- Active Guilds -->
             <div class="right-side-main-active-guild">
               <div class="right-side-main-active-guild-header">
                 <h2>ACTIVE GUILDS</h2>
               </div>
-
               <div class="right-side-main-active-guild-body">
-                <p>
-                  <span class="active-guild-header-span">Dragon Hunters</span>
-                  <span class="active-guild-body-span">47 members</span>
-                </p>
-                <p>
-                  <span class="active-guild-header-span">Sword & Sorcery</span>
-                  <span class="active-guild-body-span">32 members</span>
-                </p>
-                <p>
-                  <span class="active-guild-header-span">Castle Defenders</span>
-                  <span class="active-guild-body-span">28 members</span>
-                </p>
+                <% activeGuilds.forEach(function(g) { %>
+                  <p>
+                    <span class="active-guild-header-span"><%= g.name %></span>
+                    <span class="active-guild-body-span"><%= g.members %> members</span>
+                  </p>
+                <% }); %>
               </div>
             </div>
           </div>
         </div>
       </main>
 
-      <%-include("partials/footer.ejs")%>
+      <%- include("partials/footer.ejs") %>
     </div>
   </body>
 </html>

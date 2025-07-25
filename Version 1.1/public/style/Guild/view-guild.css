@@ -1,0 +1,143 @@
+/* 1. Inherit global resets and background */
+.guild-detail-page {
+    background: rgba(50, 44, 43, 0.9);
+    border: 2px solid #803d3b;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+/* 2. Header */
+.guild-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.guild-header img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #af8260;
+    margin-bottom: 1rem;
+}
+
+.guild-header h1 {
+    font-family: "Press Start 2P", cursive;
+    font-size: 2rem;
+    color: #803d3b;
+    margin: 0.5rem 0;
+}
+
+.guild-header p {
+    font-family: "Courier Prime", monospace;
+    color: #e4c59e;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+/* Tags */
+.guild-header .tags {
+    margin-top: 1rem;
+}
+
+.guild-header .tag {
+    display: inline-block;
+    font-family: "Courier Prime", monospace;
+    background-color: #44312f;
+    color: #af8260;
+    border: 1px solid #803d3b;
+    border-radius: 12px;
+    padding: 0.3rem 0.8rem;
+    margin: 0 0.3rem;
+    font-size: 0.85rem;
+    transition: background-color 0.2s;
+}
+.guild-header .tag:hover {
+    background-color: #803d3b;
+    cursor: default;
+}
+
+/* 3. Stats */
+.guild-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.guild-stats div {
+    font-family: "Press Start 2P", cursive;
+    font-size: 0.9rem;
+    color: #af8260;
+    text-align: center;
+}
+
+/* 4. Members */
+.guild-members {
+    margin-bottom: 2rem;
+}
+
+.guild-members h2 {
+    font-family: "Press Start 2P", cursive;
+    font-size: 1rem;
+    color: #803d3b;
+    margin-bottom: 0.75rem;
+}
+
+.guild-members ul {
+    list-style: none;
+    padding: 0;
+}
+
+.guild-members li {
+    font-family: "Courier Prime", monospace;
+    color: #e4c59e;
+    padding: 0.4rem 0;
+    border-bottom: 1px dashed #803d3b;
+}
+.guild-members li:last-child {
+    border-bottom: none;
+}
+
+/* 5. Join button */
+.guild-actions {
+    text-align: center;
+}
+
+.guild-actions button {
+    font-family: "Press Start 2P", cursive;
+    font-size: 0.85rem;
+    color: #322c2b;
+    background-color: #af8260;
+    border: 2px solid #803d3b;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.guild-actions button:hover,
+.guild-actions button:focus {
+    background-color: #803d3b;
+    color: #e4c59e;
+    outline: none;
+}
+
+.welcome-back {
+    font-family: "Courier Prime", monospace;
+    color: #af8260;
+    background: #44312f;
+    padding: 0.5rem;
+    border: 1px solid #803d3b;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.leader-label {
+    font-family: "Press Start 2P", cursive;
+    font-size: 0.75rem;
+    color: #af8260;
+    margin-left: 0.5rem;
+}

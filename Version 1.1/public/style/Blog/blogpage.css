@@ -1,3 +1,40 @@
+@media (max-width: 900px) {
+  .main-container {
+    padding: 10px;
+  }
+  .make-blog {
+    padding: 15px;
+  }
+  .navigation-bar-quests {
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-container {
+    padding: 5px;
+    margin-top: 10px;
+  }
+  .make-blog {
+    padding: 8px;
+    font-size: 14px;
+  }
+  .main-contents-header {
+    font-size: 15px;
+  }
+  .main-contents-body {
+    font-size: 12px;
+  }
+  .navigation-bar-quests {
+    font-size: 13px;
+    padding: 2px 2px;
+  }
+  .section-headers {
+    font-size: 13px;
+  }
+}
 main {
   width: 100%;
 }
