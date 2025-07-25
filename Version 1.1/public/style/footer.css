@@ -1,52 +1,94 @@
-@media (max-width: 900px) {
-  footer {
-    padding: 0 10px;
-  }
-  .footer-site-tabs {
-    flex-direction: column;
-    gap: 8px;
-  }
-}
-
-@media (max-width: 600px) {
-  footer {
-    font-size: 14px;
-    padding: 0 2px;
-  }
-  .footer-site-tabs a {
-    margin: 6px 0;
-    font-size: 15px;
-  }
-}
 footer {
   width: 100%;
   position: relative;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
 }
+
 footer hr {
-  margin: 10px 0;
+  width: 90%;
+  margin: 1rem 0;
   border: 1px solid #af8260;
 }
 
 footer p {
   text-align: center;
   color: #e4c59e;
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 .footer-site-tabs {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 1rem;
 }
 
 .footer-site-tabs a {
   color: #af8260;
-  margin: 10px 15px;
+  margin: 0.5rem;
+  font-size: 1rem;
   transition: color 0.5s ease, text-shadow 0.5s ease;
 }
 .footer-site-tabs a:hover {
-  cursor: pointer;
   color: #eddbc2;
   text-shadow: 0 0 2px #eddbc2;
+  cursor: pointer;
+}
+
+/* Responsive Breakpoints */
+/* Phone (≤480px) */
+@media (max-width: 480px) {
+  footer {
+    padding: 1rem;
+  }
+  footer p {
+    font-size: 0.9rem;
+  }
+  footer hr {
+    width: 100%;
+  }
+  .footer-site-tabs a {
+    font-size: 0.9rem;
+    margin: 0.25rem;
+  }
+}
+
+/* Tablet (481–768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  footer {
+    padding: 1.5rem;
+  }
+  footer p {
+    font-size: 0.95rem;
+  }
+  .footer-site-tabs a {
+    font-size: 0.95rem;
+  }
+}
+
+/* Laptop (769–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  footer {
+    padding: 2rem;
+  }
+}
+
+/* Desktop PC (1025–1440px) */
+/* No changes needed beyond base */
+
+/* TV/4K+ (≥1441px) */
+@media (min-width: 1441px) {
+  footer {
+    padding: 3rem;
+  }
+  footer p {
+    font-size: 1.1rem;
+  }
+  .footer-site-tabs a {
+    font-size: 1.1rem;
+  }
 }

@@ -1,3 +1,32 @@
+/* Enhanced Responsive Breakpoints */
+@media (max-width: 900px) {
+  .main-container {
+    width: 98vw;
+    padding: 10px;
+  }
+  form {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-container {
+    width: 100vw;
+    padding: 4px;
+    font-size: 0.95rem;
+  }
+  form, .upper-container, .lower-container {
+    gap: 6px;
+  }
+  input, select, button {
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+  button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
 main {
     width: 100%;
     margin-bottom: 20px;
@@ -111,3 +140,58 @@ button:active {
     color: #e4c59e;
 }
 
+
+/* — Phone — */
+@media (max-width: 480px) {
+  .main-container {
+    width: 95vw;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  input, select, button {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* — Tablet — */
+@media (min-width: 481px) and (max-width: 768px) {
+  .main-container {
+    width: 85vw;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+  }
+  input, select {
+    padding: 0.75rem;
+  }
+  button {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* — Laptop — */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-container {
+    width: 75vw;
+    padding: 2rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* — Desktop PC — */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .main-container {
+    width: 70%;
+    padding: 2.5rem;
+    font-size: 1.3rem;
+  }
+}
+
+/* — TV/4K+ — */
+@media (min-width: 1441px) {
+  .main-container {
+    width: 60%;
+    padding: 3rem;
+    font-size: 1.4rem;
+  }
+}

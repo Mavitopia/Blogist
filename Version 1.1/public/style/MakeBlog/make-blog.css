@@ -1,3 +1,33 @@
+/* Enhanced Responsive Breakpoints */
+@media (max-width: 900px) {
+  main {
+    padding: 10px;
+  }
+  .blog-form {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 4px;
+    font-size: 0.95rem;
+  }
+  .blog-form {
+    gap: 4px;
+  }
+  .blog-form label,
+  .blog-form input,
+  .blog-form textarea,
+  .blog-form button {
+    font-size: 0.9rem;
+    padding: 6px;
+  }
+  .tabs {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
 /* Main container */
 main {
   background: #38302d;
@@ -221,4 +251,89 @@ main {
 #quest-blog-form button:hover {
   transform: scale(1.02);
   background: #af2f3b;
+}
+
+/* — Phone — */
+@media (max-width: 480px) {
+  main {
+    padding: 1rem;
+  }
+  .tabs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .tab-button {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+  .blog-form,
+  #quest-blog-form {
+    gap: 1rem;
+  }
+  .blog-form label,
+  #quest-blog-form label {
+    font-size: 0.9rem;
+  }
+  .blog-form button,
+  #quest-blog-form button {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+}
+
+/* — Tablet — */
+@media (min-width: 481px) and (max-width: 768px) {
+  main {
+    padding: 1.5rem;
+  }
+  .tab-button {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+  .blog-form,
+  #quest-blog-form {
+    gap: 1.25rem;
+  }
+}
+
+/* — Laptop — */
+@media (min-width: 769px) and (max-width: 1024px) {
+  main {
+    padding: 2rem;
+  }
+  .tabs {
+    gap: 1rem;
+  }
+  .blog-form,
+  #quest-blog-form {
+    gap: 1.5rem;
+  }
+}
+
+/* — Desktop PC — */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  main {
+    padding: 2.5rem;
+  }
+  .tab-button {
+    font-size: 1.1rem;
+    padding: 0.85rem;
+  }
+}
+
+/* — TV/4K+ — */
+@media (min-width: 1441px) {
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem;
+  }
+  .tab-button {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+  .blog-form,
+  #quest-blog-form {
+    gap: 2rem;
+  }
 }

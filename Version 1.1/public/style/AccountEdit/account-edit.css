@@ -4,19 +4,23 @@ main {
   border-radius: 25px;
   padding: 25px;
   transition: scale 0.2s ease-in-out;
-  font-size: 25px;
-  margin: 10px 0;
-  width: 800px;
+  font-size: 1.25rem;
+  margin: 10px auto;
+  width: 90%;
+  max-width: 800px;
+  box-sizing: border-box;
 }
+
 main:hover {
   scale: 1.02;
   box-shadow: 0 8px 32px 0 rgba(175, 130, 96, 0.35),
-    0 1.5px 8px 0 rgba(0, 0, 0, 0.25);
+              0 1.5px 8px 0 rgba(0, 0, 0, 0.25);
 }
 
 ul {
   padding-left: 20px;
   padding-top: 10px;
+  margin-bottom: 20px;
 }
 
 .account-info h2 {
@@ -37,10 +41,6 @@ li a {
 li a:hover {
   color: #d5b58e;
   text-decoration: underline;
-}
-
-ul {
-  margin-bottom: 20px;
 }
 
 .account-loading {
@@ -65,5 +65,150 @@ ul {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  main {
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  ul {
+    padding-left: 10px;
+  }
+
+  .account-loading {
+    height: 150px;
+  }
+
+  .spinner {
+    width: 30px;
+    height: 30px;
+    border-width: 3px;
+  }
+}
+
+
+/* -------------------- */
+/* 📱 PHONE: Up to 480px */
+/* -------------------- */
+@media (max-width: 480px) {
+  main {
+    padding: 12px;
+    font-size: 0.95rem;
+    border-radius: 18px;
+  }
+
+  ul {
+    padding-left: 8px;
+  }
+
+  .account-loading {
+    height: 140px;
+  }
+
+  .spinner {
+    width: 28px;
+    height: 28px;
+    border-width: 3px;
+  }
+}
+
+/* ---------------------- */
+/* 📱 TABLET: 481px–768px */
+/* ---------------------- */
+@media (min-width: 481px) and (max-width: 768px) {
+  main {
+    padding: 18px;
+    font-size: 1.05rem;
+    border-radius: 20px;
+  }
+
+  ul {
+    padding-left: 12px;
+  }
+
+  .account-loading {
+    height: 160px;
+  }
+
+  .spinner {
+    width: 32px;
+    height: 32px;
+    border-width: 3px;
+  }
+}
+
+/* ------------------------ */
+/* 💻 LAPTOP: 769px–1024px  */
+/* ------------------------ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  main {
+    padding: 22px;
+    font-size: 1.15rem;
+    border-radius: 22px;
+  }
+
+  ul {
+    padding-left: 15px;
+  }
+
+  .account-loading {
+    height: 180px;
+  }
+
+  .spinner {
+    width: 36px;
+    height: 36px;
+    border-width: 3.5px;
+  }
+}
+
+/* ---------------------------- */
+/* 🖥️ DESKTOP: 1025px–1440px    */
+/* ---------------------------- */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  main {
+    padding: 25px;
+    font-size: 1.25rem;
+    border-radius: 25px;
+  }
+
+  .account-loading {
+    height: 200px;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border-width: 4px;
+  }
+}
+
+/* ---------------------------- */
+/* 📺 TV / 4K+: 1441px and up   */
+/* ---------------------------- */
+@media (min-width: 1441px) {
+  main {
+    max-width: 1000px;
+    padding: 35px;
+    font-size: 1.5rem;
+    border-radius: 30px;
+  }
+
+  ul {
+    padding-left: 25px;
+  }
+
+  .account-loading {
+    height: 240px;
+  }
+
+  .spinner {
+    width: 48px;
+    height: 48px;
+    border-width: 5px;
   }
 }

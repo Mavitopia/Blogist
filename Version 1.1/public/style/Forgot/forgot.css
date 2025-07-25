@@ -1,39 +1,47 @@
-/* same container & form styles as login */
 .login-main {
   width: 100%;
   max-width: 500px;
   margin: 40px auto;
-  padding: 0 20px;
+  padding: 0 1.25rem; /* 20px */
+  box-sizing: border-box;
 }
 
 .login-form {
   background-color: #44312f;
   border: 2px solid #803d3b;
   border-radius: 8px;
-  padding: 30px;
+  padding: 1.875rem; /* 30px */
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem; /* 20px */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
 }
 
 .form-group label {
-  font-size: 20px;
+  font-size: 1.25rem; /* 20px */
   color: #e4c59e;
-  margin-bottom: 6px;
+  margin-bottom: 0.375rem; /* 6px */
 }
 
 .form-group input {
   width: 100%;
-  padding: 10px;
+  padding: 0.625rem; /* 10px */
   background: #322c2b;
   border: 1px solid #af8260;
   border-radius: 4px;
   color: #e4c59e;
+  font-size: 1rem;
 }
 
 .form-group input:focus {
   outline: none;
   border-color: #e4c59e;
+  box-shadow: 0 0 5px #e4c59e;
 }
 
 .form-footer {
@@ -42,20 +50,23 @@
 }
 
 .btn-submit {
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem; /* 10px 20px */
   background-color: #803d3b;
   border: 2px solid #af8260;
   border-radius: 4px;
   color: #e4c59e;
   font-size: 1rem;
   cursor: pointer;
-  transition: transform 0.2s, background-color 0.2s;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.btn-submit:hover {
+.btn-submit:hover,
+.btn-submit:focus {
   background-color: #af8260;
   color: #322c2b;
   transform: scale(1.05);
+  outline: none;
+  box-shadow: 0 0 8px #af8260;
 }
 
 .signup-prompt {
@@ -65,19 +76,44 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem; /* 8px */
 }
 
 .btn-signup {
-  padding: 6px 14px;
+  padding: 0.375rem 0.875rem; /* 6px 14px */
   background-color: transparent;
   border: 2px solid #af8260;
   border-radius: 4px;
   color: #af8260;
   text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.btn-signup:hover {
+.btn-signup:hover,
+.btn-signup:focus {
   background-color: #af8260;
   color: #322c2b;
+  outline: none;
+  box-shadow: 0 0 6px #af8260;
+}
+
+/* Responsive example for smaller devices */
+@media (max-width: 480px) {
+  .login-main {
+    padding: 0 1rem;
+  }
+
+  .login-form {
+    padding: 1rem;
+  }
+
+  .form-group label {
+    font-size: 1.1rem;
+  }
+
+  .btn-submit,
+  .btn-signup {
+    font-size: 0.9rem;
+  }
 }

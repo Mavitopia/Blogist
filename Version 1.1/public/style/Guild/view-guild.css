@@ -1,3 +1,34 @@
+/* Enhanced Responsive Breakpoints */
+@media (max-width: 900px) {
+  .guild-detail-page {
+    padding: 10px;
+  }
+  .guild-header img {
+    width: 80px;
+    height: 80px;
+  }
+  .guild-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .guild-detail-page {
+    padding: 4px;
+    font-size: 0.95rem;
+  }
+  .guild-header h1 {
+    font-size: 1.2rem;
+  }
+  .guild-header img {
+    width: 60px;
+    height: 60px;
+  }
+  .guild-members h2 {
+    font-size: 0.8rem;
+  }
+}
 /* 1. Inherit global resets and background */
 .guild-detail-page {
     background: rgba(50, 44, 43, 0.9);
@@ -140,4 +171,102 @@
     font-size: 0.75rem;
     color: #af8260;
     margin-left: 0.5rem;
+}
+
+/* — Phone — */
+@media (max-width: 480px) {
+  .guild-detail-page {
+    padding: 1rem;
+  }
+  .guild-header img {
+    width: 80px;
+    height: 80px;
+  }
+  .guild-header h1 {
+    font-size: 1.2rem;
+  }
+  .guild-header p,
+  .guild-header .tag {
+    font-size: 0.8rem;
+  }
+  .guild-stats {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .guild-members h2 {
+    font-size: 0.9rem;
+  }
+  .guild-actions button {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* — Tablet — */
+@media (min-width: 481px) and (max-width: 768px) {
+  .guild-detail-page {
+    padding: 1.5rem;
+  }
+  .guild-header img {
+    width: 100px;
+    height: 100px;
+  }
+  .guild-header h1 {
+    font-size: 1.5rem;
+  }
+  .guild-stats div {
+    font-size: 0.85rem;
+  }
+  .guild-members h2 {
+    font-size: 1rem;
+  }
+}
+
+/* — Laptop — */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .guild-detail-page {
+    padding: 2rem;
+  }
+  .guild-header h1 {
+    font-size: 1.8rem;
+  }
+  .guild-stats div {
+    font-size: 0.9rem;
+  }
+}
+
+/* — Desktop PC — */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .guild-detail-page {
+    padding: 2.5rem;
+  }
+  .guild-header img {
+    width: 120px;
+    height: 120px;
+  }
+  .guild-header h1 {
+    font-size: 2rem;
+  }
+  .guild-stats div {
+    font-size: 1rem;
+  }
+}
+
+/* — TV/4K+ — */
+@media (min-width: 1441px) {
+  .guild-detail-page {
+    padding: 3rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .guild-header img {
+    width: 150px;
+    height: 150px;
+  }
+  .guild-header h1 {
+    font-size: 2.4rem;
+  }
+  .guild-stats div {
+    font-size: 1.1rem;
+  }
 }

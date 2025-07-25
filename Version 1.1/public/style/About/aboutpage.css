@@ -55,7 +55,9 @@ main {
 
 .detail-card {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   margin-top: 20px;
   gap: 30px;
 }
@@ -130,7 +132,9 @@ main {
 
 .main-footer-level-card {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   margin-top: 20px;
   gap: 30px;
 }
@@ -160,3 +164,4 @@ main {
   margin-bottom: 10px;
   font-size: 18px;
 }
+

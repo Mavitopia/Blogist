@@ -1,167 +1,534 @@
-@media (max-width: 900px) {
-  .container {
-    width: 90%;
-    margin: 40px auto;
-  }
-  .app-navigation {
-    flex-direction: column;
-    font-size: 18px;
-    padding: 10px 10px;
-    gap: 8px;
-  }
-}
+/* ========== Enhanced Responsive CSS (Simplified) ========== */
 
-@media (max-width: 600px) {
-  .container {
-    width: 100%;
-    margin: 10px 0;
-    padding: 0 5px;
-  }
-  header {
-    margin-bottom: 10px;
-  }
-  h1 {
-    font-size: 1.5rem;
-  }
-  .app-introduction p {
-    font-size: 1rem;
-  }
-  .app-navigation {
-    font-size: 15px;
-    padding: 6px 2px;
-    gap: 4px;
-  }
-}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html,
 body {
   overflow-x: hidden;
   height: 100%;
+  scroll-behavior: smooth;
 }
+
 body {
   font-family: "Courier Prime", monospace;
   background: #322c2b;
   color: #e4c59e;
   min-height: 100vh;
-  background-image: radial-gradient(
-      circle at 20% 80%,
-      rgba(175, 130, 96, 0.3) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(128, 61, 59, 0.15) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 40% 40%,
-      rgba(228, 197, 158, 0.1) 0%,
-      transparent 50%
-    );
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(175, 130, 96, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(128, 61, 59, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(228, 197, 158, 0.1) 0%, transparent 50%);
+  background-attachment: fixed;
+  line-height: 1.6;
 }
+
+/* Simplified Container with Media Queries for Fluid Sizing */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  width: 50%;
-  margin: 80px auto;
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  min-width: 0;
 }
+
+@media (min-width: 600px) {
+  .container {
+    width: 75%;
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 60%;
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    width: 50%;
+    max-width: 1200px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+  }
+}
+
+/* Header */
 header {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
 }
+
+@media (min-width: 600px) {
+  header {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Fluid Typography for Title */
 h1 {
   text-align: center;
   font-family: "Press Start 2P", cursive;
-  font-size: 2.5rem;
+  font-size: 20px;
   color: #803d3b;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  word-break: break-word;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
 }
+
+@media (min-width: 600px) {
+  h1 {
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* App Introduction Paragraph */
 .app-introduction p {
-  font-size: 1.1rem;
-  margin-bottom: 25px;
-  margin-top: 15px;
+  font-size: 1rem;
+  margin: 1rem 0 1.5rem 0;
+  text-align: center;
+  max-width: 100%;
+  line-height: 1.5;
 }
+
+@media (min-width: 600px) {
+  .app-introduction p {
+    font-size: 1.1rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+}
+
+/* Typing Animation */
 p.pixel-type {
-  font-size: 18px;
+  font-size: 15px;
   color: #af8260;
   padding: 0.5em 0;
-
   overflow: hidden;
   white-space: nowrap;
   display: inline-block;
   width: 0;
-
   border-right: 2px solid #af8260;
-
   animation: typing 5s linear forwards, blink-caret 0.7s step-end infinite;
+  max-width: 100%;
 }
+
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  from { width: 0; }
+  to { width: 100%; }
 }
+
 @keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #af8260;
-  }
+  from, to { border-color: transparent; }
+  50% { border-color: #af8260; }
 }
+
+/* Horizontal Rule */
 .app-hr {
   width: 100%;
-  margin: 1rem auto;
+  margin: 1.5rem auto;
   border: 1px solid #803d3b;
+  opacity: 0.7;
+  border-radius: 1px;
 }
+
+/* Navigation */
 .app-navigation {
   display: flex;
   justify-content: space-between;
-  padding: 13px 30px;
-  font-size: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  margin-top: 40px;
+  margin-top: 2.5rem;
   background-color: #44312f;
   border: 2px solid #803d3b;
-}
-.app-navigation a {
-  all: unset;
-}
-.app-navigation p {
-  padding: 8px 22px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-}
-.app-navigation p:hover {
-  cursor: pointer;
-  background-color: #af8260;
-  color: #803d3b;
-  transform: scale(1.05);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  min-width: 0;
+  width: 100%;
+  position: relative;
 }
 
-#login-nav-btn {
-  margin-left: 10px;
-  background-color: #803d3b;
-  color: #e4c59e;
-  padding: 8px 22px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+.app-navigation::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #803d3b, #af8260, #803d3b);
+  border-radius: 8px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
-#login-nav-btn:hover {
-  background-color: #af8260;
+
+.app-navigation:hover::before {
+  opacity: 0.3;
+}
+
+.app-navigation a {
+  all: unset;
+  display: block;
+}
+
+/* Navigation Items */
+.app-navigation p {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 0;
+  overflow-wrap: break-word;
+  text-align: center;
+  position: relative;
+  white-space: nowrap;
+  background: linear-gradient(135deg, transparent 0%, rgba(175, 130, 96, 0.1) 100%);
+}
+
+.app-navigation p:hover,
+.app-navigation p:focus {
+  cursor: pointer;
+  background: linear-gradient(135deg, #af8260 0%, #b89972 100%);
+  color: #803d3b;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 12px rgba(175, 130, 96, 0.4);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Login Button */
+#login-nav-btn {
+  margin-left: 1rem;
+  background: linear-gradient(135deg, #803d3b 0%, #954845 100%);
+  color: #e4c59e;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(128, 61, 59, 0.3);
+  border: 1px solid rgba(228, 197, 158, 0.2);
+}
+
+#login-nav-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(228, 197, 158, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+#login-nav-btn:hover::before {
+  left: 100%;
+}
+
+#login-nav-btn:hover,
+#login-nav-btn:focus {
+  background: linear-gradient(135deg, #af8260 0%, #c19373 100%);
   color: #322c2b;
-  transform: scale(1.05);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(175, 130, 96, 0.4);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ================= Responsive Breakpoints ================= */
+
+/* Extra Small Mobile (≤320px) */
+@media (max-width: 320px) {
+  .container {
+    width: 95vw;
+    margin: 1rem auto;
+    padding: 0 0.5rem;
+  }
+  
+  h1 {
+    font-size: 1rem;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+  }
+  
+  .app-navigation {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+  
+  .app-navigation p,
+  #login-nav-btn {
+    margin: 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    white-space: normal;
+  }
+}
+
+/* Small Mobile (321px - 480px) */
+@media (min-width: 321px) and (max-width: 480px) {
+  .container {
+    width: 95vw;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+  
+  .app-navigation {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+    padding: 1rem;
+  }
+  
+  .app-navigation p,
+  #login-nav-btn {
+    margin: 0;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+/* Large Mobile (481px - 600px) */
+@media (min-width: 481px) and (max-width: 600px) {
+  .container {
+    width: 90vw;
+    margin: 2rem auto;
+  }
+  
+  .app-navigation {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+  }
+  
+  .app-navigation p,
+  #login-nav-btn {
+    flex: 1 1 auto;
+    min-width: max-content;
+    margin: 0;
+  }
+}
+
+/* Tablet Portrait (601px - 768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+  .container {
+    width: 85vw;
+    max-width: 600px;
+    margin: 3rem auto;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .app-navigation {
+    justify-content: space-around;
+    padding: 1rem 2rem;
+    gap: 1rem;
+  }
+}
+
+/* Tablet Landscape (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    width: 75vw;
+    max-width: 700px;
+    margin: 4rem auto;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .app-navigation {
+    justify-content: space-between;
+    padding: 1.2rem 2rem;
+  }
+}
+
+/* Small Desktop (1025px - 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .container {
+    width: 65vw;
+    max-width: 750px;
+    margin: 5rem auto;
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Medium Desktop (1201px - 1440px) */
+@media (min-width: 1201px) and (max-width: 1440px) {
+  .container {
+    width: 55vw;
+    max-width: 800px;
+    margin: 6rem auto;
+  }
+  
+  h1 {
+    font-size: 2.4rem;
+  }
+}
+
+/* Large Desktop (1441px - 1920px) */
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .container {
+    width: 50vw;
+    max-width: 900px;
+    margin: 7rem auto;
+  }
+  
+  h1 {
+    font-size: 2.6rem;
+  }
+  
+  .app-navigation {
+    font-size: 1.3rem;
+    padding: 1.5rem 2.5rem;
+  }
+}
+
+/* Ultra-wide / 4K+ (≥1921px) */
+@media (min-width: 1921px) {
+  .container {
+    width: 45vw;
+    max-width: 1000px;
+    margin: 8rem auto;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  .app-navigation {
+    font-size: 1.4rem;
+    padding: 2rem 3rem;
+  }
+}
+
+/* ================= Accessibility & Performance Enhancements ================= */
+
+/* High DPI Display Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  h1 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .app-navigation {
+    border-width: 1px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  p.pixel-type {
+    animation: none;
+    width: 100%;
+    border-right: none;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .app-navigation p,
+  #login-nav-btn {
+    border: 2px solid currentColor;
+  }
+  
+  .app-navigation p:hover,
+  #login-nav-btn:hover {
+    outline: 3px solid #e4c59e;
+    outline-offset: 2px;
+  }
+}
+
+/* Focus Management for Keyboard Navigation */
+.app-navigation p:focus-visible,
+#login-nav-btn:focus-visible {
+  outline: 3px solid #e4c59e;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 6px rgba(228, 197, 158, 0.3);
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .app-navigation p,
+  #login-nav-btn {
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+  }
+  
+  .app-navigation p:active,
+  #login-nav-btn:active {
+    transform: scale(0.98);
+    transition-duration: 0.1s;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .app-navigation {
+    border: 2px solid black;
+    background: white;
+  }
+  
+  .app-navigation p,
+  #login-nav-btn {
+    color: black;
+    background: white;
+  }
 }

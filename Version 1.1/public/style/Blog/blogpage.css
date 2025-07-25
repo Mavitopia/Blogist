@@ -188,3 +188,239 @@ main {
   text-align: center;
   line-height: 1.5;
 }
+
+/* -------------------- */
+/* 📱 PHONE: Up to 480px */
+/* -------------------- */
+@media (max-width: 480px) {
+  .main-container {
+    padding: 5px;
+    margin-top: 10px;
+  }
+
+  .make-blog {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .make-blog h2 {
+    font-size: 20px;
+  }
+
+  .make-blog p {
+    font-size: 14px;
+  }
+
+  .main-contents-header {
+    font-size: 14px;
+  }
+
+  .main-contents-body {
+    font-size: 12px;
+  }
+
+  .main-contents-description {
+    font-size: 12px;
+  }
+
+  .navigation-bar-quests {
+    flex-direction: column;
+    padding: 4px;
+    font-size: 12px;
+    gap: 8px;
+  }
+
+  .section-headers {
+    font-size: 12px;
+  }
+
+  .numbers-navigation-blog {
+    font-size: 16px;
+  }
+}
+
+/* ---------------------- */
+/* 📱 TABLET: 481px–768px */
+/* ---------------------- */
+@media (min-width: 481px) and (max-width: 768px) {
+  .main-container {
+    padding: 10px;
+    margin-top: 15px;
+  }
+
+  .make-blog {
+    padding: 15px;
+    font-size: 15px;
+  }
+
+  .make-blog h2 {
+    font-size: 22px;
+  }
+
+  .make-blog p {
+    font-size: 15px;
+  }
+
+  .main-contents-header {
+    font-size: 16px;
+  }
+
+  .main-contents-body {
+    font-size: 14px;
+  }
+
+  .main-contents-description {
+    font-size: 13px;
+  }
+
+  .navigation-bar-quests {
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+
+  .section-headers {
+    font-size: 14px;
+  }
+
+  .numbers-navigation-blog {
+    font-size: 18px;
+  }
+}
+
+/* ------------------------ */
+/* 💻 LAPTOP: 769px–1024px  */
+/* ------------------------ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-container {
+    padding: 15px;
+  }
+
+  .make-blog {
+    padding: 25px;
+    font-size: 16px;
+  }
+
+  .make-blog h2 {
+    font-size: 24px;
+  }
+
+  .make-blog p {
+    font-size: 16px;
+  }
+
+  .main-contents-header {
+    font-size: 18px;
+  }
+
+  .main-contents-body {
+    font-size: 15px;
+  }
+
+  .navigation-bar-quests {
+    padding: 5px 15px;
+    gap: 10px;
+  }
+
+  .section-headers {
+    font-size: 16px;
+  }
+
+  .numbers-navigation-blog {
+    font-size: 20px;
+  }
+}
+
+/* ---------------------------- */
+/* 🖥️ DESKTOP: 1025px–1440px    */
+/* ---------------------------- */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .main-container {
+    padding: 20px;
+  }
+
+  .make-blog {
+    padding: 30px;
+    font-size: 17px;
+  }
+
+  .make-blog h2 {
+    font-size: 28px;
+  }
+
+  .make-blog p {
+    font-size: 18px;
+  }
+
+  .main-contents-header {
+    font-size: 21px;
+  }
+
+  .main-contents-body {
+    font-size: 16px;
+  }
+
+  .navigation-bar-quests {
+    padding: 5px 20px;
+    gap: 10px;
+  }
+
+  .section-headers {
+    font-size: 18px;
+  }
+
+  .numbers-navigation-blog {
+    font-size: 22px;
+  }
+}
+
+/* ---------------------------- */
+/* 📺 TV / 4K+: 1441px and up   */
+/* ---------------------------- */
+@media (min-width: 1441px) {
+  .main-container {
+    padding: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .make-blog {
+    padding: 40px;
+    font-size: 18px;
+  }
+
+  .make-blog h2 {
+    font-size: 32px;
+  }
+
+  .make-blog p {
+    font-size: 20px;
+  }
+
+  .main-contents-header {
+    font-size: 24px;
+  }
+
+  .main-contents-body {
+    font-size: 18px;
+  }
+
+  .main-contents-description {
+    font-size: 16px;
+  }
+
+  .navigation-bar-quests {
+    padding: 10px 30px;
+    gap: 12px;
+  }
+
+  .section-headers {
+    font-size: 20px;
+  }
+
+  .numbers-navigation-blog {
+    font-size: 26px;
+  }
+}

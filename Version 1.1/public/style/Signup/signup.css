@@ -1,3 +1,30 @@
+/* Enhanced Responsive Breakpoints */
+@media (max-width: 900px) {
+  .login-main {
+    max-width: 98vw;
+    padding: 0 8px;
+  }
+  .login-form {
+    padding: 12px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .login-main {
+    max-width: 100vw;
+    padding: 0 2px;
+  }
+  .login-form {
+    padding: 6px;
+    gap: 6px;
+  }
+  .form-group label,
+  .btn-submit,
+  .btn-signup {
+    font-size: 0.9rem;
+  }
+}
 /* same sizing & form container as before */
 .login-main {
   width: 100%;
@@ -86,4 +113,47 @@
   background-color: #803d3b;
   border: 2px solid #af8260;
   color: #e4c59e;
+}
+
+/* — Phone — */
+@media (max-width: 480px) {
+  .login-main {
+    padding: 0 1rem;
+  }
+  .login-form {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .form-group label,
+  .btn-submit,
+  .btn-signup,
+  .forgot-link {
+    font-size: 0.9rem;
+  }
+}
+
+/* — Tablet — */
+@media (min-width: 481px) and (max-width: 768px) {
+  .login-main { max-width: 600px; }
+  .login-form { padding: 1.5rem; gap: 1.5rem; }
+}
+
+/* — Laptop — */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .login-main { max-width: 700px; }
+  .login-form { padding: 2rem; }
+}
+
+/* — Desktop PC — */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .login-main { max-width: 800px; }
+}
+
+/* — TV/4K+ — */
+@media (min-width: 1441px) {
+  .login-main {
+    max-width: 900px;
+    padding: 0 3rem;
+  }
+  .login-form { padding: 3rem; }
 }

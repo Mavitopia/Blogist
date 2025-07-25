@@ -273,3 +273,43 @@ main {
   border: 2px solid #f5deb3; /* keep border visible */
   box-shadow: 0 0 15px rgba(245, 222, 179, 0.4);
 }
+
+
+@media (max-width: 1505px) {
+  
+  .navigation-bar-quests {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+
+  .navigation-bar-quests-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .navigation-bar-quests-left label{
+    font-size: 22px;
+  }
+
+  .navigation-bar-quests-left select {
+    font-size: 22px;
+  }
+
+  .right-side-main-recently-completed {
+    font-size: 10px;
+  }
+
+  .right-side-main-quest-master-header {
+    font-size: 10px;
+  }
+
+  .right-side-main-active-guild-header {
+    font-size: 10px;
+  }
+}
