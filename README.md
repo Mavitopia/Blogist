@@ -25,7 +25,7 @@ Each project here captures my learning journey through experimentation with UI d
 
 > ⚠️ **Note:** These projects are experimental and meant for learning purposes only.  
 > They all contain bugs and other imperfections that I may fix in future versions, but for now, these remain as-is.  
-> Both versions work fine, though Version 1.1 is clearly better built, it still has many issues and I have lost motivation to continue it—for now. Maybe I will return in Version 1.3 <fire>  
+> Both versions work fine, though Version 1.1 is clearly better built, it still has many issues and I have lost motivation to continue it—for now. Maybe I will return in Version 1.2 <fire>  
 
 ---
 
