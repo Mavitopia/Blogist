@@ -1,61 +1,4 @@
-@media (max-width: 1200px) {
-  .contact-us-via-other {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 10px;
-  }
-}
-@media (max-width: 900px) {
-  .contact-us-container {
-    padding: 16px;
-  }
-}
-@media (max-width: 600px) {
-  .contact-us-container {
-    padding: 6px;
-    font-size: 1rem;
-  }
-  .contact-others {
-    height: auto;
-    padding: 6px;
-    font-size: 0.95rem;
-  }
-  .contact-us-via-site {
-    padding: 6px;
-  }
-  .contact-us-via-site-container h2 {
-    font-size: 1.1rem;
-  }
-}
-/* Enhanced Responsive Breakpoints */
-@media (max-width: 900px) {
-  .contact-us-container {
-    padding: 20px;
-  }
-  .contact-us-via-other {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 10px;
-  }
-}
 
-@media (max-width: 600px) {
-  .contact-us-container {
-    padding: 6px;
-    font-size: 0.95rem;
-  }
-  .contact-others {
-    height: 120px;
-    padding: 6px;
-    font-size: 0.9rem;
-  }
-  .contact-us-via-site {
-    padding: 6px;
-  }
-  .contact-us-via-site-container h2 {
-    font-size: 1rem;
-  }
-}
 h1 {
   color: #c44d58;
 }
@@ -165,161 +108,61 @@ button {
 }
 
 
-/* -------------------- */
-/* 📱 PHONE: Up to 480px */
-/* -------------------- */
-@media (max-width: 480px) {
+@media (max-width: 1200px) {
+  .contact-us-via-other {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+  }
+}
+@media (max-width: 900px) {
+  .contact-us-container {
+    padding: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .contact-us-container {
+    padding: 6px;
+    font-size: 1rem;
+  }
+  .contact-others {
+    height: auto;
+    padding: 6px;
+    font-size: 0.95rem;
+  }
+  .contact-us-via-site {
+    padding: 6px;
+  }
+  .contact-us-via-site-container h2 {
+    font-size: 1.1rem;
+  }
+}
+/* Enhanced Responsive Breakpoints */
+@media (max-width: 900px) {
   .contact-us-container {
     padding: 20px;
   }
-
   .contact-us-via-other {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, auto);
-    gap: 15px;
+    grid-template-rows: auto;
+    gap: 10px;
   }
+}
 
-  .contact-others {
-    height: 150px;
-    font-size: 14px;
-  }
-
-  .contact-us-via-site-container h2 {
-    font-size: 20px;
-  }
-
-  .contact-us-via-site form {
-    font-size: 16px;
-  }
-
-  .contact-us-via-site input,
-  .contact-us-via-site textarea {
+@media (max-width: 600px) {
+  .contact-us-container {
+    padding: 6px;
     font-size: 0.95rem;
-    padding: 8px;
   }
-
-  .contact-us-via-site button[type="submit"] {
+  .contact-others {
+    height: 120px;
+    padding: 6px;
+    font-size: 0.9rem;
+  }
+  .contact-us-via-site {
+    padding: 6px;
+  }
+  .contact-us-via-site-container h2 {
     font-size: 1rem;
-  }
-}
-
-/* ---------------------- */
-/* 📱 TABLET: 481px–768px */
-/* ---------------------- */
-@media (min-width: 481px) and (max-width: 768px) {
-  .contact-us-container {
-    padding: 30px;
-  }
-
-  .contact-us-via-other {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, auto);
-    gap: 20px;
-  }
-
-  .contact-others {
-    height: 160px;
-  }
-
-  .contact-us-via-site-container h2 {
-    font-size: 22px;
-  }
-
-  .contact-us-via-site form {
-    font-size: 18px;
-  }
-
-  .contact-us-via-site input,
-  .contact-us-via-site textarea {
-    font-size: 1rem;
-    padding: 9px;
-  }
-}
-
-/* ------------------------ */
-/* 💻 LAPTOP: 769px–1024px  */
-/* ------------------------ */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .contact-us-container {
-    padding: 40px;
-  }
-
-  .contact-us-via-other {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-
-  .contact-others {
-    height: 180px;
-  }
-
-  .contact-us-via-site-container h2 {
-    font-size: 24px;
-  }
-
-  .contact-us-via-site form {
-    font-size: 19px;
-  }
-}
-
-/* ---------------------------- */
-/* 🖥️ DESKTOP: 1025px–1440px    */
-/* ---------------------------- */
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .contact-us-container {
-    padding: 50px;
-  }
-
-  .contact-others {
-    height: 200px;
-  }
-
-  .contact-us-via-site-container h2 {
-    font-size: 25px;
-  }
-
-  .contact-us-via-site form {
-    font-size: 20px;
-  }
-}
-
-/* ---------------------------- */
-/* 📺 TV / 4K+: 1441px and up   */
-/* ---------------------------- */
-@media (min-width: 1441px) {
-  .contact-us-container {
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 60px;
-  }
-
-  .contact-us-via-other {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-  }
-
-  .contact-others {
-    height: 220px;
-    font-size: 18px;
-  }
-
-  .contact-us-via-site-container h2 {
-    font-size: 30px;
-  }
-
-  .contact-us-via-site form {
-    font-size: 22px;
-  }
-
-  .contact-us-via-site input,
-  .contact-us-via-site textarea {
-    font-size: 1.1rem;
-    padding: 12px;
-  }
-
-  .contact-us-via-site button[type="submit"] {
-    font-size: 1.2rem;
-    padding: 14px;
   }
 }

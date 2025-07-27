@@ -54,7 +54,7 @@ app.get("/", (req, res) => {
     latestBlog = sorted[0];
     latestBlogIdx = sorted[0].idx;
   }
-
+  
   // Latest 3 quests (by id/date)
   let latestQuests = quests.slice(-3).reverse();
 

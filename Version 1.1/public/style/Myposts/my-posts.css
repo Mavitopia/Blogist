@@ -1,32 +1,4 @@
-/* Enhanced Responsive Breakpoints */
-@media (max-width: 900px) {
-  .posts-container {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 10px;
-  }
-  .post-card {
-    padding: 10px;
-  }
-}
 
-@media (max-width: 600px) {
-  .posts-container {
-    grid-template-columns: 1fr;
-    gap: 6px;
-    padding: 4px;
-  }
-  .post-card {
-    padding: 6px;
-    font-size: 0.95rem;
-  }
-  .post-title {
-    font-size: 1rem;
-  }
-  .post-date, .btn-edit, .btn-delete {
-    font-size: 0.8rem;
-  }
-}
 /* Container & Main */
 .posts-container {
   display: grid;
@@ -115,56 +87,32 @@
 .no-posts a:hover {
   text-decoration: underline;
 }
+/* Enhanced Responsive Breakpoints */
+@media (max-width: 900px) {
+  .posts-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 10px;
+  }
+  .post-card {
+    padding: 10px;
+  }
+}
 
-/* Responsive */
 @media (max-width: 600px) {
   .posts-container {
     grid-template-columns: 1fr;
-  }
-}
-
-/* — Phone — */
-@media (max-width: 480px) {
-  .posts-container {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-    gap: 1rem;
+    gap: 6px;
+    padding: 4px;
   }
   .post-card {
-    padding: 1rem;
+    padding: 6px;
+    font-size: 0.95rem;
   }
-  .post-title { font-size: 1.1rem; }
-  .post-date, .btn-edit, .btn-delete { font-size: 0.8rem; }
-}
-
-/* — Tablet — */
-@media (min-width: 481px) and (max-width: 768px) {
-  .posts-container { gap: 1.5rem; }
-  .post-card { padding: 1.25rem; }
-  .post-title { font-size: 1.25rem; }
-  .post-date { font-size: 0.85rem; }
-}
-
-/* — Laptop — */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .posts-container { gap: 2rem; }
-  .post-card { padding: 1.5rem; }
-}
-
-/* — Desktop PC — */
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .posts-container { gap: 2.5rem; padding: 2rem; }
-  .post-card { padding: 2rem; }
-}
-
-/* — TV/4K+ — */
-@media (min-width: 1441px) {
-  .posts-container {
-    max-width: 1200px;
-    margin: auto;
-    gap: 3rem;
-    padding: 2.5rem;
+  .post-title {
+    font-size: 1rem;
   }
-  .post-card { padding: 2.5rem; }
-  .post-title { font-size: 1.6rem; }
+  .post-date, .btn-edit, .btn-delete {
+    font-size: 0.8rem;
+  }
 }

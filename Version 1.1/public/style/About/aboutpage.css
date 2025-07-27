@@ -1,31 +1,4 @@
-@media (max-width: 900px) {
-  .main-header, .main-footer {
-    padding: 12px;
-  }
-  .detail-card, .main-footer-level-card {
-    flex-direction: column;
-    gap: 15px;
-  }
-}
 
-@media (max-width: 600px) {
-  .main-header h2, .main-footer-header {
-    font-size: 18px;
-  }
-  .main-header p, .main-footer-paragraph {
-    font-size: 13px;
-  }
-  .detail-card-all, .main-footer-level-card-all {
-    padding: 10px;
-    font-size: 13px;
-  }
-  .detail-card-header, .main-footer-level-card-all h2 {
-    font-size: 15px;
-  }
-  .detail-card-about, .main-footer-level-card-all p {
-    font-size: 12px;
-  }
-}
 main {
   width: 100%;
   margin-bottom: 20px;
@@ -165,3 +138,31 @@ main {
   font-size: 18px;
 }
 
+@media (max-width: 900px) {
+  .main-header, .main-footer {
+    padding: 12px;
+  }
+  .detail-card, .main-footer-level-card {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-header h2, .main-footer-header {
+    font-size: 18px;
+  }
+  .main-header p, .main-footer-paragraph {
+    font-size: 13px;
+  }
+  .detail-card-all, .main-footer-level-card-all {
+    padding: 10px;
+    font-size: 13px;
+  }
+  .detail-card-header, .main-footer-level-card-all h2 {
+    font-size: 15px;
+  }
+  .detail-card-about, .main-footer-level-card-all p {
+    font-size: 12px;
+  }
+}

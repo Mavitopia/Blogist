@@ -15,6 +15,16 @@
   font-size: 1.1rem;
 }
 
+
+.nav a p {
+  color: #af8260;
+  transition: color 0.2s;
+}
+.nav a p:hover {
+  color: #e4c59e;
+}
+
+
 /* Tablet responsiveness */
 @media (max-width: 900px) {
   .read-main {
@@ -39,101 +49,5 @@
   .read-content {
     padding: 10px;
     font-size: 0.95rem;
-  }
-}
-
-.nav a p {
-  color: #af8260;
-  transition: color 0.2s;
-}
-.nav a p:hover {
-  color: #e4c59e;
-}
-
-/* -------------------- */
-/* 📱 PHONE: Up to 480px */
-/* -------------------- */
-@media (max-width: 480px) {
-  .read-main {
-    max-width: 100vw;
-    margin: 10px 0;
-    padding: 0 5px;
-    border-radius: 8px;
-  }
-
-  .read-content {
-    padding: 10px;
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-}
-
-/* ---------------------- */
-/* 📱 TABLET: 481px–768px */
-/* ---------------------- */
-@media (min-width: 481px) and (max-width: 768px) {
-  .read-main {
-    max-width: 96vw;
-    padding: 0 10px;
-    margin: 20px auto;
-    border-radius: 10px;
-  }
-
-  .read-content {
-    padding: 20px;
-    font-size: 1rem;
-    line-height: 1.55;
-  }
-}
-
-/* ------------------------ */
-/* 💻 LAPTOP: 769px–1024px  */
-/* ------------------------ */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .read-main {
-    max-width: 92vw;
-    padding: 0 15px;
-    border-radius: 12px;
-  }
-
-  .read-content {
-    padding: 25px;
-    font-size: 1.05rem;
-    line-height: 1.6;
-  }
-}
-
-/* ---------------------------- */
-/* 🖥️ DESKTOP: 1025px–1440px    */
-/* ---------------------------- */
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .read-main {
-    max-width: 800px;
-    padding: 0 20px;
-    border-radius: 12px;
-  }
-
-  .read-content {
-    padding: 30px;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-}
-
-/* ---------------------------- */
-/* 📺 TV / 4K+: 1441px and up   */
-/* ---------------------------- */
-@media (min-width: 1441px) {
-  .read-main {
-    max-width: 1000px;
-    padding: 0 30px;
-    margin: 60px auto;
-    border-radius: 14px;
-  }
-
-  .read-content {
-    padding: 40px;
-    font-size: 1.25rem;
-    line-height: 1.7;
   }
 }

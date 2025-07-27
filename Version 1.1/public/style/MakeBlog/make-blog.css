@@ -1,33 +1,4 @@
-/* Enhanced Responsive Breakpoints */
-@media (max-width: 900px) {
-  main {
-    padding: 10px;
-  }
-  .blog-form {
-    gap: 8px;
-  }
-}
 
-@media (max-width: 600px) {
-  main {
-    padding: 4px;
-    font-size: 0.95rem;
-  }
-  .blog-form {
-    gap: 4px;
-  }
-  .blog-form label,
-  .blog-form input,
-  .blog-form textarea,
-  .blog-form button {
-    font-size: 0.9rem;
-    padding: 6px;
-  }
-  .tabs {
-    flex-direction: column;
-    gap: 4px;
-  }
-}
 /* Main container */
 main {
   background: #38302d;

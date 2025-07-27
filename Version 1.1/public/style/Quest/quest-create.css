@@ -1,32 +1,4 @@
-/* Enhanced Responsive Breakpoints */
-@media (max-width: 900px) {
-  .main-container {
-    width: 98vw;
-    padding: 10px;
-  }
-  form {
-    gap: 10px;
-  }
-}
 
-@media (max-width: 600px) {
-  .main-container {
-    width: 100vw;
-    padding: 4px;
-    font-size: 0.95rem;
-  }
-  form, .upper-container, .lower-container {
-    gap: 6px;
-  }
-  input, textarea, select, button {
-    font-size: 0.95rem;
-    padding: 8px;
-  }
-  button {
-    width: 100%;
-    font-size: 1rem;
-  }
-}
 /* Global Main Area */
 main {
   width: 100%;
