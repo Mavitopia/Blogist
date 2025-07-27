@@ -49,6 +49,8 @@ Please review these for correctness, consistency, and security best practices. A
 
 ## ⭐ Getting Started
 
+!important note : make uploads folder inside public for the image functionality to work
+
 1. Clone the repository
 2. Install dependencies
 3. Run the development server
