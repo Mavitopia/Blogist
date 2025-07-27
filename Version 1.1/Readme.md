@@ -49,7 +49,7 @@ Please review these for correctness, consistency, and security best practices. A
 
 ## ⭐ Getting Started
 
-! important note : make uploads folder inside public for the image functionality to work
+⚠️ **Important:** Please create an `uploads` folder inside the `public` directory for image uploads to work correctly.
 
 1. Clone the repository
 2. Install dependencies
