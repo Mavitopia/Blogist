@@ -20,9 +20,6 @@ Each project here captures my learning journey through experimentation with UI d
 ### 🔹 Version 1.1 – *Digital Tavern*  
 - A more advanced iteration  
 - Features a fantasy/RPG-inspired theme with pixel art UI elements  
-- Includes a **custom post editor** and improved navigation  
-- Uses **in-memory storage** exclusively—designed to test frontend logic and design patterns  
-- Emphasizes **fun, fantasy immersion**, and interface enhancement over full functionality  
 
 ---
 
